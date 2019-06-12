@@ -4,8 +4,8 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const scarew = new Discord.ShardingManager('./bot.js', {// Ana dosyanızın adını yazınız.
-    totalShards: 'auto',
-    token: "NTY2OTg5MjEwMjQ2OTcxNDAz.XLNA9Q.dASS0BWsDmCR3_lyoBbo7aIbfrQ"// Buraya tokeninizi yazınız.
+    totalShards: 'auto',//Burayı değiştirmeyin daha iyi olur sizin için
+    token: "TOKEN"// Buraya tokeninizi yazınız.
 });
 
 scarew.spawn(); 
