@@ -1,4 +1,4 @@
-const express = require('express');
+  const express = require('express');
 const app = express();
 const http = require('http');
     app.get("/", (request, response) => {
@@ -18,6 +18,7 @@ const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
 const db = require('quick.db');
+const Jimp = require('jimp');          fs
 
 require('./util/eventLoader')(client);
 
@@ -103,8 +104,6 @@ client.elevation = message => {
   return permLevel
   };
 
-
-
 var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
 
 client.on('warn', e => {
@@ -114,9 +113,3 @@ client.on('warn', e => {
 client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
-
-client.login(ayarlar.token);
-
-
-
-
