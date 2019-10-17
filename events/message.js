@@ -18,10 +18,6 @@ module.exports = message => {
 
 };
 
- 
-
-
-
 const ayarlar = require('../ayarlar.json');
 module.exports = async message => {
   let client = message.client;

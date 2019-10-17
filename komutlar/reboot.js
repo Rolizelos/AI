@@ -1,42 +1,25 @@
-const Discord = require('discord.js'); 
-const moment = require('moment');
 
-exports.run = (client, message, args) => {
-    if (!message.guild) {
-  const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor('RANDOM')
-  .setTimestamp()
-  .setAuthor(message.author.username, message.author.avatarURL)
-  .addField(':warning: Uyarı :warning:', '`yenile` adlı komutu özel mesajlarda kullanamazsın.')
-  return message.author.sendEmbed(ozelmesajuyari); }
-message.channel.sendMessage('Botun yeniden başlatılmasına onay veriyorsanız hemen evet yazın,Kalan Süre 30 Saniye.')
-.then(() => {
-  message.channel.awaitMessages(response => response.content === "evet", {
-    max: 1,
-    time: 30000,
-    errors: ['time'],
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+const ayarlar = require("../ayarlar.json")
+
+exports.run = async (bot, message, args) => {
+    if(message.author.id !== "ID") if(message.author.id !== "ID") return message.channel.send(":x: Bu Komutu kullanabileceğini mi sandın!")    
+    message.channel.sendMessage(`**SISTEM YENIDEN BASLATILIYOR**...`).then(msg => {
+    console.log(`CFX: yeniden başlatılıyor...`);
+    process.exit(0);
   })
-  .then((collected) => {
-      message.channel.sendMessage(`**Bot yeniden başlatılıyor...**`).then(message => {
-      console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Bot yeniden başlatılıyor...`)
-      process.exit(1);
-    }).catch(console.error)
-    })
-    .catch(() => {
-      message.channel.sendMessage('**Yeniden başlatma işlemi iptal edildi.**');
-    });
-});
-};
-
+//CodeFENIX              
+}
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['reboot'],
-  permLevel: 4
+  aliases: [],
+  permLevel: 0
 };
-
+//CodeFENIX
 exports.help = {
-  name: 'yenile',
-  description: '[Admin Komutu]',
-  usage: 'yenile'
+  name: 'reboot',
+  description: 'Sistemi yeniden başlatır',
+  usage: 'reboot'
 };
