@@ -5,7 +5,7 @@ const { IMGUR_KEY } = process.env;
 const yes = ['evet'];
 const no = ['hayır']
 
-const deleteCommandMessages = function (msg, client) { // eslint-disable-line consistent-return
+const deleteCommandMessages = function (msg, client) { 
         if (msg.deletable && client.provider.get('global', 'deletecommandmessages', false)) {
           return msg.delete();
         }
