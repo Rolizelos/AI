@@ -1,10 +1,7 @@
 <hr/>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 <hr>
-<p>CodeFENIX | CFX <a href="http://codefenix.dx.am/">@JaimiTR|FENIX tarafından oluşturulmuştur.</a></p>
+CodeLib iyi kodlamalar sunar...
 <hr>
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 <hr/>
-    <h1>
-     CodeFENIX KOD Paylaşım. 
-    </h1>
