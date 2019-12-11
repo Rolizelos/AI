@@ -9,7 +9,7 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `₣│SunucuADI│${prefix}yardım`,
+            name: `!js | CoderLab`,
             type: 'watching'
         },
         status: 'online'
