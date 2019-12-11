@@ -1,25 +1,35 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
-const ayarlar = require("../ayarlar.json")
+const moment = require('moment');
 
-exports.run = async (bot, message, args) => {
-    if(message.author.id !== "ID") if(message.author.id !== "ID") return message.channel.send(":x: Bu Komutu kullanabileceğini mi sandın!")    
-//ID Yazan Yere Kendi ID nizi girmeniz gerekiyor.
-    message.channel.sendMessage(`**SISTEM YENIDEN BASLATILIYOR**...`).then(msg => {
-    console.log(`Yeniden başlatılıyor...`);
-    process.exit(0);
+exports.run = (client, message, args) => {
+message.channel.sendMessage(' **Botun yeniden başlatılmasına onay veriyorsanız 10 saniye içinde `başlat` yazın.** ')
+.then(() => {
+  message.channel.awaitMessages(response => response.content === "başlat", {
+    max: 1,
+    time: 10000,
+    errors: ['time'],
   })
-            
-}
+  .then((collected) => {
+      message.channel.sendMessage(`**Bot yeniden başlatılıyor...**`).then(message => {
+      console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Bot yeniden başlatılıyor...`)
+      process.exit(1);
+    }).catch(console.error)
+    })
+    .catch(() => {
+      message.channel.sendMessage('Yeniden başlatma işlemi iptal edildi.');
+    });
+});
+};
+
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
-  permLevel: 0
+  aliases: ['yenile'],
+  permLevel: 4
 };
 
 exports.help = {
   name: 'reboot',
-  description: 'Sistemi yeniden başlatır',
+  description: '[SAHİP KOMUTU!]',
   usage: 'reboot'
 };
