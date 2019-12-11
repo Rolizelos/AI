@@ -5,7 +5,7 @@ const app = express();
 const http = require('http');
 const scarew = new Discord.ShardingManager('./bot.js', {
     totalShards: 'auto',
-    token: "TOKEN"// Tokeninizi Buraya Girin..
+    token: "NjU0Mzg3NDg0NzAwMTgwNDkw.XfEz_g.aXNnse8AASjSLD-Q2oghq1oWE0g"// Tokeninizi Buraya Girin..
 });
 
 scarew.spawn(); 
