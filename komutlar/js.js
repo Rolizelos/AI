@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
   
-  if (message.channel.id !== '654376897412595723') return message.channel.send(`${client.emojis.get("648206354904907776")} \`${message.author.tag}\`**Bu Komutudu <#654376897412595723> Kanalında Kullan!**`).then(msg => {
+  if (message.channel.id !== '654376897412595723') return message.channel.send(`:x: \`${message.author.tag}\`**Bu Komutudu <#654376897412595723> Kanalında Kullan!**`).then(msg => {
     msg.delete(10000)
     })
   
