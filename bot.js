@@ -106,17 +106,23 @@ client.elevation = message => {
 
 //------------------------------------------
 
-client.on("guildMemberAdd", async member => {
-  db.fetch(`botkoruma.coderscode_${member.guild.id}`).then(yusuf => {
-  if(yusuf !== "aktif") return;
-  setTimeout(() => {
-   member.guild.fetchMember(member).then(shydragelmezse => {
-   shydragelmezse.roles.forEach(function(shydragelirsekodu) {
-   if(shydragelirsekodu.name.includes(member.user.username)) {
-   member.guild.member(member).ban();
-   member.guild.channels.find(daşşak => daşşak.name === "raid").send(`**CoderLib Bot Koruma Sistemi!** \n ${member.guild.owner} Sunucuya Bot Çekmeye Çalıştıklarını Bildirmek İstedim. \n__**Atılan Botun Tagı :**__ ${member.user.tag}`)
-}})})
-  }, 1000)
-})
-})
+client.on("message", async msg => {
+  if (msg.channel.type === "dm") return;
+  if (msg.author.bot) return;
+  if (msg.content.length > 4) {
+    if (db.fetch(`capslock_${msg.guild.id}`)) {
+      let caps = msg.content.toUpperCase();
+      if (msg.content == caps) {
+        if (!msg.member.hasPermission("ADMINISTRATOR")) {
+          if (!msg.mentions.users.first()) {
+            msg.delete();
+            return msg.channel
+              .send(`✋ Lütfen Büyük Harf Kullanma!`)
+              .then(m => m.delete(5000));
+          }
+        }
+      }
+    }
+  }
+});
 client.login(ayarlar.token);
