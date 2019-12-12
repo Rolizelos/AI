@@ -106,33 +106,17 @@ client.elevation = message => {
 
 //------------------------------------------
 
-client.on('guildMemberAdd', (member) => {
-  const db = require('quick.db');   
- 
-    const guild = member.guild;
-
-       const katılabilir = db.fetch(`katılabilir_${member.id}`)
-
-       const Kanal = db.fetch(`antiraid_${member.guild.id}`).replace("<#", "").replace(">", "")
-                 if (katılabilir == undefined) {
-
-       if(Kanal != undefined) {
-         
-       }
-
-    if(member.user.bot !==true){
-
-    } 
-    else {
-      member.guild.channels.get(Kanal).send(`:white_check_mark: ${member} adlı bot, Anti-raid özelliği aktif olduğundan dolayı sunucudan atıldı.`)
-       member.kick(member) 
-  }
-                 }
-            if (katılabilir == 'katılabilir') {
-              member.guild.channels.get(Kanal).send(`:white_check_mark: ${member} adlı bot, Anti-raid özelliğinden etkilenmediğinden dolayı sunucuya katıldı.`)
-              db.delete(`katılabilir_${member.id}`)
-            }
-        
-  });
-
+client.on("guildMemberAdd", async member => {
+  db.fetch(`botkoruma.coderscode_${member.guild.id}`).then(yusuf => {
+  if(yusuf !== "aktif") return;
+  setTimeout(() => {
+   member.guild.fetchMember(member).then(shydragelmezse => {
+   shydragelmezse.roles.forEach(function(shydragelirsekodu) {
+   if(shydragelirsekodu.name.includes(member.user.username)) {
+   member.guild.member(member).ban();
+   member.guild.channels.find(daşşak => daşşak.name === "raid").send(`**CoderLib Bot Koruma Sistemi!** \n ${member.guild.owner} Sunucuya Bot Çekmeye Çalıştıklarını Bildirmek İstedim. \n__**Atılan Botun Tagı :**__ ${member.user.tag}`)
+}})})
+  }, 1000)
+})
+})
 client.login(ayarlar.token);
