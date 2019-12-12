@@ -106,5 +106,33 @@ client.elevation = message => {
 
 //------------------------------------------
 
+client.on('guildMemberAdd', (member) => {
+  const db = require('quick.db');   
+ 
+    const guild = member.guild;
+
+       const katılabilir = db.fetch(`katılabilir_${member.id}`)
+
+       const Kanal = db.fetch(`antiraid_${member.guild.id}`).replace("<#", "").replace(">", "")
+                 if (katılabilir == undefined) {
+
+       if(Kanal != undefined) {
+         
+       }
+
+    if(member.user.bot !==true){
+
+    } 
+    else {
+      member.guild.channels.get(Kanal).send(`:white_check_mark: ${member} adlı bot, Anti-raid özelliği aktif olduğundan dolayı sunucudan atıldı.`)
+       member.kick(member) 
+  }
+                 }
+            if (katılabilir == 'katılabilir') {
+              member.guild.channels.get(Kanal).send(`:white_check_mark: ${member} adlı bot, Anti-raid özelliğinden etkilenmediğinden dolayı sunucuya katıldı.`)
+              db.delete(`katılabilir_${member.id}`)
+            }
+        
+  });
 
 client.login(ayarlar.token);
