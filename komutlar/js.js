@@ -1,18 +1,17 @@
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
-const DBL = require('dblapi.js')
 exports.run = function(client, message) {
 
-  
+  if(message.channel.id != "654376897412595723") return message.channel.send(':x: **Bu Komutudu <#654376897412595723> Kanalında Kullan!**');
 
 
   
 /////////////////////Config
 
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
- var rolismi = "JavaScript" // Verilecek Rol Ismi
+ var rolismi = "♣ | JavaScript" // Verilecek Rol Ismi
 var logkanalid = "654378716016672805"   
-let kanal = "650304608371081216"
+let kanal = "654376897412595723"
   var guildid = "654375129282904075" // Kullanılacak Sunucu
 
 ///////////////// Ana Kod
