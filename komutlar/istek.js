@@ -44,6 +44,7 @@ message.channel.send(cfx4)
 //CodeFENIX //CFX
 const cfx = new Discord.RichEmbed()
 .setColor("#00ff88")
+.addField(`\@♣ | Kod Paylaşımcı`)
 .addField(`Kullanıcı Adı`,message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField(`Kullanıcı Tagı`,message.author.discriminator,true)
