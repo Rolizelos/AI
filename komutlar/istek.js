@@ -34,14 +34,14 @@ exports.run = async function(client, message, args) {
 
 message.channel.send(cfx4)
 //CodeFENIX //CFX
-const cfx = new Discord.RichEmbed()
+    chan.send(`<@&654395044614373387>`).then(m => {
+chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
-.addField(`** **`, `<@&655867356433612810>`, true)
-.addField(`Kullanıcı Adı`,message.author.username,true)
+.addField(`\n\nKullanıcı Adı`, message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
-.addField("**İstek Kod**", code)
-.setThumbnail(message.author.avatarURL)
-chan.send(cfx);
+.addField("**İstek Kod**", `\`${code}\``)
+.setThumbnail(message.author.avatarURL))
+})
 
 
 }};
