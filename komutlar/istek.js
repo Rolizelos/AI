@@ -3,6 +3,7 @@ const db = require('quick.db');
 const a = require('../ayarlar.json') 
  
 exports.run = async function(client, message, args) {
+  message.channel.bulkDelete(1)
   let user = message.author
     
   const cfx1 = new Discord.RichEmbed()
@@ -18,6 +19,7 @@ exports.run = async function(client, message, args) {
   .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
   .setColor("#00ff88")
   .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
+
   
   
   
@@ -32,7 +34,9 @@ exports.run = async function(client, message, args) {
 
 
 
-message.channel.send(cfx4)
+message.channel.send(cfx4).then(m => {
+  m.delete(3000)
+})
 //CodeFENIX //CFX
     chan.send(`<@&654395044614373387>`).then(m => {
 chan.send(new Discord.RichEmbed()
