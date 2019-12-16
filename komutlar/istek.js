@@ -13,10 +13,7 @@ exports.run = async function(client, message, args) {
   .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
   .setColor("#00ff88")
   .setFooter(`CodeFENIX| İstek Sistemi.`, client.user.avatarURL)
-  const cfx3 = new Discord.RichEmbed()
-  .setDescription(`\`${user.tag}\` İsteğinin Gönderilmesini istiyorsan \`istiyorum\` yazman gerekiyor.`)
-  .setColor("#00ff88")
-  .setFooter(`CodeFENIX| İstek Sistemi.`, client.user.avatarURL)
+
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
   .setColor("#00ff88")
@@ -30,28 +27,23 @@ exports.run = async function(client, message, args) {
     if (!cfxistekkanal) return message.channel.send(cfx1)
     if (code.length < 1) return message.channel.send(cfx2);
   if (message.author) {
-message.channel.send(cfx3)
-//CodeFENIX // CFX
-.then(() => {
-message.channel.awaitMessages(response =>response.content ==='istiyorum', {
-max: 1,
-time: 30000,
-errors: ['time'],
-})
 
-.then((collected) => {
+//CodeFENIX // CFX
+
+
+
 message.channel.send(cfx4)
 //CodeFENIX //CFX
 const cfx = new Discord.RichEmbed()
 .setColor("#00ff88")
-.addField(`<@&654395044614373387>`)
+.addField(`<@&654395044614373387>`, `** **`)
 .addField(`Kullanıcı Adı`,message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
-.addField("İstek Kod", `code`)
+.addField("İstek Kod", code)
 .setThumbnail(message.author.avatarURL)
 chan.send(cfx);
-});
-});
+
+
 }};
 
 // CodeFENIX // CFX
