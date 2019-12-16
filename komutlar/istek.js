@@ -8,16 +8,16 @@ exports.run = async function(client, message, args) {
   const cfx1 = new Discord.RichEmbed()
   .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\``)
   .setColor("#00ff88")
-  .setFooter(`CodeFENIX| İstek Sistemi.`, client.user.avatarURL)
+  .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
   .setColor("#00ff88")
-  .setFooter(`CodeFENIX| İstek Sistemi.`, client.user.avatarURL)
+  .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
 
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
   .setColor("#00ff88")
-  .setFooter(`CodeFENIX | İstek Sistemi.`, client.user.avatarURL)
+  .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
   
   
   
@@ -36,7 +36,7 @@ message.channel.send(cfx4)
 //CodeFENIX //CFX
 const cfx = new Discord.RichEmbed()
 .setColor("#00ff88")
-.setDescription(`<@&654395044614373387>`)
+.addField(`** **`, `<@&655867356433612810>`, true)
 .addField(`Kullanıcı Adı`,message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField("**İstek Kod**", code)
