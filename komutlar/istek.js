@@ -44,11 +44,10 @@ message.channel.send(cfx4)
 //CodeFENIX //CFX
 const cfx = new Discord.RichEmbed()
 .setColor("#00ff88")
-.addField(`\@♣ | Kod Paylaşımcı`)
+.addField(`<@&654395044614373387>`)
 .addField(`Kullanıcı Adı`,message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
-.addField(`Kullanıcı Tagı`,message.author.discriminator,true)
-.addField("İstek", code)
+.addField("İstek Kod", `code`)
 .setThumbnail(message.author.avatarURL)
 chan.send(cfx);
 });
