@@ -17,7 +17,7 @@ exports.run = async function(client, message, args) {
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
   .setColor("#00ff88")
-  .setFooter(`CodeFENIX| İstek Sistemi.`, client.user.avatarURL)
+  .setFooter(`CodeFENIX | İstek Sistemi.`, client.user.avatarURL)
   
   
   
@@ -36,10 +36,10 @@ message.channel.send(cfx4)
 //CodeFENIX //CFX
 const cfx = new Discord.RichEmbed()
 .setColor("#00ff88")
-.addField(`<@&654395044614373387>`, `** **`)
+.setDescription(`<@&654395044614373387>`)
 .addField(`Kullanıcı Adı`,message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
-.addField("İstek Kod", code)
+.addField("**İstek Kod**", code)
 .setThumbnail(message.author.avatarURL)
 chan.send(cfx);
 
