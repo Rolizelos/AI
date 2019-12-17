@@ -3,6 +3,9 @@ const db = require('quick.db');
 const a = require('../ayarlar.json') 
  
 exports.run = async function(client, message, args) {
+  
+  if(message.channel.id != "654377480395685898") return message.channel.send(':x: **Bu Komutudu <#654377480395685898> Kanalında Kullan!**');
+  
   message.channel.bulkDelete(1)
   let user = message.author
     
