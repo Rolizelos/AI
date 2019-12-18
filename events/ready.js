@@ -14,5 +14,5 @@ client.user.setPresence({
         },
         status: 'online'
     })
-    console.log(`[F]: Giriş Yaptı! Komutlar Yüklendi!`);
+    console.log(`[CoderLib]: Giriş Yaptı! Komutlar Yüklendi!`);
 }
