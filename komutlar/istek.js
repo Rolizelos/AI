@@ -37,8 +37,8 @@ exports.run = async function(client, message, args) {
 
 
 
-message.channel.send(cfx4).then(m => {
-  m.delete(3000)
+message.author.send(cfx4).then(m => {
+  m.delete(300000)
 })
 //CodeFENIX //CFX
     chan.send(`<@&654395044614373387>`).then(m => {
