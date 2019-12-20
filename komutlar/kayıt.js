@@ -38,8 +38,6 @@ exports.run = async (client, message, args) => {
       o.send('Kayıt Olmak İçin Aşağıdaki Emojiye Tıklayınız!').then(async m => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
         m.react('🇹🇷')
-      let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
- user.removeRole('657582742787325953')
       })
       message.channel.send('Başarıyla **Kayıt Sistemi** kuruldu!')
     })
