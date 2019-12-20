@@ -201,4 +201,47 @@ client.on("guildMemberAdd", async member => {
  
 });
 
+//KAYIT -------------------------------------------------------------------
+
+var rol = {
+  "sunucu": "654375129282904075",
+  "kayıtlı": "654379551002198016",
+  "kayıtsız": "657582742787325953"
+}
+const pw = require('generate-password')
+client.on('guildMemberAdd', member => {
+  member.send('Sunucuya hoşgeldin! Kayıt olmak için !kayıt yazarak bu mesajı cevapla!')
+})
+client.on('message', message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") {
+    if(message.content ===  "!kayıt") {
+      var password = pw.generate({
+        numbers: true,
+        uppercase: true
+      })
+      var { createCanvas, loadImage } = require('canvas')
+        var canvas = createCanvas(750,250)
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = `#0000001`;
+        ctx.font = '56px Impact';
+        ctx.textAlign = "left";
+        ctx.fillText(`${password}`, 100, 150)
+        
+      message.channel.send('Aşağıda yer alan kodu aynen cevap kısmına yazınız', {files:[{attachment:canvas.toBuffer(),name:"kayit.png"}]})
+      db.set(`kod.${message.author.id}`, password)
+    } else {
+      var kod = db.fetch(`kod.${message.author.id}`)
+      if(!kod) return message.channel.send('${prefix}kayıt yazarak bir kod alınız!')
+      else {
+        var member = client.guilds.get(rol.sunucu).members.get(message.author.id)
+        member.addRole(rol.kayıtlı)
+        member.removeRole(rol.kayıtsız)
+        message.channel.send('Kayıt Başarılı! Sunucuya erişiminiz açılıyor!')
+        db.delete(`kod.${message.author.id}`)
+      }
+    }
+  }
+})
+
 client.login(ayarlar.token);
