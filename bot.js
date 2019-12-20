@@ -109,7 +109,7 @@ client.elevation = message => {
 client.on("message", async msg => {
   if (msg.channel.type === "dm") return;
   if (msg.author.bot) return;
-  if (msg.content.length >0) {
+  if (msg.content.length >2) {
     if (db.fetch(`capslock_${msg.guild.id}`)) {
       let caps = msg.content.toUpperCase();
       if (msg.content == caps) {
