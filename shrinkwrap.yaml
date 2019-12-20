@@ -35,7 +35,7 @@ dependencies:
   fs: 0.0.2
   funny-words: 0.1.2
   g-image-search: 1.0.2
-  generate-password: 1.4.1
+  generate-password: 1.4.2
   gifencoder: 1.1.0
   google: 2.1.0
   google-translate-api: 2.3.0
@@ -2494,10 +2494,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-LANAXHU4w51+s3sxcCLjJfsBi/c=
-  /generate-password/1.4.1:
+  /generate-password/1.4.2:
     dev: false
     resolution:
-      integrity: sha512-MwMSkOIKkgYBG3JrquF0m/Rky+pl5jZFNmoroE9bQU5VawFDKdJfxMx1qBthPusx8GQyNWSW0m+Jaw0mZnqApg==
+      integrity: sha512-UYEOMRcnpC/228qfCQNSebq8jmIonoPYPILsZl2NmH16Vm53yPvgo/KK3BYeCA3JmhSA/a/HqHzaY0v5dRbyoQ==
   /get-stdin/5.0.1:
     dev: false
     engines:
@@ -5796,7 +5796,7 @@ specifiers:
   fs: ^0.0.2
   funny-words: ^0.1.2
   g-image-search: ^1.0.2
-  generate-password: ^1.4.0
+  generate-password: ^1.4.1
   gifencoder: ^1.1.0
   google: ^2.1.0
   google-translate-api: ^2.3.0

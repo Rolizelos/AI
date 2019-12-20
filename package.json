@@ -57,7 +57,7 @@
     "fs": "^0.0.2",
     "funny-words": "^0.1.2",
     "g-image-search": "^1.0.2",
-    "generate-password": "^1.4.0",
+    "generate-password": "^1.4.1",
     "gifencoder": "^1.1.0",
     "google": "^2.1.0",
     "google-translate-api": "^2.3.0",
