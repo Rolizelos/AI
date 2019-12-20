@@ -9,11 +9,6 @@ exports.run = async (client, message, args) => {
     if (db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Kayıt Sistemi** zaten açık!')
     let rol;
     try{
-        rol = await message.guild.createRole({
-        name: `♣ | Kayıtsız`,
-        color: "#b64747",
-        permissions:[]
-        })
 
     message.guild.channels.forEach((channel, id) => {
          channel.overwritePermissions(rol, {
@@ -43,6 +38,7 @@ exports.run = async (client, message, args) => {
       o.send('Kayıt Olmak İçin Aşağıdaki Emojiye Tıklayınız!').then(async m => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
         m.react('🇹🇷')
+      
       })
       message.channel.send('Başarıyla **Kayıt Sistemi** kuruldu!')
     })
