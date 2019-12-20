@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
-  message.reply('Pong! **' + client.ping + '** ms');
+  
+  const bergy = new Discord.RichEmbed()
+.setColor(`RANDOM`)
+.setDesription(``)
 };
 
 exports.conf = {
