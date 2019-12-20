@@ -9,7 +9,7 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `!js | CoderLab`,
+            name: `!js | LiberCode`,
             type: 'watching'
         },
         status: 'online'
