@@ -10,8 +10,8 @@ exports.run = async (client, message, args) => {
     let rol;
     try{
         rol = await message.guild.createRole({
-        name: `Kayıtsız Üye`,
-        color: "#000000",
+        name: `♣ | Kayıtsız`,
+        color: "#b64747",
         permissions:[]
         })
 
