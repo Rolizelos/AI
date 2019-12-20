@@ -1,9 +1,6 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
-  
-  const bergy = new Discord.RichEmbed()
-.setColor(`RANDOM`)
-.setDesription(``)
+  message.reply(`${client.emojis.get("655468548013162526")}| **` + client.ping + '** ms');
 };
 
 exports.conf = {
