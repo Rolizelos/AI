@@ -9,11 +9,11 @@ exports.run = async (client, message, args) => {
     } else {
         user = message.author;
     }
-
-const bergy = new Discord.RichEmbed()
 const member = message.guild.member(user)
+const bergy = new Discord.RichEmbed()
+
 .setColor(`RANDOM`)
-.setDescription(`Senin Profil Fotoğrafın;`)
+.setDescription(`\`\`${user.tag}\`\` Profil Fotoğrafı!`)
 .setImage(user.avatarURL)
 
 return message.channel.send(bergy).then(n => n.delete(40000));
@@ -23,7 +23,7 @@ return message.channel.send(bergy).then(n => n.delete(40000));
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['botpp'],
+    aliases: ['profil-fotoğrafı'],
     permLevel: 0
   };
   
