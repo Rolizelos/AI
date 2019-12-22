@@ -215,7 +215,7 @@ client.on('guildMemberAdd', member => {
  
     
    const embed = new Discord.RichEmbed()
-   .setColor('BLACK')
+   .setColor('PURPLE')
    .setThumbnail(member.user.avatarURL)
    .setDescription('**Hoşgeldin,** <@'+member.user.id+'> **Seninle** ``'+member.guild.memberCount+'`` **Kişiyiz!**\n'+'**Kaydının yapılması için sesli odaya gelip ses vermen gerekli!**\n'+'**<@&654380318769545216> seninle ilgilenecektir.**\n'+'<#640653382264291347> **Kanalından kuralları okumayı ihmal etmeyin.**\n'+'<@'+member.user.id+'> **adlı kişiyi davet eden kullanıcı** <@'+davetçi.id+'> `'+invite.uses+' adet daveti var`.\n'+'**Hesap Güvenilir mi?** '+kontrol)
 
