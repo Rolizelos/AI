@@ -19,7 +19,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'bot-pp',
+    name: 'botpp',
     description: 'Bot Avatar!',
     usage: 'bot-pp'
   };
