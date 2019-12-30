@@ -9,10 +9,10 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `!js | LiberCode`,
+            name: `FREE NİTRO | FREE NİTRO`,
             type: 'watching'
         },
         status: 'online'
     })
-    console.log(`[CoderLib]: Giriş Yaptı! Komutlar Yüklendi!`);
+    console.log(`[FREE NİTRO]: Giriş Yaptı! Komutlar Yüklendi!`);
 }

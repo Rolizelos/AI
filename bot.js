@@ -257,15 +257,15 @@ member.guild.channels.get(cfxk).send(codefenixkodpaylasim);
 });
 
 
-js 
-client.on('ready'  () => {
-console.log('Cervantestenselam var saa biz cfx ayarla işte aq' ) ;
+
+client.on('ready',  () => {
+console.log('') ;
 setInterval(function () {
-let crvnts = client.channels.get("kanalidsiyazbergy" )
+let crvnts = client.channels.get("661273507350446145" )
 if(crvnts) {
-crvnts.send("sa ben Cervantes snmskskss" )
+crvnts.send("**Kayıt Olmak İçin Emojiye Tıklamayı Unutumayınız! @♥ | UnRegistered **" )
 }  
-}, 180000) 
+}, 100000) 
 }) ;
 
 client.login(ayarlar.token);
