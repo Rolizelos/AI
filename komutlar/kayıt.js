@@ -40,7 +40,7 @@ exports.run = async (client, message, args) => {
     
       await db.set(`kayıt_${message.guild.id}`, 'acik')
       await db.set(`kayıtrol_${message.guild.id}`, rol.id)
-      o.send('Kayıt Olmak İçin Aşağıdaki Emojiye Tıklayınız!').then(async m => {
+      o.send('TR | Kayıt Olmak İçin Lütfen Tıklayınız!\n US | Please click here to register!').then(async m => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
         m.react('🇹🇷')
       })
