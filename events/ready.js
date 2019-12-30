@@ -9,7 +9,7 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `FREE NİTRO | FREE NİTRO`,
+            name: `FREE NİTRO ♥`,
             type: 'watching'
         },
         status: 'online'

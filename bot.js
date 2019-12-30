@@ -261,9 +261,9 @@ member.guild.channels.get(cfxk).send(codefenixkodpaylasim);
 client.on('ready',  () => {
 console.log('') ;
 setInterval(function () {
-let crvnts = client.channels.get("661273507350446145" )
+let crvnts = client.channels.get("661273507350446145")
 if(crvnts) {
-crvnts.send("**Kayıt Olmak İçin Emojiye Tıklamayı Unutumayınız! @♥ | UnRegistered **" )
+crvnts.send("**Kayıt Olmak İçin Emojiye Tıklamayı Unutumayınız!**" )
 }  
 }, 100000) 
 }) ;
