@@ -10,8 +10,8 @@ exports.run = async (client, message, args) => {
     let rol;
     try{
         rol = await message.guild.createRole({
-        name: `♣ | Kayıtsız`,
-        color: "#b64747",
+        name: `♥ | UnRegistered`,
+        color: "pink",
         permissions:[]
         })
 
@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
       return message.channel.send('Gerekli rolleri ve izinleri **oluşturamıyorum.** Lütfen yetkimin tam olduğundan emin olun.')
     }
     
-    message.guild.createChannel("register", "text").then(async o => {
+    message.guild.createChannel("🔥│regi̇ster", "text").then(async o => {
       let role = message.guild.roles.find("name", "@everyone");
        await o.overwritePermissions(role, {
             VIEW_CHANNEL: false,
@@ -40,7 +40,7 @@ exports.run = async (client, message, args) => {
     
       await db.set(`kayıt_${message.guild.id}`, 'acik')
       await db.set(`kayıtrol_${message.guild.id}`, rol.id)
-      o.send('TR | Kayıt Olmak İçin Lütfen Tıklayınız!\n US | Please click here to register!').then(async m => {
+      o.send('**TR | Kayıt Olmak İçin Lütfen Tıklayınız!**\n**US | Please click here to register!**').then(async m => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
         m.react('🇹🇷')
       })
