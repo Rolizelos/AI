@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
+      if(message.author.id !== "655124789018492947") return;
+    if (args[0] === "client.token")
+    return message.channel.sendMessage('\`\`\`Lütfen Zarar Vermeyelim!\`\`\`');
     try {
       var code = args.join(" ");
       var evaled = eval(code);
@@ -19,7 +22,7 @@ function clean(text) {
   else
       return text;
 }
-};
+    }
 
 exports.conf = {
   enabled: true,
