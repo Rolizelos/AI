@@ -136,6 +136,34 @@ client.on('guildMemberAdd', async member => {
   member.setNickname(`${cfxtag}`)
 });
 
+
+//REKLAM-KORUMA -------------------------------------------------------------------------------------
+
+client.on("message", async msg => {
+let cfxy = await db.fetch(`reklam_${msg.guild.id}`)
+if (!msg.member.hasPermission("BAN_MEMBERS")) {
+if (cfxy == 'Açık') {
+        const reklam = ["discord.gg","https//",".com",".xyz",".net", ".com.tr", ".glitch.me" , ".org", ".net", ".site", ".co", ".dx.am", ".tk", ".cf", ".ga"];
+        if (reklam.some(word => msg.content.includes(word))) {
+          try {          
+         const cfxiy = new Discord.RichEmbed()
+          .setTitle("Sunucunda " + msg.author.tag + " Reklam Yapıyor!")
+          .setColor(0x00AE86)
+          .setDescription(msg.author + "kullanıcısı " + msg.guild + " sunucusunda reklam yaptı.")
+          .addField("Kullanıcının mesajı:", "**" + msg.content + "**")  
+  msg.guild.owner.send(cfxiy)                           
+               msg.delete(); 
+                  return;             
+          } catch(err) {
+            console.log(err);
+          }
+        } } else if (cfxy == 'Kapalı') {
+
+}
+}
+});
+
+
 //SAYAÇ -------------------------------------------------------------
 
 client.on("message", async message => {
@@ -248,7 +276,7 @@ client.on('guildMemberAdd', async (member, guild, message) => {
 
 member.addRole(member.guild.roles.get(cfxo))
 const codefenixkodpaylasim = new Discord.RichEmbed()
-.setDescription(`**Sunucuya Giriş Yapan** \`${member.user.tag}\` **Kullanıcısına** \`${cfxr}\` **Rolü verildi.**`)
+.setDescription(`**Sunucuya Giriş Yapan** \`\`${member.user.tag}\`\` **Kullanıcısına** \`\`${cfxr}\`\` **Rolü verildi.**`)
 .setColor('0x00ff88') 
 .setFooter(`FREE NİTRO | Otorol Sistemi `, client.user.avatarURL)
 member.guild.channels.get(cfxk).send(codefenixkodpaylasim);   
