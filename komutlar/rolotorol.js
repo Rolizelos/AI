@@ -22,7 +22,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'emojiotorol',
+  name: 'emoji otorol',
   description: '',
   usage: ''
 };
