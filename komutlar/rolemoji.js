@@ -4,12 +4,12 @@ const db = require('quick.db');
 exports.run = async (client, message, args) => {
   
   let user = message.author
- // if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('<a:v16:556753819829141507> Bu komut için `Yönetici` izni **gerekiyor!**')
-  
+
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`\`${user.tag}\`\` **Emoji Rol Komutları;** \`\`emoji aç/kapat/otorol\`\` **Emoji Rol Sistemini Açmak İçin; \`\`emoji aç 'açıklama'\`\`** `)
   .setColor("#00ff88")
   .setFooter(`Emoji Rol Sistemi`, client.user.avatarURL)
+  
   
     let code = args.slice(1).join(' ');
    if (code.length < 1) return message.channel.send(cfx2);
@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
         m.react('🇹🇷')
       })
 
-      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!')
+      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!').then(n => n.delete(5000));
   
   if (args[2] == 'aç') {
     if (db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Emoji Rol Sistemi** zaten açık!')
@@ -31,16 +31,16 @@ exports.run = async (client, message, args) => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
         m.react('🇹🇷')
       })
-      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!')
+      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!').then(n => n.delete(5000));
     
   } 
-  } else if (args[] == 'otorol') {
+  } else if (args[0] == 'otorol') {
     if (!db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Emoji Rol** kapalı! Otorol için açmak **gerekir!**')
     let rol = message.mentions.roles.first()
     if (!rol) return message.channel.send('Lütfen bir rol **etiketleyin!**')
     
     await db.set(`kayıtotorol_${message.guild.id}`, rol.id)
-    message.channel.send('Emoji Rol Sistemi için otorol başarıyla **ayarlandı!**')
+    message.channel.send('Emoji Rol Sistemi için otorol başarıyla **ayarlandı!**').then(n => n.delete(5000));
   }
 
 };
