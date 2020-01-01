@@ -25,27 +25,16 @@ exports.run = async (client, message, args) => {
       return message.channel.send('Gerekli rolleri ve izinleri **oluşturamıyorum.** Lütfen yetkimin tam olduğundan emin olun.')
     }
     
-    message.guild.createChannel("🔥│regi̇ster", "text").then(async o => {
-      let role = message.guild.roles.find("name", "@everyone");
-       await o.overwritePermissions(role, {
-            VIEW_CHANNEL: false,
-            SEND_MESSAGES: false,
-            CONNECT: false
-     })
-      o.overwritePermissions(rol, {
-        VIEW_CHANNEL: true,
-        SEND_MESSAGES: false,
-        ADD_REACTIONS: false
-      })
+ 
     
       await db.set(`kayıt_${message.guild.id}`, 'acik')
       await db.set(`kayıtrol_${message.guild.id}`, rol.id)
-      o.send('**TR | Kayıt Olmak İçin Lütfen Tıklayınız!**\n**US | Please click here to register!**').then(async m => {
+      message.channel.send('**TR | Kayıt Olmak İçin Lütfen Tıklayınız!**\n**US | Please click here to register!**').then(async m => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
         m.react('🇹🇷')
       })
       message.channel.send('Başarıyla **Kayıt Sistemi** kuruldu!')
-    })
+    
   } else if (args[0] == 'kapat') {
     if (!db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Kayıt Sistemi** zaten kapalı!')
     let bos;
