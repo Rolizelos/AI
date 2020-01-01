@@ -9,10 +9,10 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `FREE NİTRO ♥`,
+            name: `Liber Botlist ♥`,
             type: 'watching'
         },
         status: 'online'
     })
-    console.log(`[FREE NİTRO]: Giriş Yaptı! Komutlar Yüklendi!`);
+    console.log(`[LiberCode Botlist]: Giriş Yaptı! Komutlar Yüklendi!`);
 }
