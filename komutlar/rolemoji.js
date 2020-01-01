@@ -7,36 +7,18 @@ exports.run = async (client, message, args) => {
   
   if (args[0] == 'aç') {
     if (db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Kayıt Sistemi** zaten açık!')
-    let rol;
-    try{
-        rol = await message.guild.createRole({
-        name: `♥ | UnRegistered`,
-        color: "pink",
-        permissions:[]
-        })
-
-    message.guild.channels.forEach((channel, id) => {
-         channel.overwritePermissions(rol, {
-              VIEW_CHANNEL: false,
-              CONNECT: false
-            });
-          });
-    }catch (e){
-      return message.channel.send('Gerekli rolleri ve izinleri **oluşturamıyorum.** Lütfen yetkimin tam olduğundan emin olun.')
-    }
-    
+ 
  
     
       await db.set(`kayıt_${message.guild.id}`, 'acik')
-      await db.set(`kayıtrol_${message.guild.id}`, rol.id)
-      message.channel.send('**TR | Kayıt Olmak İçin Lütfen Tıklayınız!**\n**US | Please click here to register!**').then(async m => {
+      message.channel.send(`sdasds`).then(async m => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
         m.react('🇹🇷')
       })
-      message.channel.send('Başarıyla **Kayıt Sistemi** kuruldu!')
+      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!')
     
   } else if (args[0] == 'kapat') {
-    if (!db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Kayıt Sistemi** zaten kapalı!')
+    if (!db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Emoji Rol** zaten kapalı!')
     let bos;
     let i = await db.fetch(`kayıtrol_${message.guild.id}`)
     if (!i) bos = 'uhm'
@@ -48,12 +30,12 @@ exports.run = async (client, message, args) => {
     await db.delete(`kayıtmesaj_${message.guild.id}`)
     message.channel.send('Kayıt Sistemi başarıyla **kapatıldı!**')
   } else if (args[0] == 'otorol') {
-    if (!db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Kayıt Sistemi** kapalı! Otorol için açmak **gerekir!**')
+    if (!db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Emoji Rol** kapalı! Otorol için açmak **gerekir!**')
     let rol = message.mentions.roles.first()
     if (!rol) return message.channel.send('Lütfen bir rol **etiketleyin!**')
     
     await db.set(`kayıtotorol_${message.guild.id}`, rol.id)
-    message.channel.send('Kayıt için otorol başarıyla **ayarlandı!**')
+    message.channel.send('Emoji Rol Sistemi için otorol başarıyla **ayarlandı!**')
   } else return message.channel.send('**[**`aç`**,** `kapat` **veya** `otorol`**]** Yazmalısın!')
 };
 
