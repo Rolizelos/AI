@@ -5,21 +5,27 @@ exports.run = async (client, message, args) => {
   
   let user = message.author
  // if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('<a:v16:556753819829141507> Bu komut için `Yönetici` izni **gerekiyor!**')
-  if (!args[0]) return message.channel.send('**[**`aç`**,** `kapat` **veya** `otorol`**]** Yazmalısın!')
+  if (!args[1]) return message.channel.send('**[**`aç`**,** `kapat` **veya** `otorol`**]** Yazmalısın!')
   
-  if (args[0] == 'aç') {
-    if (db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Emoji Rol Sistemi** zaten açık!')
- 
-
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
   .setColor("#00ff88")
   .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
   
-    let code = args.slice(0).join(' ');
+    let code = args.slice(1).join(' ');
    if (code.length < 1) return message.channel.send(cfx2);
   if (message.author) {
   
+      await db.set(`kayıt_${message.guild.id}`, 'acik')
+      message.channel.send(`\`\`${code}\`\``).then(async m => {
+        await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
+        m.react('🇹🇷')
+      })
+      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!')
+  
+  if (args[2] == 'aç') {
+    if (db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Emoji Rol Sistemi** zaten açık!')
+ 
       await db.set(`kayıt_${message.guild.id}`, 'acik')
       message.channel.send(`\`\`${code}\`\``).then(async m => {
         await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
