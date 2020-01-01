@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
-      if(message.author.id !== "655124789018492947") return;
     if (args[0] === "client.token")
     return message.channel.sendMessage('\`\`\`Lütfen Zarar Vermeyelim!\`\`\`');
     try {
@@ -28,7 +27,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 4
+  permLevel: 0
 };
 
 exports.help = {
