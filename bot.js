@@ -286,17 +286,5 @@ member.guild.channels.get(cfxk).send(codefenixkodpaylasim);
 
 //------------------------------------------------------------------------------
 
-client.on('message', message => {
-  if(message.author.id !== "655124789018492947") return;
-  if (message.content.includes('@everyone')) {
-    message.reply(`⚠️Lütfen **everyone** Kullanmayınız.!!`)
-    message.delete(1000)
-  }
-});
-client.on('message', message => {
-  if (message.content.includes('@here')) {
-    message.reply(`⚠️Lütfen **here** Kullanmayınız.!!`)
-    message.delete(1000)
-  }
-});
+
 client.login(ayarlar.token);
