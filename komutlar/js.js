@@ -2,17 +2,17 @@ const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
 exports.run = function(client, message) {
 
-  if(message.channel.id != "654376897412595723") return message.channel.send(':x: **Bu Komutudu <#654376897412595723> Kanalında Kullan!**');
+  if(message.channel.id != "662003760922492949") return message.channel.send(':x: **Bu Komutudu <#662003760922492949> Kanalında Kullan!**');
 
 
   
 /////////////////////Config
 
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
- var rolismi = "♣ | JavaScript" // Verilecek Rol Ismi
-var logkanalid = "654378716016672805"   
+ var rolismi = "JavaScript" // Verilecek Rol Ismi
+var logkanalid = "662690891567464459"   
 let kanal = "654376897412595723"
-  var guildid = "654375129282904075" // Kullanılacak Sunucu
+  var guildid = "658191439527936001" // Kullanılacak Sunucu
 
 ///////////////// Ana Kod
 
