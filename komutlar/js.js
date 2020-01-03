@@ -17,14 +17,14 @@ let kanal = "654376897412595723"
 ///////////////// Ana Kod
 
   var role = message.guild.roles.find(i => i.name === rolismi); 
-  if (message.member.roles.has(role.id)) return message.channel.send("❌ Maalesef, Bu Role Sahipsin")
+  if (message.member.roles.has(role.id)) return message.channel.send("❌ Maalesef, Bu Role Sahipsin").then(n => n.delete(5000));
   if(!role) return message.channel.send(rolismi + "Adından Bir Rol Bulamıyorum Lütfen <@"+ayarlar.sahip+"> 'e ulaş" )
   if(logkanali == "true") {
 message.member.addRole(role);
 message.channel.send("✅  Başarıyla `JavaScript` Rolün verildi!")
 client.channels.get(logkanalid).send("✅  | " + message.author +" Adlı Kullanıcı Başarılı Bir Şekilde **"+rolismi+"** Adlı Rolü Aldı!")
 }else {
-message.channel.send('✅  Başarıyla `JavaScript` Rolün verildi!')
+message.channel.send('✅  Başarıyla `JavaScript` Rolün verildi!').then(n => n.delete(5000));
 message.member.addRole(role);
 }
   
