@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
 exports.run = function(client, message) {
 
-  if(message.channel.id != "662003760922492949") return message.channel.send(':x: **Bu Komutudu <#662003760922492949> Kanalında Kullan!**');
+  if(message.channel.id != "662003760922492949") return message.channel.send(':x: **Bu Komutudu <#662003760922492949> Kanalında Kullan!**').then(n => n.delete(5000));
 
 
   
@@ -21,7 +21,7 @@ let kanal = "654376897412595723"
   if(!role) return message.channel.send(rolismi + "Adından Bir Rol Bulamıyorum Lütfen <@"+ayarlar.sahip+"> 'e ulaş" )
   if(logkanali == "true") {
 message.member.addRole(role);
-message.channel.send("✅  Başarıyla `JavaScript` Rolün verildi!")
+message.channel.send("✅  Başarıyla `JavaScript` Rolün verildi!").then(n => n.delete(5000));
 client.channels.get(logkanalid).send("✅  | " + message.author +" Adlı Kullanıcı Başarılı Bir Şekilde **"+rolismi+"** Adlı Rolü Aldı!")
 }else {
 message.channel.send('✅  Başarıyla `JavaScript` Rolün verildi!').then(n => n.delete(5000));
