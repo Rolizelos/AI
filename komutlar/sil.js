@@ -52,7 +52,7 @@ let sayı = args[0]
 exports.conf = {
   enabled: true,  
   guildOnly: false, 
-  aliases: ['sil' ], 
+  aliases: [], 
   permLevel: 0
 };
 
