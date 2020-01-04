@@ -4,7 +4,7 @@ const a = require('../ayarlar.json')
  
 exports.run = async function(client, message, args) {
   
-  if(message.channel.id != "6662920137766338560") return message.channel.send(':x: **Bu Komutudu <#662920137766338560> Kanalında Kullan!**').then(n => n.delete(5000));
+  if(message.channel.id != "662920137766338560") return message.channel.send(':x: **Bu Komutudu <#662920137766338560> Kanalında Kullan!**').then(n => n.delete(5000));
   
   
   message.channel.bulkDelete(1)
@@ -14,11 +14,12 @@ exports.run = async function(client, message, args) {
   .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\``)
   .setColor("#00ff88")
   .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
+  return message.channel.send(cfx1).then(n => n.delete(5000));
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
   .setColor("#00ff88")
   .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
-
+return message.channel.send(cfx2).then(n => n.delete(5000));
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
   .setColor("#00ff88")
