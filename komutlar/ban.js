@@ -2,17 +2,15 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
- if(message.author.id =! "663063880917843968" ) 
-  if(message.channel.send('Banlama Yetkin Yok Gülüm!') ) 
-    return;
+
   /////////////////////Config
 
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
 var logkanalid = "663020684829786113"   //Log Kanalı Id
   var guildid = "658191439527936001" // Kullanılacak Sunucu
-
+  var role = message.guild.roles.find(i => i.name === 'Role.name' );
 ///////////////// Ana Kod
-  
+  if(!message.member.roles.has(role)) return;
   
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
