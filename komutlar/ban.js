@@ -2,11 +2,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
+
+
+
+if(message.member.roles.array().filter(role => role.id === "661998458625982504")[0]) {
+
+}
+ 
   
-  if(message.member.roles.array().filter(role => role.id === "661998458625982504")[0]) {
-   if(message.client.send(`Siktir lan`)) 
-  
-  return
   /////////////////////Config
 
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
