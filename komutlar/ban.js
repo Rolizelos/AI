@@ -2,14 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
-
-
-
-if(message.member.roles.array().filter(role => role.id === "661998458625982504")[0]) {
-
-}
- 
-  
+ if(message.author.id =! "663063880917843968" ) 
+  if(message.channel.send('Banlama Yetkin Yok Gülüm!') ) 
+    return;
   /////////////////////Config
 
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
