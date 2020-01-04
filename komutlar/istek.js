@@ -14,12 +14,11 @@ exports.run = async function(client, message, args) {
   .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\``)
   .setColor("#00ff88")
   .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
-  return message.channel.send(cfx1).then(n => n.delete(5000));
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
   .setColor("#00ff88")
   .setFooter(`LiberCode | İstek Sistemi.`, client.user.avatarURL)
-return message.channel.send(cfx2).then(n => n.delete(5000));
+
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
   .setColor("#00ff88")
@@ -43,7 +42,7 @@ message.author.send(cfx4).then(m => {
   m.delete(300000)
 })
 //CodeFENIX //CFX
-    chan.send(`<@&654395044614373387>`).then(m => {
+    chan.send(`<@&661998982515392523>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
