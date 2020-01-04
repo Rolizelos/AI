@@ -17,7 +17,7 @@ exports.run = async(client, message, args) => {
   .setTitle(`**\`Otorol Bilgi;\`**`)
   .setDescription(`** ** \n **Ayarlamak İçin:** \`${ayarlar.prefix}otorol ayarla @rol #kanal\` \n\n **Kapatmak İçin:** \`${ayarlar.prefix}otorol kapat\``)
   .setColor("#00ff88")
-  .setFooter(`FREE NİTRO | Otorol Sistemi.`, client.user.avatarURL)
+  .setFooter(`LiberCode | Otorol Sistemi.`, client.user.avatarURL)
   
   if (!args[0]) return message.channel.send(cfxyaptı)
   if (args[0] == 'ayarla') {//CFX

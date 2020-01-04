@@ -212,7 +212,7 @@ member.addRole(member.guild.roles.get(cfxo))
 const codefenixkodpaylasim = new Discord.RichEmbed()
 .setDescription(`**Sunucuya Giriş Yapan** \`\`${member.user.tag}\`\` **Kullanıcısına** \`\`${cfxr}\`\` **Rolü verildi.**`)
 .setColor('0x00ff88') 
-.setFooter(`FREE NİTRO | Otorol Sistemi `, client.user.avatarURL)
+.setFooter(`LiberCode | Otorol Sistemi `, client.user.avatarURL)
 member.guild.channels.get(cfxk).send(codefenixkodpaylasim);   
 //CFX
 
