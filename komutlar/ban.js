@@ -26,7 +26,7 @@ var logkanalid = "663020684829786113"   //Log Kanalı Id
 
 //-------------------------------------------------------------------
 if(logkanali == "true") {
-client.channels.get(logkanalid).send("✅  | " + message.author +" Adlı Kullanıcı Sunucudan Banlandı!")}
+client.channels.get(logkanalid).send("✅  | <@"+ user.tag +" Adlı Kullanıcı Sunucudan Banlandı!")}
 //-------------------------------------------------------------------
   message.guild.ban(user, 2);
 
@@ -34,7 +34,7 @@ client.channels.get(logkanalid).send("✅  | " + message.author +" Adlı Kullan�
     .setColor(0xD97634)
     .setTimestamp()
 .addField(`:bangbang:  **BAN** :bangbang:`, `\`\`${user.tag}(${user.id})\`\` **Adlı Kişi Banlandı!**`)
-  .setFooter(`FREE NİTRO | Ban Sistem`)
+  .setFooter(`LiberCode | Ban Sistem`)
   return message.channel.send(embed);
 };
 
