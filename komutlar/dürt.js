@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
   .setColor('RANDOM')
   .setTitle(`**FaceBook Dürtülme Sistemi!**`)
   .setTimestamp()
-  .setDescription(`**\`${message.tag.author}\` Sizi Dürttü!**`)
+  .setDescription("<@"+message.author.id+"> sizi dürttü!")
   .setFooter('Facebook Dürt Sistemi', client.user.avatarURL)
   return user.send(bergy);
 };
