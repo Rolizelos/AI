@@ -8,9 +8,8 @@ exports.run = (client, message, args) => {
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
 var logkanalid = "663020684829786113"   //Log Kanalı Id
   var guildid = "658191439527936001" // Kullanılacak Sunucu
-  var role = message.guild.roles.find(i => i.name === 'Role.name' );
 ///////////////// Ana Kod
-  if(!message.member.roles.has(role)) return;
+  
   
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
