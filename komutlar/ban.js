@@ -25,7 +25,7 @@ var logkanalid = "663020684829786113"   //Log Kanalı Id
   if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
    if (reason.length < 1) return message.reply('Ban sebebini yazmalısın.');
   if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
- 
+ if (!message.guild.member(user).bannable) return message.reply('**Yetkilileri Banlayamam!**');
 
 //-------------------------------------------------------------------
 if(logkanali == "true") {
@@ -38,6 +38,7 @@ client.channels.get(logkanalid).send(`✅  | ${user.tag} **Adlı Kullanıcı Sun
     .setTimestamp()
 .addField(`:bangbang:  **BAN** :bangbang:`, `\`\`${user.tag}(${user.id})\`\` **Adlı Kişi Banlandı!**`)
   .setFooter(`LiberCode | Ban Sistem`)
+  .setThumbnail(`https://cdn.discordapp.com/attachments/663035553448460329/663041540041474081/a_bbf8aec9ad6f9a9d423dfb6f3681eb97.gif`)
   return message.channel.send(embed);
 };
 
