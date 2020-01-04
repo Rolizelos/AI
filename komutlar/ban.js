@@ -2,6 +2,16 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
+  
+  /////////////////////Config
+
+ var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
+var logkanalid = "663020684829786113"   //Log Kanalı Id
+  var guildid = "658191439527936001" // Kullanılacak Sunucu
+
+///////////////// Ana Kod
+  
+  
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
   .setColor(0xFF0000)
@@ -14,8 +24,10 @@ exports.run = (client, message, args) => {
   let user = message.mentions.users.first();
   if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
 
-
-
+//-------------------------------------------------------------------
+if(logkanali == "true") {
+client.channels.get(logkanalid).send("✅  | " + message.author +" Adlı Kullanıcı Sunucudan Banlandı!")}
+//-------------------------------------------------------------------
   message.guild.ban(user, 2);
 
   const embed = new Discord.RichEmbed()
