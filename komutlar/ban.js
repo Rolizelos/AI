@@ -29,7 +29,7 @@ var logkanalid = "663020684829786113"   //Log Kanalı Id
 
 //-------------------------------------------------------------------
 if(logkanali == "true") {
-client.channels.get(logkanalid).send(`✅  | ${user.tag} Adlı Kullanıcı Sunucudan Banlandı! \n **Sebebi İse;** ${reason} `)}
+client.channels.get(logkanalid).send(`✅  | ${user.tag} **Adlı Kullanıcı Sunucudan Banlandı!** \n  **Reason=>** \`\ ${reason} \`\ `)}
 //-------------------------------------------------------------------
   message.guild.ban(user, 2);
 
