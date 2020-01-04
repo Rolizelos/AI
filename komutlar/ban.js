@@ -23,10 +23,13 @@ var logkanalid = "663020684829786113"   //Log Kanalı Id
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
   if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
+   if (reason.length < 1) return message.reply('Ban sebebini yazmalısın.');
+  if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
+ 
 
 //-------------------------------------------------------------------
 if(logkanali == "true") {
-client.channels.get(logkanalid).send("✅  | "+ user.tag +" Adlı Kullanıcı Sunucudan Banlandı!")}
+client.channels.get(logkanalid).send(`✅  | ${user.tag} Adlı Kullanıcı Sunucudan Banlandı! \n **Sebebi İse;** ${reason} `)}
 //-------------------------------------------------------------------
   message.guild.ban(user, 2);
 
