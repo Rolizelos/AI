@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
   
-  if (!message.member.roles.has("663347155787841546")) return message.channel.send(`Bu komutu kullanmaya yetkin yok!`);
+  if (!message.member.roles.has("663348452138287130")) return message.channel.send(`:x: **Bu komutu kullanmaya yetkin yok!**`);
 
   /////////////////////Config
 
