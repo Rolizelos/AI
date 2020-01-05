@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
+  
+  if (!message.member.roles.has("663347155787841546")) return message.channel.send(`Bu komutu kullanmaya yetkin yok!`);
 
   /////////////////////Config
 
