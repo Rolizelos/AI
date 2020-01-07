@@ -5,15 +5,20 @@ exports.run = async (client, message, args) => {
     return message.channel.send(
       `❌ Bu Komutu Kullanabilmek için \`İsimleri Yönet\` Yetkisine Sahip Olmalısın!`
     );
-  let member = message.mentions.members.first();
+  
+ let user = message.mentions.users.first();
+  
+  let code = args.slice(0).join(' ');
+    if (code.length < 1) return message.channel.send(embed);
+  
+  
   let isim = args.slice(1).join(" ");
-  if (!member) return message.channel.send("❌ Bir Üye Etiketlemelisin!");
   if (!isim) return message.channel.send("❌ Bir İsim Yazmalısın!");
-  member.setNickname(`${isim}`);
+  user.setNickname(`${code} ${user.tag}`);
   const embed = new Discord.RichEmbed()
     .addField(
       `**🏷 İsim Değiştirildi 🏷**`,
-      `\n \n**🔸️İsmi Değiştirilen Kullanıcı:** ${member.user} \n🔸️ **Yeni Kullanıcı Adı:** \`${isim}\``
+      `\n \n**🔸️İsmi Değiştirilen Kullanıcı:** ${user.tag} \n🔸️ **Yeni Kullanıcı Adı:** \`${code}\``
     )
     .setFooter(`Liber Code | Nick Sistemi`)
     .setThumbnail(client.user.avatarURL);
@@ -23,11 +28,11 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["nick", "isimm"],
+  aliases: ["nick", "isim"],
   permLevel: 0
 };
 exports.help = {
-  name: "nick1",
+  name: "isim",
   description: "Birinin nickini değiştirir.",
   usage: "nick <Ł yeni nick>"
 };
