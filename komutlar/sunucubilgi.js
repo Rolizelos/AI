@@ -10,14 +10,14 @@ exports.run = (client, message, params) => {
             if(moment(guild.createdAt).format('MM') === '01') {
                 var tarih = `${moment(guild.createdAt).format('DD')} Ocak ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
             }
-            if(moment(user.createdAt).format('MM') === '02') {
-                var tarih = `${moment(user.createdAt).format('DD')} Şubat ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
+            if(moment(guild.createdAt).format('MM') === '02') {
+                var tarih = `${moment(guild.createdAt).format('DD')} Şubat ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
             }
-            if(moment(user.createdAt).format('MM') === '03') {
-                var tarih = `${moment(user.createdAt).format('DD')} Mart ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
+            if(moment(guild.createdAt).format('MM') === '03') {
+                var tarih = `${moment(guild.createdAt).format('DD')} Mart ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
             }
-            if(moment(user.createdAt).format('MM') === '04') {
-                var tarih = `${moment(user.createdAt).format('DD')} Nisan ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
+            if(moment(guild.createdAt).format('MM') === '04') {
+                var tarih = `${moment(guild.createdAt).format('DD')} Nisan ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
             }
             if(moment(guild.createdAt).format('MM') === '05') {
                 var tarih = `${moment(guild.createdAt).format('DD')} Mayıs ${moment(guild.createdAt).format('YYYY HH:mm:ss')} `
