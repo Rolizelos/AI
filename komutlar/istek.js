@@ -48,7 +48,10 @@ chan.send(new Discord.RichEmbed()
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField("**İstek Kod**", `\`${code}\``)
-.setThumbnail(message.author.avatarURL))
+.setThumbnail(message.author.avatarURL)).then(x => {
+x.react("✅")
+x.react("❌")
+})
 })
 
 
