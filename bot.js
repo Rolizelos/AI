@@ -205,6 +205,11 @@ client.on("guildMemberAdd", member => {
    member.addRole(rol)
    })
 //------------------------------------------------------------------------------
+client.on("guildMemberAdd", member => {
+let botrol = member.guild.roles.get("661999180050595841")
+if (member.user.bot === true) { // bot ise şu işletmeleri yapicak
+  member.addRole(botrol)
+}
 
-
+   }) 
 client.login(ayarlar.token);
