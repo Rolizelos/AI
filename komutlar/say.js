@@ -5,7 +5,6 @@ module.exports.run = async (client, message, args) => {
     .setColor("RANDOM")
     .setDescription(`**Sunucuda ${message.guild.memberCount} Kişi Bulunmaktadır!**`)
     .setAuthor("Toplam Üye", `${message.author.displayAvatarURL}`)
-    .setFooter('say')
 
   message.channel.sendEmbed(bergy);
 };
