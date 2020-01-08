@@ -8,18 +8,18 @@ exports.run = function(client, msg, author) {
     msg.channel.sendMessage(
       "**Örnek Kullanım:** `" +
         prefix +
-        "sakso <@kullanıcı>`"
+        "öp <@kullanıcı>`"
     );
   }
   if (yazi) {
     const Embed = new Discord.RichEmbed()
       .setTitle("")
       .setDescription(
-        `Ohh ❤ ** <@${msg.author.id}> Adlı Kullanıcı ${yazi} Adlı Kullanıcıya Sakso Çekti!**`
+        `Vooov ❤ ** <@${msg.author.id}> Adlı Kullanıcı ${yazi} Adlı Kullanıcıyı Öptü!**`
       )
       .setColor("RANDOM")
       .setImage(
-        "https://cdn.discordapp.com/attachments/657271597320896522/664499852172066877/liseli-kiza-sakso-cektirip-sikme_1.gif"
+        "https://cdn.discordapp.com/attachments/634056817017880586/645300230790840360/tenor-1.gif"
       );
     msg.channel.sendMessage(Embed);
   }
@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "sakso",
-  description: "Bu komutla istediğine Sakso Çektirirsin!",
-  usage: "sakso <@kullanıcı>"
+  name: "öp",
+  description: "Bu komut ile istediğin kişiye öpersin!",
+  usage: "öp <@kullanıcı>"
 };
