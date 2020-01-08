@@ -4,11 +4,12 @@ let prefix = ayarlar.prefix;
 
 exports.run = function(client, msg, author) {
   let yazi = msg.mentions.members.first();
+  if (msg.channel.nsfw === true)
   if (!yazi) {
     msg.channel.sendMessage(
       "**Örnek Kullanım:** `" +
         prefix +
-        "öp <@kullanıcı>`"
+        "sakso <@kullanıcı>`"
     );
   }
   if (yazi) {
@@ -19,7 +20,7 @@ exports.run = function(client, msg, author) {
       )
       .setColor("RANDOM")
       .setImage(
-        "https://https://discordapp.com/channels/@me/658562362160185375/664488700956246070"
+        "https://cdn.discordapp.com/attachments/657271597320896522/664499852172066877/liseli-kiza-sakso-cektirip-sikme_1.gif"
       );
     msg.channel.sendMessage(Embed);
   }
