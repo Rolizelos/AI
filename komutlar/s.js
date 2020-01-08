@@ -4,7 +4,7 @@ let prefix = ayarlar.prefix;
 
 exports.run = function(client, msg, author) {
   let yazi = msg.mentions.members.first();
-  if (msg.channel.nsfw === true)
+  if (msg.channel.nsfw === true) 
   if (!yazi) {
     msg.channel.sendMessage(
       "**Örnek Kullanım:** `" +
