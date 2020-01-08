@@ -5,7 +5,7 @@ const ayarlar = require('../ayarlar.json')
 exports.run = async (client, message, args) => {
 
   if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`Buna yetkin yok!`);
-  if (!args[0]) return message.channel.send(`${client.emojis.get("661269808544874527")} **Aç Veya Kapat Yazmalısın!**  \`${ayarlar.prefix}reklamkoruma aç/kapat\``)
+  if (!args[0]) return message.channel.send(`${client.emojis.get("664532426638491659")} **Aç Veya Kapat Yazmalısın!**  \`${ayarlar.prefix}reklamkoruma aç/kapat\``)
 
   let reklam = await db.fetch(`reklam_${message.guild.id}`)
   let reklamkapalim = await db.fetch(`reklamkapali${message.guild.id}`)
