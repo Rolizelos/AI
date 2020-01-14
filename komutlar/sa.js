@@ -5,9 +5,9 @@ exports.run = async (bot, message, args) => {
   
   /////////////////////Config
 
- var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
-var logkanalid = "663020684829786113"   //Log Kanalı Id
-  var guildid = "658191439527936001" // Kullanılacak Sunucu
+ var logkanali1 = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
+var logkanalid1 = "666670859439702026"   //Log Kanalı Id
+  var guildid = "665929879199416320" // Kullanılacak Sunucu
 ///////////////// Ana Kod
   
   if (!message.member.roles.find('name', 'Yönetici')) return message.channel.send('Dostum Bu Komutu Kullanabilmek İçin **Yönetici** Yetkisine Sahip Olman Gerek');
@@ -16,8 +16,8 @@ var logkanalid = "663020684829786113"   //Log Kanalı Id
 const alinacak = message.guild.roles.find('name', 'Kayıtsız Üye');
 const verilecek = message.guild.roles.find('name', 'Üye');
 //-------------------------------------------------------------------
-if(logkanali == "true") {
-client.channels.get(logkanalid).send(`✅  | ${user.tag} **Adlı Kullanıcı Sunucudan Banlandı!** \n  **Reason=>**  `)}
+if(logkanali1 == "true") {
+message.guild.channels.find(x => x.id === logkanalid1).send(`${client.emojis.get("EMOJİ ID")} ${user.tag} **Sunucumuza Başarıyla Kayıt Oldu!**\n **${user.tag} \`\`${message.guild.name}\`\`\ Sunucusuna Hoşgeldin!**`)}
 //-------------------------------------------------------------------
 const ky = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
