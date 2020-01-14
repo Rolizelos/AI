@@ -212,4 +212,6 @@ if (member.user.bot === true) { // bot ise şu işletmeleri yapicak
 }
 
    }) 
-client.login(ayarlar.token);
+
+
+  client.login(ayarlar.token);
