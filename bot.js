@@ -217,9 +217,9 @@ client.on('guildMemberAdd', async member => {
     let zaman = new Date().getTime() - member2.createdAt.getTime()
     var cfxzaman = [];
 if(zaman < 604800000) {
-  cfxzaman = `Şüpheli`
+  cfxzaman = `🛑| Şüpheli`
 } else {
-  cfxzaman = `Güvenli`
+  cfxzaman = `🟩 | Güvenli`
 }
   const katilim = moment.utc(member.guild.members.get(member.id).user.createdAt).format('`YYYY [Yılında] MMMM [Ayında] dddd [Gününde] (DD/MM/YYYY)`')
       .replace("Monday", `Pazartesi`)
@@ -244,7 +244,7 @@ if(zaman < 604800000) {
   let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
   let codefenixkodfilan =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
 
-  codefenixkodfilan.send(`Hoşgeldin ${member} Seninle Beraber ${codefenixkodfilan.guild.memberCount} Kişiyiz! \n Kaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \n ${katilim} \n \`\`${cfxzaman}\`\` \n \`\`${codefenixkodfilan.guild.members.filter( member => member.user.bot).size} bot / ${codefenixkodfilan.guild.memberCount}  üye / Toplam Üye ${codefenixkodfilan.guild.memberCount}\`\``)
+  codefenixkodfilan.send(`Hoşgeldin ${member} Seninle Beraber ${codefenixkodfilan.guild.memberCount} Kişiyiz! \nKaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \nHesap Kuruluş Zamanı: ${katilim} \nBu Kullanıcı: \`\`${cfxzaman}\`\` \n <@&666656114095554560> Rolündeki Yetkililer Seninle İlgilenecektir! `)
 
 })
 
