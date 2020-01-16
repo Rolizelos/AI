@@ -198,20 +198,48 @@ client.on('raw', event => {
 });
 
 
-//OTOROL ----------------------------------------------------------------------------------------------
+   
 
-client.on("guildMemberAdd", member => {
-  var rol = member.guild.roles.get("662009787470315544")
-   member.addRole(rol)
-   })
-//------------------------------------------------------------------------------
-client.on("guildMemberAdd", member => {
-let botrol = member.guild.roles.get("661999180050595841")
-if (member.user.bot === true) { // bot ise şu işletmeleri yapicak
-  member.addRole(botrol)
+// Main Dosyanız.
+client.on('guildMemberAdd', async member => {
+  let member2 = member.user
+    let author = "₣│Ƨƛ│JaimiTR#8142"
+    let zaman = new Date().getTime() - member2.createdAt.getTime()
+    var cfxzaman = [];
+if(zaman < 604800000) {
+  cfxzaman = `Şüpheli`
+} else {
+  cfxzaman = `Güvenli`
 }
-
-   }) 
+  const katilim = moment.utc(member.guild.members.get(member.id).user.createdAt).format('`YYYY [Yılında] MMMM [Ayında] dddd [Gününde] (DD/MM/YYYY)`')
+        .replace("Monday", `Pazartesi`)
+        .replace("Tuesday", `Salı`)
+        .replace("Wednesday", `Çarşamba`)
+        .replace("Thursday", `Perşembe`)
+        .replace("Friday", `Cuma`)
+        .replace("Saturday", `Cumartesi`)
+        .replace("Sunday", `Pazar`)
+        .replace("January", `Ocak`)
+        .replace("February", `Şubat`)
+        .replace("March", `Mart`)
+        .replace("April", `Nisan`)
+        .replace("May", `Mayıs`)
+        .replace("June", `Haziran`)
+        .replace("July", `Temmuz`)
+        .replace("August", `Ağustos`)
+        .replace("September", `Eylül`)
+        .replace("October", `Ekim`)
+        .replace("November", `Kasım`)
+        .replace("December", `Aralık`)
+  let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
+  let codefenixkodfilan =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
+  let cfxembed = new Discord.RichEmbed()
+  .setDescription(`${katilim} \n ** \`\`${cfxzaman}\`\ \n \`\`${codefenixkodfilan.guild.members.filter( member => member.user.bot).size} bot / ${codefenixkodfilan.guild.memberCount}  üye / Toplam Üye ${codefenixkodfilan.guild.memberCount}\`\``)
+  .setColor('#2f3136')
+  .setTimestamp()
+  .setFooter(`© created by ${author} | CodeFENIX`)  
+codefenixkodfilan.send(cfxembed)
+})
 
 
   client.login(ayarlar.token);
