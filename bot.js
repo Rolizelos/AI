@@ -213,23 +213,22 @@ client.on('message', async message => {
 // Main Dosyanız.
 client.on('guildMemberAdd', async member => {
   let member2 = member.user
-    let author = "₣│Ƨƛ│JaimiTR#8142"
     let zaman = new Date().getTime() - member2.createdAt.getTime()
 var user = member2   
 var cfxzaman = [];
 if(zaman < 604800000) {
-  cfxzaman = `🛑| Şüpheli`
+  cfxzaman = '🛑| Şüpheli Gözüküyor!'
 } else {
-  cfxzaman = `🟩 | Güvenli`
+  cfxzaman = '🟩 | Güvenli Gözüküyor!'
 }
 
 let zaman1 = new Date().getTime() - user.createdAt.getTime()
-const gecen = moment.duration(zaman1).format(`DD **[Gün]** HH **[Saat]** mm **[Dakika]** ss **[Saniye]**`)
+const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm **[Dakika,]** ss **[Saniye]**`)
  
   let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
   let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
 
-  message.send(`${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! \n${client.emojis.get("665930842786365473")}Kaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \n${client.emojis.get("665930842786365473")}Hesap Kuruluş Zamanı: ${gecen} \n${client.emojis.get("665930842786365473")}Bu Kullanıcı: \`\`${cfxzaman}\`\` \n${client.emojis.get("665930842786365473")}<@&666656114095554560> Rolündeki Yetkililer Seninle İlgilenecektir! `)
+  message.send(`${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! \n${client.emojis.get("665930842786365473")}Kaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \n${client.emojis.get("665930842786365473")}Hesap Kuruluş Zamanı: ${gecen} \n${client.emojis.get("665930842786365473")}Bu Kullanıcı: ${cfxzaman} \n${client.emojis.get("665930842786365473")}<@&666656114095554560> Rolündeki Yetkililer Seninle İlgilenecektir! `)
 
 })
 

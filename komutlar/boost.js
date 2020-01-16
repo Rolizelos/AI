@@ -1,19 +1,20 @@
 // Komutlar.
 const Discord = require('discord.js')
 const db = require('quick.db')
-const ayarlar = require("../ayarlar.json");
-exports.run = async (client, message ,args) => {
+const ayarlar = require('../ayarlar.json')
 
+exports.run = async (client, message ,args) => {
+    if (!args[0]) return message.channel.send(`${client.emojis.get("665930842786365473")} **Eksik Veya Hatalı Komut Kullanımı:** Doğr \`${ayarlar.prefix}reklamkoruma aç/kapat\``)
   
   let cfxkanal = message.mentions.channels.first()
   if(args[0] == 'ayarla') {
   db.set(`cfxdbayar${message.guild.id}`, cfxkanal.id)
-  message.channel.send(`**Kanal Ayarlandı! \nAyarlanan Kanal:** ${cfxkanal.name}`)
+  message.channel.send(`**Kanal Ayarlandı! \n Ayarlanan Kanal:** ${cfxkanal.name}`)
     return;
   }
   if(args[0] == 'kapat') {
   db.delete(`cfxdbayar${message.guild.id}`)
-  message.channel.send(`Kanal Sıfırlandı!`)
+  message.channel.send(`**Hoşgeldin Kanalı Sıfırlandı!**`)
     return;
   }
 }
@@ -25,6 +26,6 @@ exports.conf = {
 };
   //CodeFENIX //CFX
 exports.help = {
-  name: "gkanal",
+  name: "hgkanal",
   by_codefenix: "copyright JaimiTR"
 };
