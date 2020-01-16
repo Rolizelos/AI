@@ -215,36 +215,21 @@ client.on('guildMemberAdd', async member => {
   let member2 = member.user
     let author = "₣│Ƨƛ│JaimiTR#8142"
     let zaman = new Date().getTime() - member2.createdAt.getTime()
-    var cfxzaman = [];
+var user = member   
+var cfxzaman = [];
 if(zaman < 604800000) {
   cfxzaman = `🛑| Şüpheli`
 } else {
   cfxzaman = `🟩 | Güvenli`
 }
-  const katilim = moment.utc(member.guild.members.get(member.id).user.createdAt).format('`YYYY [Yılında] MMMM [Ayında] dddd [Gününde] (DD/MM/YYYY)`')
-      .replace("Monday", `Pazartesi`)
-        .replace("Tuesday", `Salı`)
-        .replace("Wednesday", `Çarşamba`)
-        .replace("Thursday", `Perşembe`)
-        .replace("Friday", `Cuma`)
-        .replace("Saturday", `Cumartesi`)
-        .replace("Sunday", `Pazar`)
-        .replace("January", `Ocak`)
-        .replace("February", `Şubat`)
-        .replace("March", `Mart`)
-        .replace("April", `Nisan`)
-        .replace("May", `Mayıs`)
-        .replace("June", `Haziran`)
-        .replace("July", `Temmuz`)
-        .replace("August", `Ağustos`)
-        .replace("September", `Eylül`)
-        .replace("October", `Ekim`)
-        .replace("November", `Kasım`)
-        .replace("December", `Aralık`)
-  let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
-  let codefenixkodfilan =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
 
-  codefenixkodfilan.send(`Hoşgeldin ${member} Seninle Beraber ${codefenixkodfilan.guild.memberCount} Kişiyiz! \nKaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \nHesap Kuruluş Zamanı: ${katilim} \nBu Kullanıcı: \`\`${cfxzaman}\`\` \n <@&666656114095554560> Rolündeki Yetkililer Seninle İlgilenecektir! `)
+let zaman1 = new Date().getTime() - user.createdAt.getTime()
+const gecen = moment.duration(zaman1).format("D")
+ 
+  let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
+  let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
+
+  message.send(`${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! \n${client.emojis.get("665930842786365473")}Kaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \n${client.emojis.get("665930842786365473")}Hesap Kuruluş Zamanı: ${gecen} \n${client.emojis.get("665930842786365473")}Bu Kullanıcı: \`\`${cfxzaman}\`\` \n${client.emojis.get("665930842786365473")}<@&666656114095554560> Rolündeki Yetkililer Seninle İlgilenecektir! `)
 
 })
 
