@@ -197,7 +197,17 @@ client.on('raw', event => {
         }
 });
 
-
+//fake ayrıl katıl
+client.on('message', async message => {
+if (message.content === '!gir') { // - yerine prefixi yaz
+  client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
+    }
+});
+client.on('message', async message => {
+    if (message.content === '!çık') { // - yerine prefixi yaz
+        client.emit('guildMemberRemove', message.member || await message.guild.fetchMember(message.author));
+    }
+}); 
    
 
 // Main Dosyanız.
@@ -212,7 +222,7 @@ if(zaman < 604800000) {
   cfxzaman = `Güvenli`
 }
   const katilim = moment.utc(member.guild.members.get(member.id).user.createdAt).format('`YYYY [Yılında] MMMM [Ayında] dddd [Gününde] (DD/MM/YYYY)`')
-        .replace("Monday", `Pazartesi`)
+      .replace("Monday", `Pazartesi`)
         .replace("Tuesday", `Salı`)
         .replace("Wednesday", `Çarşamba`)
         .replace("Thursday", `Perşembe`)
@@ -233,12 +243,9 @@ if(zaman < 604800000) {
         .replace("December", `Aralık`)
   let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
   let codefenixkodfilan =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
-  let cfxembed = new Discord.RichEmbed()
-  .setDescription(`${katilim} \n ** \`\`${cfxzaman}\`\ \n \`\`${codefenixkodfilan.guild.members.filter( member => member.user.bot).size} bot / ${codefenixkodfilan.guild.memberCount}  üye / Toplam Üye ${codefenixkodfilan.guild.memberCount}\`\``)
-  .setColor('#2f3136')
-  .setTimestamp()
-  .setFooter(`© created by ${author} | CodeFENIX`)  
-codefenixkodfilan.send(cfxembed)
+
+  codefenixkodfilan.send(`Hoşgeldin ${member} Seninle Beraber ${codefenixkodfilan.guild.memberCount} Kişiyiz! \n Kaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \n ${katilim} \n \`\`${cfxzaman}\`\` \n \`\`${codefenixkodfilan.guild.members.filter( member => member.user.bot).size} bot / ${codefenixkodfilan.guild.memberCount}  üye / Toplam Üye ${codefenixkodfilan.guild.memberCount}\`\``)
+
 })
 
 
