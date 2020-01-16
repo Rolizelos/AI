@@ -215,7 +215,7 @@ client.on('guildMemberAdd', async member => {
   let member2 = member.user
     let author = "₣│Ƨƛ│JaimiTR#8142"
     let zaman = new Date().getTime() - member2.createdAt.getTime()
-var user = member   
+var user = member2   
 var cfxzaman = [];
 if(zaman < 604800000) {
   cfxzaman = `🛑| Şüpheli`
@@ -224,7 +224,7 @@ if(zaman < 604800000) {
 }
 
 let zaman1 = new Date().getTime() - user.createdAt.getTime()
-const gecen = moment.duration(zaman1).format("D")
+const gecen = moment.duration(zaman1).format("DD HH mm ss")
  
   let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
   let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
