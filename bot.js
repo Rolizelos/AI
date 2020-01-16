@@ -224,7 +224,7 @@ if(zaman < 604800000) {
 }
 
 let zaman1 = new Date().getTime() - user.createdAt.getTime()
-const gecen = moment.duration(zaman1).format("DD HH mm ss")
+const gecen = moment.duration(zaman1).format(`DD **[Gün]** HH **[Saat]** mm **[Dakika]** ss **[Saniye]**`)
  
   let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
   let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
