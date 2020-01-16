@@ -1,40 +1,40 @@
 const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
 
-exports.run = async(client, message, args) => {
-if (message.channel.type !== "text") return;
-const limit = args[0] ? args[0] : 0;
-  if(!limit) {
-              var embed = new Discord.RichEmbed()
-                .setDescription(`Doğru kullanım: \`o!slowmode [0/150]\``)
-                .setColor('RANDOM')
-                .setTimestamp()
-            message.channel.send({embed})
-            return
-          }
-if (limit > 100) {
-    return message.channel.sendEmbed(new Discord.RichEmbed().setDescription("Süre limiti maksimum **100** saniye olabilir.").setColor('RANDOM'));
-}
-    message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`Yazma süre limiti **${limit}** saniye olarak ayarlanmıştır.`).setColor('RANDOM'));
-var request = require('request');
-request({
-    url: `https://discordapp.com/api/v7/channels/${message.channel.id}`,
-    method: "PATCH",
-    json: {
-        rate_limit_per_user: limit
-    },
-    headers: {
-        "Authorization": `Bot ${client.token}`
-    },
-})};
-  exports.conf = {
+var prefix = ayarlar.prefix;
+
+exports.run = (client, message, params) => {
+
+  if (!params[0]) {
+    const commandNames = Array.from(client.commands.keys());
+    const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
+    message.author.sendCode('asciidoc', `= Komut Listesi =\n\n[Komut hakkında bilgi için ${ayarlar.prefix}yardım <komut adı>]\n\n${client.commands.map(c => `${ayarlar.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
+  if (message.channel.type !== 'dm') {
+    const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Özel mesajlarını kontrol et. 📮');
+    message.channel.sendEmbed(ozelmesajkontrol) }
+  } else {
+    let command = params[0];
+    if (client.commands.has(command)) {
+      command = client.commands.get(command);
+      message.author.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nDoğru kullanım: ` + prefix + `${command.help.usage}`);
+    }
+  }
+
+};
+
+exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["yavaşmod" , "slowmode"],
-  permLevel: 3,
+  aliases: ['h', 'halp', 'help', 'y'],
+  permLevel: 0
 };
 
 exports.help = {
-  name: 'sm',
-  description: 'Sohbete yazma sınır (süre) ekler.',
-  usage: 'yavaş-mod [1/10]',
+  name: 'yardım',
+  description: 'Tüm komutları gösterir.',
+  usage: 'yardım [komut]'
 };
