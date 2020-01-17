@@ -237,5 +237,7 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
 
 })
 
+//---------
+
 
   client.login(ayarlar.token);
