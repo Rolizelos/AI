@@ -216,7 +216,7 @@ client.on('guildMemberAdd', async member => {
     let zaman = new Date().getTime() - member2.createdAt.getTime()
 var user = member2   
 var cfxzaman = [];
-if(zaman < 604800000) {
+if(zaman < 432000) {
   cfxzaman = '🛑| Şüpheli Gözüküyor!'
 } else {
   cfxzaman = '🟩 | Güvenli Gözüküyor!'
