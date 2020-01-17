@@ -4,6 +4,8 @@ var randomstring = require('randomstring');
 
 exports.run = (client, message, args) => {
   
+var user = message.author
+  
   let length = args.slice(0).join(' ');
   if (length.length < 1) return message.channel.send(`Şifre Uzunluğunuz 1'Den Uzun Olmalıdır!`);
   
@@ -11,23 +13,17 @@ exports.run = (client, message, args) => {
    .setDescription(
             randomstring.generate({
             length: `${length}`,
-            charset: 'alphabetic'
+            charset: ''
 }))
     message.author.send(şifre)
-
-  var user = message.author
-  
-
-  
-   
-
+return message.channel.send(`Şifreniz Özel Mesaj Bölümüne Gönderildi!`)
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['rastgeleşifre', 'rastgeleşifre', 'rastgeleşifre', 'rastgeleşifre'],
-  permLevel: 0
+  permLevel: 4
 };
 
 exports.help = {
