@@ -13,12 +13,8 @@ exports.run = (client, message, args) => {
             length: `${length}`,
             charset: 'alphabetic'
 }))
-  
+    message.author.send(şifre)
 
-  
- 
-  
-  
   var user = message.author
   
 
