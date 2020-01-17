@@ -9,7 +9,7 @@ exports.run = async (client, message ,args) => {
   let cfxkanal = message.mentions.channels.first()
   if(args[0] == 'ayarla') {
   db.set(`cfxdbayar${message.guild.id}`, cfxkanal.id)
-  message.channel.send(`**Kanal Ayarlandı! \n Ayarlanan Kanal:** \`${cfxkanal.name}\``)
+  message.channel.send(`**Kanal Ayarlandı! \nAyarlanan Kanal:** \`${cfxkanal.name}\``)
     return;
   }
   if(args[0] == 'kapat') {
