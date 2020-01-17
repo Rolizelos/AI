@@ -1,45 +1,40 @@
-const Discord = require('discord.js')
-const db = require('quick.db');
+const Discord = require("discord.js");
+const ayarlar = require('../ayarlar.json')
+const izle = new Discord.Collection();
 
-exports.run = async (client, message, args) => {
-if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
-  
-  let channel = message.mentions.channels.first()
-  
-  if(args[0] === "sıfırla") {
-    if(!args[0]) {
-      message.channel.send(`Ayarlı Log Kanalı Bulunamadı.`)
-      return
-    }
-    
-    db.delete(`modlogK_${message.guild.id}`)
-    message.channel.send(`Log Kanalı Başarıyla Sıfırlandı.`)
-    return
+exports.run = (client, message, args) => {
+    if(message.author.id !== ayarlar.sahip) {
+        const embed = new Discord.RichEmbed()
+        .setColor(0xFF5733)
+        .setTitle(':x:HATA')
+        .setDescription(`Sahibimin Komutunu kullanamazsınız`) 
+        .setFooter(`${message.guild}`)//\n ${Date.now() - message.createdTimestamp} ms
+        .setThumbnail(client.user.displayAvatarURL)
+        return message.channel.send({embed})};
+
+  const channel = (message.guild.channels.get(args[0]) || message.channel);
+  if(izle.has(channel.id)) {
+    izle.get(channel.id).stop();
+    message.channel.send("Kanal İzleme Durduruldu: "+`**${channel.name}**.`);
+    return izle.delete(channel.id);
   }
   
-    if (!channel) {
-        return message.channel.send(`Log kanalı olarak ayarlamak istediğin kanalı etiketlemelisin.`)
-    }
-  
-    db.set(`modlogK_${message.guild.id}`, channel.name)
-  
-    const embed = new Discord.RichEmbed()
-    .setDescription(`Log kanalı başarıyla ${channel} olarak ayarlandı.`)
-    .setColor("RANDOM")
-    message.channel.send(embed)
-}
-    
-exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: ["logayarla","log","loglar","logkanalayarla","log-kanal","log-kanal-ayarla","logkanal"],
-    permLevel: 3,
-kategori : 'ayarlar'
-}
+  message.channel.send("Kanal İzleniyor: "+`**${channel.name}**.`);
+  const collector = channel.createMessageCollector(()=>true);
+  let author = message.author
+  collector.on("collect", (collected, collector) => console.log(`[${collected.guild.name}][${collected.channel.name}][#${collected.author.username}]${collected.content}`));
+  izle.set(channel.id, collector);
+};
 
-exports.help = {
-    name: 'log-ayarla',
-    description: 'Log kanalını ayarlar..',
-    usage: 'log-ayarla <#kanal>'
-}
- 
+module.exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["kizle","kanalwatch","channelwatch"],
+  permLevel: 0
+};
+
+module.exports.help = {
+  name: 'kanalizle',
+  description: 'Kanal izlersiniz',
+  usage: 'kanalizle <kanal-ıd>'
+};
