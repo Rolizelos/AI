@@ -28,4 +28,4 @@ exports.conf = {
 exports.help = {
   name: "hgkanal",
   by_codefenix: "copyright JaimiTR"
-};
+}; 
