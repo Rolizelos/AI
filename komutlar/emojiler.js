@@ -76,7 +76,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "emoji",
+  name: "yarak",
   description: "Sunucudaki Emojileri ve ID Lerini Yollar!",
   usage: "emojiler"
 };
