@@ -2,12 +2,29 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var randomstring = require('randomstring');
 
-exports.run = (client, message) => {
-     message.channel.send(
+exports.run = (client, message, args) => {
+  
+  let length = args.slice(0).join(' ');
+  if (length.length < 1) return message.channel.send(`Şifre Uzunluğunuz 1'Den Uzun Olmalıdır!`);
+  
+  const şifre = new Discord.RichEmbed()
+   .setDescription(
             randomstring.generate({
-            length: 12,
+            length: `${length}`,
             charset: 'alphabetic'
 }))
+  
+
+  
+ 
+  
+  
+  var user = message.author
+  
+
+  
+   
+
 };
 
 exports.conf = {
@@ -18,7 +35,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'rastgeleşifre',
+  name: 'şifre',
   description: 'random şifre atar',
   usage: 'rastgeleşifre'
 };
