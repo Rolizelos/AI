@@ -9,7 +9,7 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `Liber Botlist ♥`,
+            name: `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı!`,
             type: 'watching'
         },
         status: 'online'
