@@ -6,8 +6,8 @@ exports.run = async (client, message, args) => {
       `❌ Bu Komutu Kullanabilmek için \`İsimleri Yönet\` Yetkisine Sahip Olmalısın!`
     );
   let member = message.mentions.members.first();
-  let isim = args.slice(1).join(" ");
-  let yaş = args.slice(2).join(" ");
+  let isim = args[1]
+  let yaş = args[2]
   if (!member) return message.channel.send("❌ Bir Üye Etiketlemelisin!");
   if (!isim) return message.channel.send("❌ Bir İsim Yazmalısın!");
   if (!yaş) return message.channel.send("❌ Bir Yaş Yazmalısın!");
