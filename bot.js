@@ -235,8 +235,4 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
   message.send(bergy)
 
 })
-
-//---------
-
-
   client.login(ayarlar.token);
