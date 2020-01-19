@@ -242,10 +242,4 @@ return member.send(`Hesabınız 3 günden önce açıldığı için Cezalı'ya a
 
 
 
-
-
-
-
-
-
 client.login(ayarlar.token);
