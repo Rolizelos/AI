@@ -265,13 +265,17 @@ client.on('message', msg => {
           SEND_MESSAGES: true,
           READ_MESSAGES: true
       });
+        
+        let anan = msg.guild.roles.get("668434895181316119").members.map(x => {
+msg.guild.members.get(x.id).username +"#"+ msg.guild.members.get(x.id).discriminator
+})
 
       const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(`${client.user.username} | Destek Sistemi`)
       .addField(`Merhaba ${msg.author.username}!`, `Destek Yetkilileri burada seninle ilgilenecektir. \nDestek talebini kapatmak için \`${prefix}kapat\` yazabilirsin.`)
       .addField(`» Talep Konusu/Sebebi:`, `${msg.content}`, true)
-      
+   
       .addField(`» Kullanıcı:`, `<@${msg.author.id}>`, true)
       .setFooter(`${client.user.username} | Destek Sistemi`)
       .setTimestamp()
