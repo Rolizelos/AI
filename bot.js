@@ -137,31 +137,6 @@ client.on('guildMemberAdd', async member => {
 });
 
 
-//REKLAM-KORUMA -------------------------------------------------------------------------------------
-
-client.on("message", async msg => {
-let cfxy = await db.fetch(`reklam_${msg.guild.id}`)
-if (!msg.member.hasPermission("BAN_MEMBERS")) {
-if (cfxy == 'Açık') {
-        const reklam = ["discord.gg","https//",".com",".xyz",".net", ".com.tr", ".glitch.me" , ".org", ".net", ".site", ".co", ".dx.am", ".tk", ".cf", ".ga"];
-        if (reklam.some(word => msg.content.includes(word))) {
-          try {          
-         const cfxiy = new Discord.RichEmbed()
-          .setTitle("Sunucunda " + msg.author.tag + " Reklam Yapıyor!")
-          .setColor(0x00AE86)
-          .setDescription(msg.author + "kullanıcısı " + msg.guild + " sunucusunda reklam yaptı.")
-          .addField("Kullanıcının mesajı:", "**" + msg.content + "**")  
-  msg.guild.owner.send(cfxiy)                           
-               msg.delete(); 
-                  return;             
-          } catch(err) {
-            console.log(err);
-          }
-        } } else if (cfxy == 'Kapalı') {
-
-}
-}
-});
 
 //KAYIT -------------------------------------------------------------------
 
@@ -251,5 +226,27 @@ if(msg.author.bot) return;
 if (msg.content.length > 1) {
 db.set(`diasure${msg.author.id}`, Date.now());
 msg.channel.send(diauyetekst).then(msg => { msg.delete(10000) })}}}})
+
+
+
+client.on("guildMemberAdd", member => {
+let user = client.users.get(member.id);
+const kurulus = new Date().getTime() - user.createdAt.getTime();
+if ( kurulus < 259200000)
+  return member.send(begyden sa)
+member.addRole(`666656114095554560`)
+member.removeRole(`ALINACAK ROL ID`)//Eğer yoksa buraya dokunma
+
+}
+);
+
+
+
+
+
+
+
+
+
 
 client.login(ayarlar.token);
