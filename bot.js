@@ -228,16 +228,4 @@ db.set(`diasure${msg.author.id}`, Date.now());
 msg.channel.send(diauyetekst).then(msg => { msg.delete(10000) })}}}})
 
 
-
-client.on("guildMemberAdd", member => {
-let user = client.users.get(member.id);
-const kurulus = new Date().getTime() - user.createdAt.getTime();
-if ( kurulus < 259200000)
-member.addRole(`666656114095554560`)
-return member.send(`Hesabınız 3 günden önce açıldığı için Cezalı'ya atıldınız. Yetkililere bildirebilirisiniz.`)
-}
-);
-
-
-
 client.login(ayarlar.token);
