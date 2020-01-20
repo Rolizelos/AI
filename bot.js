@@ -7,7 +7,7 @@ const http = require('http');
     app.listen(process.env.PORT);
     setInterval(() => {
     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-    }, 210000);
+    }, 280000);
 //Bu Bölümleri Değiştirmeyin
 // ________________________________________________________________
 const Discord = require('discord.js');
