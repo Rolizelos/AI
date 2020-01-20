@@ -1,51 +1,41 @@
-const Discord = require("discord.js");
-const db = require('quick.db');
+const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
-  
-  let user = message.author
-
-  const bergy = new Discord.RichEmbed()
-  .setDescription(`\`\`${user.tag}\`\` **Emoji Rol Komutları;** \`\`emoji aç/kapat/otorol\`\` **Emoji Rol Sistemini Açmak İçin; \`\`emoji aç 'açıklama'\`\`** `)
-  .setColor("#00ff88")
-  .setFooter(`Emoji Rol Sistemi`, client.user.avatarURL)
-  
-  
-    let code = args.slice(1).join(' ');
-   if (code.length < 1) return message.channel.send(bergy);
-  if (message.author) {
-  
-      await db.set(`kayıt_${message.guild.id}`, 'acik')
-      message.channel.send(`\`\`${code}\`\``).then(async m => {
-        await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
-        m.react('🇹🇷')
-      })
-
-      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!').then(n => n.delete(5000));
-  
-  if (args[2] == 'aç') {
-    if (db.has(`kayıt_${message.guild.id}`)) return message.channel.send('Bu sunucuda **Emoji Rol Sistemi** zaten açık!')
- 
-      await db.set(`kayıt_${message.guild.id}`, 'acik')
-      message.channel.send(`\`\`${code}\`\``).then(async m => {
-        await db.set(`kayıtmesaj_${message.guild.id}`, m.id)
-        m.react('🇹🇷')
-      })
-      message.channel.send('Başarıyla **Emoji Rol Sistemi** kuruldu!').then(n => n.delete(5000));
-    
-  } 
+module.exports = async message => {
+  let client = message.client;
+   let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+  let command = message.content.split(' ')[0].slice(prefix.length);
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+  let params = message.content.split(' ').slice(1);
+  let perms = client.elevation(message);
+  let cmd;
+  if (client.commands.has(command)) {
+    cmd = client.commands.get(command);
+  } else if (client.aliases.has(command)) {
+    cmd = client.commands.get(client.aliases.get(command));
   }
-};
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 4
-};
-
-exports.help = {
-  name: 'emoji',
-  description: '',
-  usage: ''
-};
+  if (cmd) { 
+let veri = await db.fetch(`botbakım`)
+if(veri) {
+ if(message.author.id !== "655124789018492947") {
  
+ let codeming = new Discord.RichEmbed()
+ .setTitle('Bakımdayız :x:')
+ .setDescription('Bot,şu an kurucu tarafından bakıma alındı.')
+ .addField('Bakım Sebebi:', veri)
+ .setColor('RED')
+message.channel.send(codeming).then(m => m.delete(10000))
+ return
+ } 
+  
+}
+
+    if (perms < cmd.conf.permLevel) return;
+    cmd.run(client, message, params, perms);
+  }
+
+}; 
