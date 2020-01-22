@@ -42,7 +42,7 @@ exports.run = async function(client, message, args) {
 db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
 //CodeFENIX //CFX
-    chan.send(`<@&661998982515392523>`).then(m => {
+    chan.send(`<@&669663626314907659>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
@@ -51,7 +51,7 @@ chan.send(new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL))
 .then(async function(sentEmbed) {
      //CodeFENIX //CFX
-        const emojideistir = ["✅", "❎"];
+        const emojideistir = ["✅", "❎", "🔒"];
         const filter = (reaction) =>
      //CodeFENIX //CFX 
           emojideistir.includes(reaction.emoji.name)
@@ -59,18 +59,17 @@ chan.send(new Discord.RichEmbed()
      //CodeFENIX //CFX 
         await sentEmbed.react(emojideistir[0]).catch(function() {});
         await sentEmbed.react(emojideistir[1]).catch(function() {});
+        await sentEmbed.react(emojideistir[2]).catch(function() {});
               var reactions = sentEmbed.createReactionCollector(filter, {
         });
  reactions.on("collect", async function (reaction) {
    if(reaction.bot) return;
 				if (reaction.emoji.name === "✅") {          
-          message.guild.members.find(x => x.id === emo).send('Kabul edilmiş miş öyle diiler')
+          message.guild.members.find(x => x.id === emo).send(':tada: **İsteğiniz Yetkililer Tarafından Kabul Edildi!**')
         }
-       if (reaction.emoji.name === "❎") {          
-          message.guild.members.find(sad => sad.id === emo).send('sa1')
-        }
-    if (reaction.emoji.name === "🔒") {          
-    sentEmbed.edit(`<@&647135745521221632> \n\n ` + `\`${msg.author.tag}\` ` + code + `\n\n **İsteğinde Bulundu.** \n\n [ 🔒 EKLENDI]`)     
+ 
+    if (reaction.emoji.name === "❎") {          
+    message.guild.members.find(sads => sads.id === emo).send(':x: **İsteğiniz Yetkililer Tarafından Reddedildi! Üzgünüm!**')     
    }   
      
 })})

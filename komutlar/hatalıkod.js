@@ -42,21 +42,47 @@ message.author.send(cfx4).then(m => {
   m.delete(300000)
 })
 //CodeFENIX //CFX
-    chan.send(`<@&669653086306041868>`).then(m => {
+
+
+  db.set(`emo${message.author.id}`, message.author.id)
+    let emo = await db.fetch(`emo${message.author.id}`)
+//CodeFENIX //CFX
+     chan.send(`<@&669653086306041868>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField("**Hatalı Kod**", `\`${code}\``)
-.setThumbnail(message.author.avatarURL)).then(x => {
-x.react("✅")
-return message.author.send(`İsteğin Onaylandı!`)
-x.react("❌")
-return message.author.send(`İsteğin Reddedildi!`)
-})
-})
+.setThumbnail(message.author.avatarURL))
+.then(async function(sentEmbed) {
+     //CodeFENIX //CFX
+        const emojideistir = ["✅", "❎", "🔒"];
+        const filter = (reaction) =>
+     //CodeFENIX //CFX 
+          emojideistir.includes(reaction.emoji.name)
 
-
+     //CodeFENIX //CFX 
+        await sentEmbed.react(emojideistir[0]).catch(function() {});
+        await sentEmbed.react(emojideistir[1]).catch(function() {});
+        await sentEmbed.react(emojideistir[2]).catch(function() {});
+              var reactions = sentEmbed.createReactionCollector(filter, {
+        });
+ reactions.on("collect", async function (reaction) {
+   if(reaction.bot) return;
+				if (reaction.emoji.name === "✅") {          
+          message.guild.members.find(x => x.id === emo).send(':tada: **İsteğiniz Yetkililer Tarafından Kabul Edildi!**')
+        }
+ 
+    if (reaction.emoji.name === "❎") {          
+    message.guild.members.find(sads => sads.id === emo).send(':x: **İsteğiniz Yetkililer Tarafından Reddedildi! Üzgünüm!**')     
+   }   
+     
+})})
+})  
+    
+    
+    
+    
 }};
 
 // CodeFENIX // CFX
