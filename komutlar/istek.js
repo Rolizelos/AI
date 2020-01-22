@@ -38,9 +38,7 @@ exports.run = async function(client, message, args) {
 
 
 
-message.author.send(cfx4).then(m => {
-  m.delete(300000)
-})
+
 db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
 //CodeFENIX //CFX
@@ -64,15 +62,18 @@ chan.send(new Discord.RichEmbed()
               var reactions = sentEmbed.createReactionCollector(filter, {
         });
  reactions.on("collect", async function (reaction) {
+   if(reaction.author.bot) return;
 				if (reaction.emoji.name === "✅") {          
           message.guild.members.find(x => x.id === emo).send('Kabul edilmiş miş öyle diiler')
         }
-   if (reaction.emoji.name === "❎") {         
+   else if (reaction.emoji.name === "❎") {         
         message.guild.members.find(f => f.id === emo).send('Kabul edilmemiş miş öyle diiler')
    }   
 })})
 })
-
+message.author.send(cfx4).then(m => {
+  m.delete(300000)
+})
 
 }};
 

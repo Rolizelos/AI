@@ -195,4 +195,4 @@ if (msg.content.length > 1) {
 db.set(`diasure${msg.author.id}`, Date.now());
 msg.channel.send(diauyetekst).then(msg => { msg.delete(10000) })}}}})
 
-client.login(ayarlar.token);
+client.login(process.env.TOKEN);
