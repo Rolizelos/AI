@@ -42,17 +42,16 @@ exports.run = async function(client, message, args) {
 db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
 //CodeFENIX //CFX
-    chan.send(`<@&669663626314907659>`).then(m => {
+    chan.send(`<@&661998982515392523>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField("**İstek Kod**", `\`${code}\``)
 .setThumbnail(message.author.avatarURL))
-
-      .then(async function(sentEmbed) {
+.then(async function(sentEmbed) {
      //CodeFENIX //CFX
-        const emojideistir = ["✅", "❎", "🔒", "⏰"];
+        const emojideistir = ["✅", "❎"];
         const filter = (reaction, user) =>
      //CodeFENIX //CFX 
           emojideistir.includes(reaction.emoji.name) &&
@@ -60,23 +59,18 @@ chan.send(new Discord.RichEmbed()
      //CodeFENIX //CFX 
         await sentEmbed.react(emojideistir[0]).catch(function() {});
         await sentEmbed.react(emojideistir[1]).catch(function() {});
-        await sentEmbed.react(emojideistir[2]).catch(function() {});
-        await sentEmbed.react(emojideistir[3]).catch(function() {});
               var reactions = sentEmbed.createReactionCollector(filter, {
         });
  reactions.on("collect", async function (reaction) {
+   if(reaction.bot) return;
 				if (reaction.emoji.name === "✅") {          
-          sentEmbed.edit(`<@&647135745521221632> \n\n ` + `\`${msg.author.tag}\` ` + code + `\n\n **İsteğinde Bulundu.** \n\n [ :white_check_mark: KABUL EDİLDİ]`)
+          message.guild.members.find(x => x.id === emo).send('Kabul edilmiş miş öyle diiler')
         }
-   if (reaction.emoji.name === "❎") {         
-     sentEmbed.edit(`<@&647135745521221632> \n\n ` + `\`${msg.author.tag}\` ` + code + `\n\n **İsteğinde Bulundu.** \n\n [ ❎ RED EDİLDİ]`)     
+   else if (reaction.emoji.name === "❎") {         
+        message.guild.members.find(f => f.id === emo).send('Kabul edilmemiş miş öyle diiler')
    }   
-   if (reaction.emoji.name === "🔒") {          
-    sentEmbed.edit(`<@&647135745521221632> \n\n ` + `\`${msg.author.tag}\` ` + code + `\n\n **İsteğinde Bulundu.** \n\n [ 🔒 EKLENDI]`)     
-   }   
-   if (reaction.emoji.name === "⏰") {     
-    sentEmbed.edit(`<@&647135745521221632> \n\n ` + `\`${msg.author.tag}\` ` + code + `\n\n **İsteğinde Bulundu.** \n\n [ ⏰ BEKLEMEDE]`)          
-   }})})}});
+})})
+})
 message.author.send(cfx4).then(m => {
   m.delete(300000)
 })
