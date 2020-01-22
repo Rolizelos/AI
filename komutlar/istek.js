@@ -48,6 +48,7 @@ chan.send(new Discord.RichEmbed()
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField("**İstek Kod**", `\`${code}\``)
+.addField("Sayın Yetkililer! İstek Kod Eklendiyse `✅` Buna, Eklenmediyse `❎` Buna Basınız! Boş Yere Kullanan Kişiler Ceza Alıcaktır! ", "** **")  
 .setThumbnail(message.author.avatarURL))
 .then(async function(sentEmbed) {
      //CodeFENIX //CFX

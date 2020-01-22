@@ -53,6 +53,7 @@ chan.send(new Discord.RichEmbed()
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField("**Hatalı Kod**", `\`${code}\``)
+.addField("Sayın Yetkililer! Kod Düzeltildiyse `✅` Buna, Düzeltilmediyse Veya Hatasız `❎` Buna Basınız! Boş Yere Kullanan Kişiler Ceza Alıcaktır! ", "** **")          
 .setThumbnail(message.author.avatarURL))
 .then(async function(sentEmbed) {
      //CodeFENIX //CFX
@@ -70,11 +71,11 @@ chan.send(new Discord.RichEmbed()
  reactions.on("collect", async function (reaction) {
    if(reaction.bot) return;
 				if (reaction.emoji.name === "✅") {          
-          message.guild.members.find(x => x.id === emo).send(':tada: **İsteğiniz Yetkililer Tarafından Kabul Edildi!**')
+          message.guild.members.find(x => x.id === emo).send(':tada: **Hatalı Bildirdiğiniz Kod Yetkilier Tarafından Düzeltildi! Teşşekürler!**')
         }
  
     if (reaction.emoji.name === "❎") {          
-    message.guild.members.find(sads => sads.id === emo).send(':x: **İsteğiniz Yetkililer Tarafından Reddedildi! Üzgünüm!**')     
+    message.guild.members.find(sads => sads.id === emo).send(':x: **Hatalı Diye Bildirdiğiniz Kod Yetkililer Tarafından İncelendi! Bir Hata Bulunamadı Üzgünüm!**')     
    }   
      
 })})
