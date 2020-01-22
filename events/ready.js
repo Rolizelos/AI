@@ -9,10 +9,10 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı!`,
+            name: `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı! | ARK SİSTEM BOTU!`,
             type: 'watching'
         },
         status: 'online'
     })
-    console.log(`[LiberCode Botlist]: Giriş Yaptı! Komutlar Yüklendi!`);
+    console.log(`[ARK SİSTEM]: Giriş Yaptı! Komutlar Yüklendi!`);
 }

@@ -12,8 +12,8 @@ exports.run = (client, message, args) => {
   /////////////////////Config
 
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
-var logkanalid = "663020684829786113"   //Log Kanalı Id
-  var guildid = "658191439527936001" // Kullanılacak Sunucu
+var logkanalid = "669660413041836042"   //Log Kanalı Id
+  var guildid = "669638506909401118" // Kullanılacak Sunucu
 ///////////////// Ana Kod
   
   
