@@ -52,10 +52,10 @@ chan.send(new Discord.RichEmbed()
 .then(async function(sentEmbed) {
      //CodeFENIX //CFX
         const emojideistir = ["✅", "❎"];
-        const filter = (reaction, user) =>
+        const filter = (reaction) =>
      //CodeFENIX //CFX 
-          emojideistir.includes(reaction.emoji.name) &&
-          user.id === "522138336056573972" || "497674151251804160";
+          emojideistir.includes(reaction.emoji.name)
+
      //CodeFENIX //CFX 
         await sentEmbed.react(emojideistir[0]).catch(function() {});
         await sentEmbed.react(emojideistir[1]).catch(function() {});
@@ -66,9 +66,13 @@ chan.send(new Discord.RichEmbed()
 				if (reaction.emoji.name === "✅") {          
           message.guild.members.find(x => x.id === emo).send('Kabul edilmiş miş öyle diiler')
         }
-   else if (reaction.emoji.name === "❎") {         
-        message.guild.members.find(f => f.id === emo).send('Kabul edilmemiş miş öyle diiler')
+       if (reaction.emoji.name === "❎") {          
+          message.guild.members.find(sad => sad.id === emo).send('sa1')
+        }
+    if (reaction.emoji.name === "🔒") {          
+    sentEmbed.edit(`<@&647135745521221632> \n\n ` + `\`${msg.author.tag}\` ` + code + `\n\n **İsteğinde Bulundu.** \n\n [ 🔒 EKLENDI]`)     
    }   
+     
 })})
 })
 message.author.send(cfx4).then(m => {
