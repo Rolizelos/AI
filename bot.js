@@ -137,65 +137,8 @@ client.on('guildMemberAdd', async member => {
 });
 
 
-//REKLAM-KORUMA -------------------------------------------------------------------------------------
 
-client.on("message", async msg => {
-let cfxy = await db.fetch(`reklam_${msg.guild.id}`)
-if (!msg.member.hasPermission("BAN_MEMBERS")) {
-if (cfxy == 'Açık') {
-        const reklam = ["discord.gg","https//",".com",".xyz",".net", ".com.tr", ".glitch.me" , ".org", ".net", ".site", ".co", ".dx.am", ".tk", ".cf", ".ga"];
-        if (reklam.some(word => msg.content.includes(word))) {
-          try {          
-         const cfxiy = new Discord.RichEmbed()
-          .setTitle("Sunucunda " + msg.author.tag + " Reklam Yapıyor!")
-          .setColor(0x00AE86)
-          .setDescription(msg.author + "kullanıcısı " + msg.guild + " sunucusunda reklam yaptı.")
-          .addField("Kullanıcının mesajı:", "**" + msg.content + "**")  
-  msg.guild.owner.send(cfxiy)                           
-               msg.delete(); 
-                  return;             
-          } catch(err) {
-            console.log(err);
-          }
-        } } else if (cfxy == 'Kapalı') {
 
-}
-}
-});
-
-//KAYIT -------------------------------------------------------------------
-
-client.on("guildMemberAdd", async member => {
-  if (db.has(`kayıt_${member.guild.id}`)) {
-    let srol = await db.fetch(`kayıtrol_${member.guild.id}`)
-    if (!srol) return
-    await member.addRole(srol)
-  }
-})
-
-client.on('raw', event => {
-    if (event.t === 'MESSAGE_REACTION_ADD'){
-        let channel = client.channels.get(event.d.channel_id);
-        let message = channel.fetchMessage(event.d.message_id).then(msg=> {
-        let user = msg.guild.members.get(event.d.user_id);
-        
-          if (db.has(`kayıt_${msg.guild.id}`)) {
-            if (user.id != client.user.id){
-              let mesaj = db.get(`kayıtmesaj_${msg.guild.id}`)
-              let srol = db.get(`kayıtrol_${msg.guild.id}`)
-              if (msg.id == mesaj) {
-                var roleObj = msg.guild.roles.get(srol);
-                var memberObj = msg.guild.members.get(user.id);
-                    memberObj.removeRole(roleObj)
-                if (db.has(`kayıtotorol_${msg.guild.id}`)) {
-                  memberObj.addRole(db.get(`kayıtotorol_${msg.guild.id}`))
-                } 
-              }
-            }
-          }
-        })
-        }
-});
 
 //fake ayrıl katıl
 client.on('message', async message => {

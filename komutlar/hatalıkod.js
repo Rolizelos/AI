@@ -50,7 +50,9 @@ chan.send(new Discord.RichEmbed()
 .addField("**Hatalı Kod**", `\`${code}\``)
 .setThumbnail(message.author.avatarURL)).then(x => {
 x.react("✅")
+return message.author.send(`İsteğin Onaylandı!`)
 x.react("❌")
+return message.author.send(`İsteğin Reddedildi!`)
 })
 })
 

@@ -41,6 +41,8 @@ exports.run = async function(client, message, args) {
 message.author.send(cfx4).then(m => {
   m.delete(300000)
 })
+db.set(`emo${message.author.id}`, message.author.id)
+    let emo = await db.fetch(`emo${message.author.id}`)
 //CodeFENIX //CFX
     chan.send(`<@&669663626314907659>`).then(m => {
 chan.send(new Discord.RichEmbed()
@@ -48,10 +50,27 @@ chan.send(new Discord.RichEmbed()
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
 .addField(`Kullanıcı ID`,message.author.id,true)
 .addField("**İstek Kod**", `\`${code}\``)
-.setThumbnail(message.author.avatarURL)).then(x => {
-x.react("✅")
-x.react("❌")
-})
+.setThumbnail(message.author.avatarURL))
+.then(async function(sentEmbed) {
+     //CodeFENIX //CFX
+        const emojideistir = ["✅", "❎"];
+        const filter = (reaction, user) =>
+     //CodeFENIX //CFX 
+          emojideistir.includes(reaction.emoji.name) &&
+          user.id === "522138336056573972" || "497674151251804160";
+     //CodeFENIX //CFX 
+        await sentEmbed.react(emojideistir[0]).catch(function() {});
+        await sentEmbed.react(emojideistir[1]).catch(function() {});
+              var reactions = sentEmbed.createReactionCollector(filter, {
+        });
+ reactions.on("collect", async function (reaction) {
+				if (reaction.emoji.name === "✅") {          
+          message.guild.members.find(x => x.id === emo).send('Kabul edilmiş miş öyle diiler')
+        }
+   if (reaction.emoji.name === "❎") {         
+        message.guild.members.find(f => f.id === emo).send('Kabul edilmemiş miş öyle diiler')
+   }   
+})})
 })
 
 

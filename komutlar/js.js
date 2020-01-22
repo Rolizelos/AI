@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
 exports.run = function(client, message) {
 
-  if(message.channel.id != "662003760922492949") return message.channel.send(':x: **Bu Komutudu <#662003760922492949> Kanalında Kullan!**').then(n => n.delete(5000));
+  if(message.channel.id != "669655941397872680") return message.channel.send(':x: **Bu Komutudu <#669655941397872680> Kanalında Kullan!**').then(n => n.delete(5000));
   
   message.channel.bulkDelete(1)
 
@@ -10,9 +10,8 @@ exports.run = function(client, message) {
 
  var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
  var rolismi = "JavaScript" // Verilecek Rol Ismi
-var logkanalid = "662690891567464459"   
-let kanal = "654376897412595723"
-  var guildid = "658191439527936001" // Kullanılacak Sunucu
+var logkanalid = "669671496532230145"   
+  var guildid = "669638506909401118" // Kullanılacak Sunucu
 
 ///////////////// Ana Kod
 
@@ -33,7 +32,7 @@ message.member.addRole(role);
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['javascript', 'de'],
+  aliases: ['javascript',],
   permLevel: 0
 };
 
