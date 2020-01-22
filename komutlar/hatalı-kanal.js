@@ -5,15 +5,15 @@ const db = require('quick.db');
 exports.run = async (client, message, args) => {
   
   
-  let cfxistek = await db.fetch(`istekkanal${message.guild.id}`)
-  let cfxistekkanal = message.mentions.channels.first();
+  let cfxhatalı = await db.fetch(`hatalıkanal${message.guild.id}`)
+  let cfxhatalıkanal = message.mentions.channels.first();
   
   const cfx1 = new Discord.RichEmbed()
-  .setDescription(`Hatalı Kanalı ${cfxistekkanal} olarak ayarlandı.`)
+  .setDescription(`Hatalı Kanalı ${cfxhatalıkanal} olarak ayarlandı.`)
   .setColor("#00ff88")
   .setFooter(`ARK | Hatalı Kanal Sistemi.`, client.user.avatarURL)
   const cfx2 = new Discord.RichEmbed()
-  .setDescription(`İstek Kanalı Kapatıldı.`)
+  .setDescription(`Hatalı Kanalı Kapatıldı.`)
   .setColor("#00ff88")
   .setFooter(`ARK | Hatalı Kanal Sistemi.`, client.user.avatarURL)
   const cfxembed = new Discord.RichEmbed()
@@ -25,12 +25,12 @@ exports.run = async (client, message, args) => {
   
   if (!args[0]) return message.channel.send(cfxembed)
   
-  if (args[0] == cfxistekkanal) return db.set(`istekkanal${message.guild.id}`, cfxistekkanal.id) - message.channel.send(cfx1);
+  if (args[0] == cfxhatalıkanal) return db.set(`hatalıkanal${message.guild.id}`, cfxhatalıkanal.id) - message.channel.send(cfx1);
     
 
   if (args[0] == 'ayarla') {
     
-    db.set(`istekkanal${message.guild.id}`, cfxistekkanal.id)
+    db.set(`hatalıkanal${message.guild.id}`, cfxhatalıkanal.id)
     message.channel.send(cfx1)
     
     
