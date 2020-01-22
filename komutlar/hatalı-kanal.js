@@ -9,18 +9,18 @@ exports.run = async (client, message, args) => {
   let cfxistekkanal = message.mentions.channels.first();
   
   const cfx1 = new Discord.RichEmbed()
-  .setDescription(`İstek Kanalı ${cfxistekkanal} olarak ayarlandı.`)
+  .setDescription(`Hatalı Kanalı ${cfxistekkanal} olarak ayarlandı.`)
   .setColor("#00ff88")
-  .setFooter(`ARK | İstek Kanal Sistemi.`, client.user.avatarURL)
+  .setFooter(`ARK | Hatalı Kanal Sistemi.`, client.user.avatarURL)
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`İstek Kanalı Kapatıldı.`)
   .setColor("#00ff88")
-  .setFooter(`ARK | İstek Kanal Sistemi.`, client.user.avatarURL)
+  .setFooter(`ARK | Hatalı Kanal Sistemi.`, client.user.avatarURL)
   const cfxembed = new Discord.RichEmbed()
-  .setTitle(`**\`İstek-Kanal Bilgi;\`**`)
-  .setDescription(`** ** \n**Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\`\n\n **Kapatmak İçin:** \`${a.prefix}istek-kanal kapat\``)
+  .setTitle(`**\`Hatalı-Kanal Bilgi;\`**`)
+  .setDescription(`** ** \n**Ayarlamak İçin:** \`${a.prefix}hatalı-kanal ayarla #kanal\`\n\n **Kapatmak İçin:** \`${a.prefix}hatalı-kanal kapat\``)
   .setColor("#00ff88")
-  .setFooter(`ARK | İstek Kanal Sistemi.`, client.user.avatarURL)
+  .setFooter(`ARK | Hatalı Kanal Sistemi.`, client.user.avatarURL)
   
   
   if (!args[0]) return message.channel.send(cfxembed)
@@ -50,12 +50,12 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false, 
-  aliases: ['ikanal'],
+  aliases: ['hkanal'],
   permLevel: 0 
 };
 
 exports.help = {
-  name: 'istek-kanal',
+  name: 'hatalı-kanal',
   description: 'CODEFENIX KOD PAYLASIM',
   usage: 'istek-kanal #kanal'
 };
