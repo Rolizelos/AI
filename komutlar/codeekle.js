@@ -1,15 +1,24 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
-    let kanal = args[0]
-    let code = args[1]
-    if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply('Bunun için gerekli iznin yok')
-    if (!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("Botun yetkisi yok")
-    if (kanal.length < 1 || !kanal) return message.reply('Lütfen oluşturacağım kanalın adını yaz.');
-    if (code.length < 1) return message.reply(`kodunuzu yazınız!`)
+   let kanal = args[0]
+  let code = args.slice(1).join(' ');
+  if (!kanal) return message.channel.send("Kanal İsmi Yazmalısın!");
+  if (!code) return message.channel.send("Kodunu Yazmalısın!");
   message.delete();
 if (message.guild.channels.find(a => a.name === "JavaScript")) {
-message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "JavaScript")}).then(c => c.send(`${code}`))  
+message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "JavaScript")}).then(c => c.send(
+
+
+
+`**ARK SUNUCUSU KOD PAYLAŞIM KANALI!**\n
+**${message.author} Tarafından \`\`${kanal}\`\` İsimli Kod Eklendi! ${message.author} Teşşekkür Ederiz! :heart:\n İşte Kod:**
+
+\`\`${code}\`\`
+
+**Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#669656253806673939> Kanalı Yardımıyla Yetkiliere İletin!\n:heart: İyi Günler!**`))
+
+  
 message.channel.send("Kanal Oluşturuldu")
 } else {
 return message.reply("JavaScript adında bir kategori yok!")
