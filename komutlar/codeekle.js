@@ -1,26 +1,35 @@
+const Discord = require('discord.js');
 
+exports.run = (client, message, args) => {
+    let kanal = args[0]
+    let code = args[1]
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply('Bunun için gerekli iznin yok')
+    if (!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("Botun yetkisi yok")
+    if (kanal.length < 1 || !kanal) return message.reply('Lütfen oluşturacağım kanalın adını yaz.');
+    if (code.length < 1) return message.reply(`kodunuzu yazınız!`)
+  message.delete();
+if (message.guild.channels.find(a => a.name === "JavaScript")) {
+message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "JavaScript")}).then(c => c.send(`${code}`))  
+message.channel.send("Kanal Oluşturuldu")
+} else {
+return message.reply("JavaScript adında bir kategori yok!")
 
+    
+  
 
+  
+ }
+};
 
-      message.guild.createChannel(kanal, 'text')}
-    if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply('Bunun için gerekli iznin yok'); // Bunu Başkasıda Kullana Bilmesi İçin Kanalları Yönet Yetkisi Verin
-    if (kanal.length < 1) return message.reply('Lütfen oluşturacağım kanalın adını yaz.');
-    let guild = message.guild;
-    let kanal = args.slice(0).join(' ');
-  aliases: ['ses-kanal-aç'],
-  description: 'Bir ses kanalı açar',
+exports.conf = {
   enabled: true,
   guildOnly: false,
-  message.channel.send("Ses Kanalı Oluşturuldu")
-  message.delete();
-  name: 'aç',
+  aliases: [],
   permLevel: 3
-  usage: 'ses-kanal-aç [açmak istediğiniz kanalın adı]'
- if(message.guild.channels.find('name', 'JavaScript')) {
-const Discord = require('discord.js');
-exports.conf = {
+};
+
 exports.help = {
-exports.run = (client, message, args) => {
+  name: 'aç',
+  description: 'Bir ses kanalı açar',
+  usage: 'ses-kanal-aç [açmak istediğiniz kanalın adı]'
 };
-};
-};---------------
