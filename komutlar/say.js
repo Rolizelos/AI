@@ -6,12 +6,12 @@ module.exports.run = async (client, message, args) => {
 .setAuthor(message.guild.name, message.guild.iconURL)
 .setThumbnail(message.guild.iconURL)  
 .setDescription(`
-${client.emojis.get("665930842786365473")} | **Sunucudaki Toplam Üye Sayısı:** \`${message.guild.memberCount}\`
-${client.emojis.get("667740719351463936")} | **Sunucudaki Online Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'online').size}\`
-${client.emojis.get("667740716813910037")} | **Sunucudaki idle Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'idle').size}\`
-${client.emojis.get("667740717929594950")} | **Sunucudaki Dnd Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'dnd').size}\`
-${client.emojis.get("669699665532420112")} | **Sunucudaki Offline Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'offline').size}\`
-${client.emojis.get("669699663523479572")} | **Sunucudaki Bot Sayısı:** \`${message.guild.members.filter( member => member.user.bot).size}\`
+${client.emojis.get("665930842786365473")} | **Sunucudaki \`Toplam Üye\` Sayısı:** \`${message.guild.memberCount}\`
+${client.emojis.get("667740719351463936")} | **Sunucudaki \`Online\` Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'online').size}\`
+${client.emojis.get("667740716813910037")} | **Sunucudaki \`idle\` Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'idle').size}\`
+${client.emojis.get("667740717929594950")} | **Sunucudaki \`Dnd\` Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'dnd').size}\`
+${client.emojis.get("669699665532420112")} | **Sunucudaki \`Offline\` Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'offline').size}\`
+${client.emojis.get("669699663523479572")} | **Sunucudaki \`Bot\` Sayısı:** \`${message.guild.members.filter( member => member.user.bot).size}\`
 `)
   message.channel.sendEmbed(bergy);
 };

@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
+  message.channel.bulkDelete(1)
+  
    let kanal = args[0]
   let code = args.slice(1).join(' ');
   if (!kanal) return message.channel.send("Kanal İsmi Yazmalısın!");
