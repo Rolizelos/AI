@@ -174,10 +174,14 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
   const bergy = new Discord.RichEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RED')
-  .setDescription(`${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! \n${client.emojis.get("665930842786365473")}Kaydının Yapılması İçin sesli odaya geçip ses vermen gerekli! \n${client.emojis.get("665930842786365473")}Hesap Kuruluş Zamanı: ${gecen} \n${client.emojis.get("665930842786365473")}Bu Kullanıcı: \`${cfxzaman}\` \n${client.emojis.get("665930842786365473")}<@&666656114095554560> Rolündeki Yetkililer Seninle İlgilenecektir! `)
+  .setDescription(
+`${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! 
+\n${client.emojis.get("665930842786365473")}Hesap Kuruluş Zamanı: ${gecen} 
+\n${client.emojis.get("665930842786365473")}Bu Kullanıcı: \`${cfxzaman}\` 
+\n${client.emojis.get("665930842786365473")}<#669655941397872680> **Kanalına \`!js\` Yazarak \`JavaScript\` Rolünü Alabilirsin!** `)
   .setFooter(message.guild.name, message.guild.iconURL)
   message.send(bergy)
-  message.send(`${${member}}`)
+  message.send(`${member} **Hoşgeldin!**`)
 
 })
 
