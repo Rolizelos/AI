@@ -20,7 +20,7 @@ var logkanalid = "669660413041836042"   //Log Kanalı Id
   const cfx1 = new Discord.RichEmbed()
   .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${prefix}istek-kanal ayarla #kanal\``)
   .setColor("#00ff88")
-  .setFooter(`CodeFENIX| İstek Sistemi.`, client.user.avatarURL) 
+  .setFooter(`THE 100 | ARK`, client.user.avatarURL) 
   
   
  if (!logkanali) return message.channel.send(cfx1)
