@@ -22,7 +22,7 @@ ${code}
 **:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#669656253806673939> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
 
   
-message.channel.send("Kanal Oluşturuldu")
+message.reply(`${client.emojis.get("669699664039116800")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `)
 } else {
 return message.reply("JavaScript adında bir kategori yok!")
 
@@ -41,7 +41,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'aç',
+  name: 'kodekle',
   description: 'by bergy',
   usage: 'by bergy'
 };
