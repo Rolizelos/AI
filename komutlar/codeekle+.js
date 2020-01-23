@@ -11,12 +11,12 @@ exports.run = (client, message, args) => {
   if (!kanal) return message.channel.send("Kanal İsmi Yazmalısın!");
   if (!code) return message.channel.send("Kodunu Yazmalısın!");
   message.delete();
-if (message.guild.channels.find(a => a.name === "JavaScript")) {
-message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "JavaScript")}).then(c => c.send(
+if (message.guild.channels.find(a => a.name === "JavaScript+")) {
+message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "JavaScript+")}).then(c => c.send(
 
 
 
-`**ARK SUNUCUSU KOD PAYLAŞIM KANALI!**\n
+`**ARK SUNUCUSU KOD PAYLAŞIM KANALI! JavaScript+ KATEGORİSİ!**\n
 **${message.author} Tarafından \`\`${kanal}\`\` İsimli Kod Eklendi! ${message.author} Teşşekkür Ederiz! :heart:\n\n
 ${client.emojis.get("669699664039116800")} İşte Kod;**
 
@@ -29,7 +29,7 @@ ${code}
   
 message.reply(`${client.emojis.get("669699664039116800")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `).then(n => n.delete(5000));
 } else {
-return message.reply("JavaScript adında bir kategori yok!")
+return message.reply("JavaScript+ adında bir kategori yok!")
 
     
   
@@ -46,7 +46,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'kodekle',
+  name: 'kodekle+',
   description: 'by bergy',
   usage: 'by bergy'
 };
