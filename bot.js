@@ -195,16 +195,6 @@ if (msg.content.length > 1) {
 db.set(`diasure${msg.author.id}`, Date.now());
 msg.channel.send(diauyetekst).then(msg => { msg.delete(10000) })}}}})
 
-//SÜRELİ MESAJ
-client.on('ready', () => {
-  console.log(`Bot Aktif`);
-  setInterval(function() {
-     let dcs = client.channels.get("")
-     if(dcs){
-dcs.send("**Sunucumuzda Tek Bir Davet İle Giriş Çıkış Olmaktadır!\nİşte Davet Linki:** discord.gg/BUzMYB**") //Göndermek İstediğiniz Mesajı Yazın
-     }
-    }, 5000) // Her 1000 Ms 1 Saniyeye Eşittir Yani 1000 = 1 - 100000 = 100 Mesajın Kaç Saniyede Bir Gönderileceğini Ayarlayın!
-});
 
 
 
