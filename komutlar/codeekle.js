@@ -15,9 +15,11 @@ message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels
 **${message.author} Tarafından \`\`${kanal}\`\` İsimli Kod Eklendi! ${message.author} Teşşekkür Ederiz! :heart:\n\n
 ${client.emojis.get("669699664039116800")} İşte Kod;**
 
-${code`
 
-Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#669656253806673939> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
+${code}
+
+
+**:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#669656253806673939> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
 
   
 message.channel.send("Kanal Oluşturuldu")
@@ -40,6 +42,6 @@ exports.conf = {
 
 exports.help = {
   name: 'aç',
-  description: 'Bir ses kanalı açar',
-  usage: 'ses-kanal-aç [açmak istediğiniz kanalın adı]'
-};c
+  description: 'by bergy',
+  usage: 'by bergy'
+};
