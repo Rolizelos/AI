@@ -24,7 +24,7 @@ ${code}
 **:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#669656253806673939> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
 
   
-message.reply(`${client.emojis.get("669699664039116800")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `)
+message.reply(`${client.emojis.get("669699664039116800")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `).then(n => n.delete(5000));
 } else {
 return message.reply("JavaScript adında bir kategori yok!")
 
