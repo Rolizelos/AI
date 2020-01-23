@@ -3,6 +3,9 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   message.channel.bulkDelete(1)
   
+   if (!message.member.roles.find('name', 'KOD PAYLAŞIMCI')) return message.channel.send('Bu Kodu Kullanabilmek İçin \`\`Kod Paylaşımcı\`\` Rolüne Sahip Olmalısın!');
+  
+  
    let kanal = args[0]
   let code = args.slice(1).join(' ');
   if (!kanal) return message.channel.send("Kanal İsmi Yazmalısın!");
@@ -39,7 +42,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 3
+  permLevel: 4
 };
 
 exports.help = {
