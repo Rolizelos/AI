@@ -6,8 +6,10 @@ module.exports.run = async (client, message, args) => {
 .setAuthor(message.guild.name, message.guild.iconURL)
 .setThumbnail(message.guild.iconURL)  
 .setDescription(`**Sunucudaki Toplam Üye Sayısı:** \`${message.guild.memberCount}\`
-**Sunucudaki Offline Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'offline').size}\`
-**Sunucudaki Online Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'online').size}\`
+${client.emojis.get("667740719351463936")} | **Sunucudaki Online Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'online').size}\`
+**Sunucudaki idle Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'idle').size}\`
+**Sunucudaki Dnd Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'dnd').size}\`
+${client.emojis.get("665930842786365473")} | **Sunucudaki Offline Sayısı:** \`${message.guild.members.filter(x => x.user.presence.status === 'offline').size}\`
 **Sunucudaki Bot Sayısı:** \`${message.guild.members.filter( member => member.user.bot).size}\`
 `)
   message.channel.sendEmbed(bergy);
