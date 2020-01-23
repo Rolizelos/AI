@@ -72,7 +72,7 @@ chan.send(new Discord.RichEmbed()
     if (reaction.emoji.name === "❎") {          
     message.guild.members.find(sads => sads.id === emo).send(':x: **İsteğiniz Yetkililer Tarafından Reddedildi! Üzgünüm!**')     
    }   
-     
+
 })})
 })
 message.author.send(cfx4).then(m => {
