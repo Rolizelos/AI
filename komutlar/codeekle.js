@@ -25,9 +25,8 @@ ${client.emojis.get("669699664039116800")} İşte Kod;**
 
 ${code}
 
----
-
-${description}
+------------------------------------------------------
+Komut Hakkında Açıklama: ${description}
 
 **:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#669656253806673939> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
 
