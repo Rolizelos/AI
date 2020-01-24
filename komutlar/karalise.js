@@ -8,7 +8,11 @@ let cfxkaralistededb = await db.fetch(`cfxkaralistede${message.author.id}`)
 let cfxkaralistekanaldb = await db.fetch(`cfxkaralistekanaldb${message.guild.id}`)
 let cfxkanal2 = message.guild.channels.find('id', cfxkaralistekanaldb)
 let cfxkanal = message.mentions.channels.first()
-if(!args[0]) return message.channel.send(`> **Karaliste Logunu Ayarlamak İçin:** \`${prefix}karaliste kanalayarla #kanal\` \n > **Karalisteye Birini Eklemek İçin:** \`${prefix}karaliste ekle ID\` \n > **Karalisteden Birini Silmek İçin:** \`${prefix}karaliste kaldır ID\` \n > **Karaliste Log Kanalını Kapatmak İçin:** \`${prefix}karaliste kanalsıfırla\` \n > **Sistemi Sıfırlamak İçin:** \`${prefix}karaliste sıfırla\` `);
+const karaliste = new Discord.RichEmbed()
+.setColor(`RED`)
+.setDescription(`> **Karaliste Logunu Ayarlamak İçin:** \`${prefix}karaliste kanalayarla #kanal\` \n > **Karalisteye Birini Eklemek İçin:** \`${prefix}karaliste ekle ID\` \n > **Karalisteden Birini Silmek İçin:** \`${prefix}karaliste kaldır ID\` \n > **Karaliste Log Kanalını Kapatmak İçin:** \`${prefix}karaliste kanalsıfırla\` \n > **Sistemi Sıfırlamak İçin:** \`${prefix}karaliste sıfırla\` `);
+if(!args[0]) return message.channel.send(karaliste)
+
 if(args[0] == 'sıfırla') {
 	db.delete(`cfxkaralistededb${cfxkaralisteid}`)
 	db.delete(`cfxkaralistekanaldb${message.guild.id}`)
