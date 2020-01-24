@@ -203,5 +203,4 @@ msg.channel.send(diauyetekst).then(msg => { msg.delete(10000) })}}}})
 
 
 
-
 client.login(process.env.TOKEN);
