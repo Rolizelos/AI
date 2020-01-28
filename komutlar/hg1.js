@@ -4,11 +4,13 @@ const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message ,args) => {
-    if (!args[0]) return message.channel.send(`${client.emojis.get("665930842786365473")} **Eksik Veya Hatalı Komut Kullanımı:** Doğru Kullanım: \`${ayarlar.prefix}hgkanal ayarla #kanal /${ayarlar.prefix}hgkanal kapat\``)
   
   
-  let ayar = args[0]
+  let mesaj = args.slice(0).join(' ');
+  if(mesaj.length < 5) return message.channel.send('Eksik Komut Kullanımı: Doğru Kullanım:' + ${prefix}hg `mesaj` + '\n Kanal Ayarlamak İçin:${prefix}hg ayarla #kanal\n Kapatmak İçin: ${prefix}hg kapat')
   
+ message.channel.send('<a:basarl:626445944258560012> Sayaç Hoşgeldin mesajını `'+mesaj+'` Olarak ayarladım.') 
+ db.set(`sayachgmsj_${message.guild.id}`, mesaj)  
   
   
   

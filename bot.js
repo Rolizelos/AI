@@ -189,16 +189,19 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
 
 // Main Dosyanız.
 client.on('guildMemberAdd', async member => {
+  
+   let hgmsj = await db.fetch(`sayachgmsj_${member.guild.id}`)
+   let bbmsj = await db.fetch(`sayacbbmsj_${member.guild.id}`)
+  
   let member2 = member.user
   var user = member2   
-
   let dbayarfalanfilan = await db.fetch(`hgayar1${member.guild.id}`)
   let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
-  
+
   const bergy = new Discord.RichEmbed()
-  .setAuthor(message.guild.iconURL, user.tag)
   .setColor('RED')
-  .setDescription(`***${message.guild.name} Sunucusu*** | Sunucuya Katıldı\n \ Hoşgeldin Bro!`)
+  .setAuthor(`${message.guild.iconURL} ${user.tag}`)
+  .setDescription(`${hgmsj}`)
   .setFooter(message.guild.name, message.guild.iconURL)
   message.send(bergy)
 })
