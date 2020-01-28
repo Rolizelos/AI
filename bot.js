@@ -185,7 +185,9 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
 
 })
 
+
 const invites = {};
+
 
 const wait = require('util').promisify(setTimeout);
 
@@ -201,6 +203,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
+
   
   
  
@@ -221,11 +224,10 @@ client.on('guildMemberAdd', member => {
     
     
      db.add(`davet_${invite.inviter.id + member.guild.id}`,1)
-let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)let bbmsj = await db.fetch(`bbmesaj_${member.guild.id}`)
-
-   member.guild.channels.get(channel).send(`:inbox_tray: ** <@${member.id}> Joined**; İnvited by **${davetçi.tag}** (`+'**'+bal+'** invites)')
+let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
+let bbmsj = db.fetch(`bbmesaj_${member.guild.id}`)
+   member.guild.channels.get(channel).send(`${bbmsj}`)
   })
-
 });
 client.on("guildMemberRemove", async member => {
 
