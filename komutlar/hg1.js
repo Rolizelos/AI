@@ -6,14 +6,20 @@ const ayarlar = require('../ayarlar.json')
 exports.run = async (client, message ,args) => {
     if (!args[0]) return message.channel.send(`${client.emojis.get("665930842786365473")} **Eksik Veya Hatalı Komut Kullanımı:** Doğru Kullanım: \`${ayarlar.prefix}hgkanal ayarla #kanal /${ayarlar.prefix}hgkanal kapat\``)
   
+  
+  let ayar = args[0]
+  
+  
+  
+  
   let cfxkanal = message.mentions.channels.first()
   if(args[0] == 'ayarla') {
-  db.set(`cfxdbayar${message.guild.id}`, cfxkanal.id)
+  db.set(`hgayar1${message.guild.id}`, cfxkanal.id)
   message.channel.send(`**Kanal Ayarlandı! \nAyarlanan Kanal:** \`${cfxkanal.name}\``)
     return;
   }
   if(args[0] == 'kapat') {
-  db.delete(`cfxdbayar${message.guild.id}`)
+  db.delete(`hgayar1${message.guild.id}`)
   message.channel.send(`**Hoşgeldin Kanalı Kapatıldı!**`)
     return;
   }
@@ -26,6 +32,6 @@ exports.conf = {
 };
   //CodeFENIX //CFX
 exports.help = {
-  name: "hgkanal",
+  name: "anıl",
   by_codefenix: "copyright JaimiTR"
 }; 

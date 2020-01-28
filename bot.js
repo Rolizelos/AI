@@ -192,18 +192,15 @@ client.on('guildMemberAdd', async member => {
   let member2 = member.user
   var user = member2   
 
-  let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
+  let dbayarfalanfilan = await db.fetch(`hgayar1${member.guild.id}`)
   let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
-
+  
   const bergy = new Discord.RichEmbed()
-  .setAuthor(message.guild.name, message.guild.iconURL)
+  .setAuthor(message.guild.iconURL, user.tag)
   .setColor('RED')
-  .setDescription(
-  `${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! `)
+  .setDescription(`***${message.guild.name} Sunucusu*** | Sunucuya Katıldı\n \ Hoşgeldin Bro!`)
   .setFooter(message.guild.name, message.guild.iconURL)
   message.send(bergy)
-  message.send(`${member} **Hoşgeldin!**`)
-
 })
 
 
