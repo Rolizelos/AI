@@ -171,16 +171,6 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
   let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
   let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
 
-  
-  member.guild.fetchInvites().then(guildInvites => {
-    
-    const ei = invites[member.guild.id];
-  
-    invites[member.guild.id] = guildInvites;
- 
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-  
-  
   const bergy = new Discord.RichEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RED')
@@ -193,6 +183,57 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
   message.send(bergy)
   message.send(`${member} **Hoşgeldin!**`)
 
+})
+
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+client.on('guildMemberAdd', member => {
+  
+  
+ 
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    if (db.has(`dKanal_${member.guild.id}`) === false) return
+    const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
+    
+    const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+    const davetçi = client.users.get(invite.inviter.id);
+     db.add(`davet_${invite.inviter.id + member.guild.id}`,1)
+let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
+   member.guild.channels.get(channel).send(`:inbox_tray: ** <@${member.id}> Joined**; İnvited by **${davetçi.tag}** (`+'**'+bal+'** invites)')
+  })
+
+});
+client.on("guildMemberRemove", async member => {
+
+    member.guild.fetchInvites().then(guildInvites => {
+
+      const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+       db.subtract(`davet_${invite.inviter.id + member.guild.id}`,1)
+    })
 })
 
 
