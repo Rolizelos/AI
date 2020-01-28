@@ -185,22 +185,26 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
 
 })
 
-client.on("message", async msg => {  
-const diauyetekst = new Discord.RichEmbed()
-.setDescription(`** :gem: Diamond Üyemiz Aramıza Katıldı!**`)
-.setColor("#c987ff")
-let zamanasimi = 300000
-let dialar = await db.fetch(`cfxz${msg.author.id}`)
-let diadb = await db.fetch(`diasure${msg.author.id}`);
-if (dialar == 'diamond') {  
-if (diadb !== null && zamanasimi - (Date.now() - diadb) > 0) {
-let time = ms(zamanasimi - (Date.now() - diadb)); } else {
-if(msg.author.bot) return;   
-if (msg.content.length > 1) {
-db.set(`diasure${msg.author.id}`, Date.now());
-msg.channel.send(diauyetekst).then(msg => { msg.delete(10000) })}}}})
+//HG1
 
+// Main Dosyanız.
+client.on('guildMemberAdd', async member => {
+  let member2 = member.user
+  var user = member2   
 
+  let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
+  let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
+
+  const bergy = new Discord.RichEmbed()
+  .setAuthor(message.guild.name, message.guild.iconURL)
+  .setColor('RED')
+  .setDescription(
+  `${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! `)
+  .setFooter(message.guild.name, message.guild.iconURL)
+  message.send(bergy)
+  message.send(`${member} **Hoşgeldin!**`)
+
+})
 
 
 client.login(process.env.TOKEN);
