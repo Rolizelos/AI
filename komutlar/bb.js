@@ -16,12 +16,12 @@ exports.run = async (client, message ,args) => {
   
   
   let cfxkanal = message.mentions.channels.first()
-  if(args[1] == 'ayarla') {
+  if(args[0] == 'ayarla') {
   db.set(`bbayar1${message.guild.id}`, cfxkanal.id)
   message.channel.send(`**Kanal Ayarlandı! \nAyarlanan Kanal:** \`${cfxkanal.name}\``)
     return;
   }
-  if(args[1] == 'kapat') {
+  if(args[0] == 'kapat') {
   db.delete(`bbayar1${message.guild.id}`)
   message.channel.send(`**Görüşürüz Kanalı Kapatıldı!**`)
     return;
