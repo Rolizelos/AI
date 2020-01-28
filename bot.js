@@ -171,6 +171,16 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
   let dbayarfalanfilan = await db.fetch(`cfxdbayar${member.guild.id}`)
   let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
 
+  
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+  
+  
   const bergy = new Discord.RichEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RED')
