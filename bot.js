@@ -200,9 +200,9 @@ client.on('guildMemberAdd', async member => {
 
   const bergy = new Discord.RichEmbed()
   .setColor('RED')
-  .setAuthor(`${message.guild.iconURL} ${user.tag}`)
+  .setAuthor(user.tag, user.avatarURL)
+  .setThumbnail(user.avatarURL)
   .setDescription(`${hgmsj}`)
-  .setFooter(message.guild.name, message.guild.iconURL)
   message.send(bergy)
 })
 
