@@ -206,6 +206,8 @@ client.on('guildMemberAdd', member => {
  
   member.guild.fetchInvites().then(guildInvites => {
     
+    
+    
     if (db.has(`dKanal_${member.guild.id}`) === false) return
     const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
     
@@ -216,8 +218,11 @@ client.on('guildMemberAdd', member => {
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
 
     const davetçi = client.users.get(invite.inviter.id);
+    
+    
      db.add(`davet_${invite.inviter.id + member.guild.id}`,1)
-let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
+let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)let bbmsj = await db.fetch(`bbmesaj_${member.guild.id}`)
+
    member.guild.channels.get(channel).send(`:inbox_tray: ** <@${member.id}> Joined**; İnvited by **${davetçi.tag}** (`+'**'+bal+'** invites)')
   })
 

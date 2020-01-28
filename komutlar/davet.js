@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const fs = require('fs');
 var ayarlar = require('../ayarlar.json');
+var prefix = ayarlar.prefix
 //let kanal = JSON.parse(fs.readFileSync("././jsonlar/sKanal.json", "utf8"));
 
 exports.run = async (client, message, args, config) => {
@@ -12,10 +13,11 @@ exports.run = async (client, message, args, config) => {
   
   let channel = message.mentions.channels.first()
   
-    if (!channel) {
-        return message.reply("** Doğru Kullanım ● .davettakip #kanal **")
-    }
-
+    let mesaj = args.slice(0).join(' ');
+  if(mesaj.length < 5) return message.channel.send(`**>>> Eksik Komut Kullanımı: Doğru Kullanım: \`${prefix}bb <mesaj>\`\nKanal Ayarlamak İçin: \`${prefix}bb ayarla #kanal\`\nKanalı Kapatmak İçin: \`${prefix}bb kapat\`**`)
+  
+ message.channel.send('Görüşürüz Mesajını `'+mesaj+'` Olarak ayarladım.') 
+ db.set(`bbmesaj_${message.guild.id}`, mesaj)  
   
     db.set(`dKanal_${message.guild.id}`, "<#"+channel.id+">")
   
