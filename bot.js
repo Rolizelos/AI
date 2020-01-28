@@ -186,12 +186,9 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
 })
 
 //HG1
-
-// Main Dosyanız.
 client.on('guildMemberAdd', async member => {
   
    let hgmsj = await db.fetch(`sayachgmsj_${member.guild.id}`)
-   let bbmsj = await db.fetch(`sayacbbmsj_${member.guild.id}`)
   
   let member2 = member.user
   var user = member2   
@@ -206,5 +203,29 @@ client.on('guildMemberAdd', async member => {
   message.send(bergy)
 })
 
+//BB1
+
+client.on('guildMemberRemove', async member => {
+  
+   let bbmsj = await db.fetch(`bbmesaj_${member.guild.id}`)
+  
+  let member2 = member.user
+  var user = member2   
+  let dbayarfalanfilan = await db.fetch(`bbayar1${member.guild.id}`)
+  let message =  member.guild.channels.find(x => x.id === dbayarfalanfilan)
+
+  const bergy = new Discord.RichEmbed()
+  .setColor('RED')
+  .setAuthor(user.tag, user.avatarURL)
+  .setThumbnail(user.avatarURL)
+  .setDescription(`${bbmsj}`)
+  message.send(bergy)
+})
+
+client.on('message', async message => {
+    if (message.content === '!çık') { // - yerine prefixi yaz
+        client.emit('guildMemberRemove', message.member || await message.guild.fetchMember(message.author));
+    }
+}); 
 
 client.login(process.env.TOKEN);
