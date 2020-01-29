@@ -126,6 +126,23 @@ client.on("message", async msg => {
   }
 });
 
+//OROSPU COCU KAŞAR PİÇ KURULARINI ENGELLEME SİSTEMİ! (BUNU SİLERSEN SENDE OROSPU COCUSUN!)----------------------
+
+
+client.on('guildMemberAdd', member => {
+  if(user.username.includes('.dcw')) {
+    member.ban('dcw üyesi')
+  }
+})
+
+//OROSPU COCU KAŞAR PİÇ KURULARINI ENGELLEME SİSTEMİ! (BUNU SİLERSEN SENDE OROSPU COCUSUN!)----------------------
+
+
+
+
+
+
+
 //OTO TAG ---------------------------------------------------------
 
 client.on('guildMemberAdd', async member => {
