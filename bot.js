@@ -196,7 +196,8 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
 `${client.emojis.get("665930842786365473")}Hoşgeldin ${member} Seninle Beraber ${message.guild.memberCount} Kişiyiz! 
 \n${client.emojis.get("665930842786365473")}Hesap Kuruluş Zamanı: ${gecen} 
 \n${client.emojis.get("665930842786365473")}Bu Kullanıcı: \`${cfxzaman}\` 
-\n${client.emojis.get("665930842786365473")}<#669655941397872680> **Kanalına \`!js\` Yazarak \`JavaScript\` Rolünü Alabilirsin!**`)
+\n${client.emojis.get("665930842786365473")}<#669655941397872680> **Kanalına \`!js\` Yazarak \`JavaScript\` Rolünü Alabilirsin!
+\n${client.emojis.get("665930842786365473")}10 Davetle Erişebileceğin \`JavaScript+\` Rolündeki Kodları Görmek İçin \`!js+\` Yazman Yeterli!**`)
   .setFooter(message.guild.name, message.guild.iconURL)
   message.send(bergy)
   message.send(`${member} **Hoşgeldin!**`)

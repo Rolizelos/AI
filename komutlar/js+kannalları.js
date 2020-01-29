@@ -2,28 +2,27 @@ const Discord = require('discord.js');
 exports.run = function(client, message, args) {
   
   
-    let a = message.guild.channels.find(x => x.id=== '669657282065465371')
-a.children.map(x => x.name)
+    let a = message.guild.channels.find(x => x.id === '669657282065465371')
+    let b = a.children.map(x => x)
   
   const js = new Discord.RichEmbed()
   .setAuthor(`JS+ Kategorisindeki Kanalları:`)
-  .setDescription(`${a}`)
+  .setDescription(`${b.join('\n')}`)
+  .setColor(`PURPLE`)
 
 
-message.channel.send(js)
+message.author.send(js)
 
   
 };
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: [],
   permLevel: 0
 };
 
 exports.help = {
   name: 'js+',
-  description: 'Botun pingini gösterir.',
-  usage: 'ping'
 };
