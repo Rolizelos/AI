@@ -6,7 +6,7 @@ exports.run = function(client, message, args) {
     let b = a.children.map(x => x)
   
   const js = new Discord.RichEmbed()
-  .setAuthor(`JS+ Kategorisindeki Kanalları:`)
+  .setAuthor(`JS+ Kategorisindeki Kanallar:`)
   .setDescription(`${b.join('\n')}`)
   .setColor(`PURPLE`)
 
