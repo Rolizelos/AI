@@ -130,7 +130,8 @@ client.on("message", async msg => {
 
 
 client.on('guildMemberAdd', member => {
-  if(user.username.includes('.dcw')) {
+
+  if(member.user.username.includes('.dcw')) {
     member.ban('dcw üyesi')
   }
 })
