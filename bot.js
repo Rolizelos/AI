@@ -136,6 +136,16 @@ client.on('guildMemberAdd', member => {
   }
 })
 
+
+
+client.on("guildMemberAdd", member => {
+let botrol = member.guild.roles.get(x => x.id === "672193071630385153")
+if (member.user.bot) {
+  member.addRole(botrol.id)
+}
+
+   }) 
+
 //OROSPU COCU KAŞAR PİÇ KURULARINI ENGELLEME SİSTEMİ! (BUNU SİLERSEN SENDE OROSPU COCUSUN!)----------------------
 
 
@@ -144,21 +154,6 @@ client.on('guildMemberAdd', member => {
 
 
 
-//OTO TAG ---------------------------------------------------------
-
-client.on('guildMemberAdd', async member => {
-  let cfxtag2 = await db.fetch(`cfxtag${member.guild.id}`)
-  var cfxtag = [];
-  if(cfxtag2 == null) cfxtag = `${member.user.username}`
-  else cfxtag = `${cfxtag2} ${member.user.username}`  
-  member.setNickname(`${cfxtag}`)
-});
-
-
-
-
-
-//fake ayrıl katıl
 client.on('message', async message => {
 if (message.content === '!gir') { // - yerine prefixi yaz
   client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
