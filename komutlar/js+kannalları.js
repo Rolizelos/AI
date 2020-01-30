@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
   
-  
+  message.channel.bulkDelete(1)
     let a = message.guild.channels.find(x => x.id === '669657282065465371')
     let b = a.children.map(x => x)
   
