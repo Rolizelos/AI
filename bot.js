@@ -129,13 +129,6 @@ client.on("message", async msg => {
 //OROSPU COCU KAŞAR PİÇ KURULARINI ENGELLEME SİSTEMİ! (BUNU SİLERSEN SENDE OROSPU COCUSUN!)----------------------
 
 
-client.on('guildMemberAdd', member => {
-
-  if(member.user.username.includes('.dcw')) {
-    member.ban('dcw üyesi')
-  }
-})
-
 
 
 client.on("guildMemberAdd", member => {
