@@ -4,18 +4,18 @@ const a = require('../ayarlar.json')
  
 exports.run = async function(client, message, args) {
   
-  if(message.channel.id != "678169836832030720") return message.channel.send(':x: **Bu Komutudu <#6696562> Kanalında Kullan!**').then(n => n.delete(5000));
+  if(message.channel.id != "678169836832030720") return message.channel.send(':x: **Bu Komutudu <#678169836832030720> Kanalında Kullan!**').then(n => n.delete(5000));
   
   
   message.channel.bulkDelete(1)
   let user = message.author
     
   const cfx1 = new Discord.RichEmbed()
-  .setDescription(`**Hatalı-Kod-Log Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\``)
+  .setDescription(`**Hatalı-Kod-Log Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}hatalı-kanal ayarla #kanal\``)
   .setColor("#00ff88")
   .setFooter(`ARK | Hatalı-Kod Sistemi.`, client.user.avatarURL)
   const cfx2 = new Discord.RichEmbed()
-  .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
+  .setDescription(`\`${user.tag}\` Lütfen hatalı kodu belirtin.`)
   .setColor("#00ff88")
   .setFooter(`ARK | Hatalı-Kod Sistemi.`, client.user.avatarURL)
 
