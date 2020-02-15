@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 exports.run = function(client, message, args) {
   
   message.channel.bulkDelete(1)
-    let a = message.guild.channels.find(x => x.id === '669657282065465371')
+    let a = message.guild.channels.find(x => x.id === '678180815166767114')
     let b = a.children.map(x => x + x.name)
 
   const js = new Discord.RichEmbed()

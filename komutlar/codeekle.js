@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   message.channel.bulkDelete(1)
   
-   if (!message.member.roles.find('name', 'KOD PAYLAŞIMCI')) return message.channel.send('Bu Kodu Kullanabilmek İçin \`\`Kod Paylaşımcı\`\` Rolüne Sahip Olmalısın!');
+   if (!message.member.roles.find('id', '678178183698317315')) return message.channel.send('Bu Kodu Kullanabilmek İçin \`\`SUPPORT\`\` Rolüne Sahip Olmalısın!');
   
   
    let kanal = args[0]
@@ -11,8 +11,8 @@ exports.run = (client, message, args) => {
   if (!kanal) return message.channel.send("Kanal İsmi Yazmalısın!");
   if (!code) return message.channel.send("Kodunu Yazmalısın!");
   message.delete();
-if (message.guild.channels.find(a => a.name === "JavaScript")) {
-message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "JavaScript")}).then(c => c.send(
+if (message.guild.channels.find(a => a.name === "●▬▬▬▬๑「JavaScript」๑▬▬▬▬▬●")) {
+message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "●▬▬▬▬๑「JavaScript」๑▬▬▬▬▬●")}).then(c => c.send(
 
 
 
@@ -29,7 +29,7 @@ ${code}
   
 message.reply(`${client.emojis.get("669699664039116800")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `).then(n => n.delete(5000));
 } else {
-return message.reply("JavaScript adında bir kategori yok!")
+return message.reply("\`●▬▬▬▬๑「JavaScript」๑▬▬▬▬▬●\` adında bir kategori yok!")
 
     
   
