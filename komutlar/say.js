@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
   const bergy = new Discord.RichEmbed()
 .setColor("GREEN")
-.setAuthor(message.guild.name, message.guild.iconURL)
+.setAuthor(message.guild.name, message.guild.avatarURL)
 .setThumbnail(message.guild.iconURL)  
 .setDescription(`
 ${client.emojis.get("665930842786365473")} | **Sunucudaki \`Toplam Üye\` Sayısı:** \`${message.guild.memberCount}\`
