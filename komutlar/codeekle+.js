@@ -18,16 +18,16 @@ message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels
 
 `**ARK SUNUCUSU KOD PAYLAŞIM KANALI! JavaScript+ KATEGORİSİ!**\n
 **${message.author} Tarafından \`\`${kanal}\`\` İsimli Kod Eklendi! ${message.author} Teşşekkür Ederiz! :heart:\n\n
-${client.emojis.get("669699664039116800")} İşte Kod;**
+${client.emojis.get("678184744537686017")} İşte Kod;**
 
 
 ${code}
 
 
-**:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#669656253806673939> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
+**:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#678169836832030720> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
 
   
-message.reply(`${client.emojis.get("669699664039116800")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `).then(n => n.delete(5000));
+message.reply(`${client.emojis.get("678184744537686017")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `).then(n => n.delete(5000));
 } else {
 return message.reply("JavaScript+ adında bir kategori yok!")
 
