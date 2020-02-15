@@ -47,7 +47,7 @@ message.author.send(cfx4).then(m => {
   db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
 //CodeFENIX //CFX
-     chan.send(`<@&669653086306041868>`).then(m => {
+     chan.send(`<@&678178183698317315>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
