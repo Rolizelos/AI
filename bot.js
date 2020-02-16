@@ -258,4 +258,12 @@ client.on("guildMemberRemove", async member => {
 })
 
 
+client.on('guildMemberAdd', member => {
+if(member.user.bot) {
+let user = member.guild.roles.find(y => y.name === '「❤️」MEMBER')
+let role = member.guild.roles.find(x => x.name === '「🎭」Bot')
+member.addRole(role.id)
+.then(f => f.removeRole(user.id))
+  }        
+
 client.login(process.env.TOKEN);
