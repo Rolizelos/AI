@@ -9,10 +9,10 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı! | ARK SİSTEM BOTU!`,
-            type: 'watching'
+            name: `Junex Development`,
+            type: 'listening'
         },
-        status: 'online'
+        status: 'dnd'
     })
-    console.log(`[ARK SİSTEM]: Giriş Yaptı! Komutlar Yüklendi!`);
+    console.log(`[${client.user.username}]: Giriş Yaptı! Komutlar Yüklendi!`);
 }
