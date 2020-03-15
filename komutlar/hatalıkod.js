@@ -4,7 +4,7 @@ const a = require('../ayarlar.json')
  
 exports.run = async function(client, message, args) {
   
-  if(message.channel.id != "678169836832030720") return message.channel.send(':x: **Bu Komutudu <#678169836832030720> Kanalında Kullan!**').then(n => n.delete(5000));
+  if(message.channel.id != "688799331566092329") return message.channel.send(':x: **Bu Komutudu <#688799331566092329> Kanalında Kullan!**').then(n => n.delete(5000));
   
   
   message.channel.bulkDelete(1)
@@ -13,16 +13,16 @@ exports.run = async function(client, message, args) {
   const cfx1 = new Discord.RichEmbed()
   .setDescription(`**Hatalı-Kod-Log Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}hatalı-kanal ayarla #kanal\``)
   .setColor("#00ff88")
-  .setFooter(`ARK | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  .setFooter(`Junex | Hatalı-Kod Sistemi.`, client.user.avatarURL)
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Lütfen hatalı kodu belirtin.`)
   .setColor("#00ff88")
-  .setFooter(`ARK | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  .setFooter(`Junex | Hatalı-Kod Sistemi.`, client.user.avatarURL)
 
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Hatalı Kod Bildirimin Yetkililere Ulaştı! Yakında Düzeltilir!`)
   .setColor("#00ff88")
-  .setFooter(`ARK | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  .setFooter(`Junex | Hatalı-Kod Sistemi.`, client.user.avatarURL)
 
   
   
@@ -47,7 +47,7 @@ message.author.send(cfx4).then(m => {
   db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
 //CodeFENIX //CFX
-     chan.send(`<@&678178183698317315>`).then(m => {
+     chan.send(`<@&678165769963700224>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)

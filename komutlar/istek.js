@@ -4,7 +4,7 @@ const a = require('../ayarlar.json')
  
 exports.run = async function(client, message, args) {
   
-  if(message.channel.id != "678166461763682324") return message.channel.send(':x: **Bu Komutudu <#678166461763682324> Kanalında Kullan!**').then(n => n.delete(5000));
+  if(message.channel.id != "688799294257627155") return message.channel.send(':x: **Bu Komutudu <#688799294257627155> Kanalında Kullan!**').then(n => n.delete(5000));
   
   
   message.channel.bulkDelete(1)
@@ -13,16 +13,16 @@ exports.run = async function(client, message, args) {
   const cfx1 = new Discord.RichEmbed()
   .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\``)
   .setColor("#00ff88")
-  .setFooter(`ARK | İstek Sistemi.`, client.user.avatarURL)
+  .setFooter(`Junex | İstek Sistemi.`, client.user.avatarURL)
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
   .setColor("#00ff88")
-  .setFooter(`ARK | İstek Sistemi.`, client.user.avatarURL)
+  .setFooter(`Junex | İstek Sistemi.`, client.user.avatarURL)
 
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
   .setColor("#00ff88")
-  .setFooter(`ARK | İstek Sistemi.`, client.user.avatarURL)
+  .setFooter(`Junex | İstek Sistemi.`, client.user.avatarURL)
 
   
   
@@ -42,7 +42,7 @@ exports.run = async function(client, message, args) {
 db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
 //CodeFENIX //CFX
-    chan.send(`<@&678178183698317315>`).then(m => {
+    chan.send(`<@&678165769963700224>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
 .addField(`\n\nKullanıcı Adı`, message.author.username,true)
@@ -90,7 +90,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'istek',
+  name: 'istek-kod',
   description: 'CODEFENIX KOD PAYLASIM',
   usage: 'istek <istediğiniz>'
 };
