@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
    if (!message.member.roles.find('id', '678165769963700224')) return message.channel.send('Bu Kodu Kullanabilmek İçin \`\`Code Sharer\`\` Rolüne Sahip Olmalısın!');
   
   
-   let kanal = args[0]
+   let kanal = '📁'+args[0]
   let code = args.slice(1).join(' ');
   if (!kanal) return message.channel.send("Kanal İsmi Yazmalısın!");
   if (!code) return message.channel.send("Kodunu Yazmalısın!");

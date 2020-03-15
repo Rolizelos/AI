@@ -10,8 +10,8 @@ exports.run = function(client, message) {
 
  var logkanali = "false"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
  var rolismi = "JavaScript" // Verilecek Rol Ismi
-var logkanalid = "669671496532230145"   
-  var guildid = "669638506909401118" // Kullanılacak Sunucu
+var logkanalid = "688797347504717897"   
+  var guildid = "678162896030531594" // Kullanılacak Sunucu
 
 ///////////////// Ana Kod
 message.channel.bulkDelete(1)
