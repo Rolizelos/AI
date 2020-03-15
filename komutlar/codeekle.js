@@ -11,8 +11,8 @@ exports.run = (client, message, args) => {
   if (!kanal) return message.channel.send("Kanal İsmi Yazmalısın!");
   if (!code) return message.channel.send("Kodunu Yazmalısın!");
   message.delete();
-if (message.guild.channels.find(a => a.name === "●▬▬▬▬๑「JavaScript」๑▬▬▬▬▬●")) {
-message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.name === "●▬▬▬▬๑「JavaScript」๑▬▬▬▬▬●")}).then(c => c.send(
+if (message.guild.channels.find(a => a.id === "688788941310001199")) {
+message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.id === "688788941310001199")}).then(c => c.send(
 
 
 
