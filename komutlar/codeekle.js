@@ -29,27 +29,10 @@ ${code}
   
 message.reply(`${client.emojis.get("688789528856625165")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `)
 } else {
-return message.reply("<#688788941310001199> adında bir kategori yok!")
-   if (message.content.toLowerCase().startsWith(prefix + `kapat`)) {
-    if (!message.channel.name.startsWith(`destek-`))
-      return message.channel.send(`Bu komut sadece Destek Talebi kanallarında kullanılabilir!`);
+return message.reply("<#688789268411580442> adında bir kategori yok!")
 
-    var deneme = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setAuthor(`Destek Talebi Kapatma İşlemi`)
-      .setDescription(`Destek talebini kapatmayı onaylamak için, \n10 saniye içinde \`evet\` yazınız.`)
-      .setFooter(`${client.user.username} | Destek Sistemi`);
-    message.channel.send(deneme).then(m => {
-      message.channel
-        .awaitMessages(response => response.content === "evet", {
-          max: 1,
-          time: 10000,
-          errors: ["time"]
-        })
-        .then(collected => {
-          message.channel.delete();
-
-})};
+     
+}};
 
 exports.conf = {
   enabled: true,
