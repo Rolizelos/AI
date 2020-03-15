@@ -6,26 +6,6 @@ const ayarlar = require("../ayarlar.json");
 var prefix = ayarlar.prefix;
 
 exports.run = (client, message, args) => {
-  
- 
-
-  /////////////////////Config
-
- var logkanali = "true"; //log kanalı kullanılacak ise true yapın kullanılmayacaksa false yapın
-var logkanalid = "669660413041836042"   //Log Kanalı Id
-  var guildid = "669638506909401118" // Kullanılacak Sunucu
-///////////////// Ana Kod
-  
-  
-  const cfx1 = new Discord.RichEmbed()
-  .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${prefix}istek-kanal ayarla #kanal\``)
-  .setColor("#00ff88")
-  .setFooter(`THE 100 | ARK`, client.user.avatarURL) 
-  
-  
- if (!logkanali) return message.channel.send(cfx1)
-  
-  
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
   .setColor(0xFF0000)
@@ -39,14 +19,7 @@ var logkanalid = "669660413041836042"   //Log Kanalı Id
   if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
    if (reason.length < 1) return message.reply('Ban sebebini yazmalısın.');
   if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
-
-
-//-------------------------------------------------------------------
-if(logkanali == "true") {
-client.channels.get(logkanalid).send(`✅  | ${user.tag} **Adlı Kullanıcı Sunucudan Banlandı!** \n  **Reason=>** \`\ ${reason} \`\ `)}
-//-------------------------------------------------------------------
   message.guild.ban(user, 2);
-
   const embed = new Discord.RichEmbed()
     .setColor(0xD97634)
     .setTimestamp()
