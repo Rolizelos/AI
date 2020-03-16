@@ -136,7 +136,9 @@ client.on('guildMemberAdd', member => {
   }
 })
 
-
+client.on('ready', ()=>{
+client.channels.get('SES KANALI ID').join()
+})
 
 client.on("guildMemberAdd", member => {
 let botrol = member.guild.roles.get(x => x.id === "672193071630385153")
