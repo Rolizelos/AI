@@ -137,7 +137,7 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on('ready', ()=>{
-client.channels.get('SES KANALI ID').join()
+client.channels.get('688795572907540557').join()
 })
 
 client.on("guildMemberAdd", member => {
