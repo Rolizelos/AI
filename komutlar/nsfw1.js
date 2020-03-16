@@ -9,8 +9,8 @@ exports.run = (client, msg, args) => {
     .end((err, response) => {
       const cfx = new Discord.RichEmbed()
       .setImage(response.body.message)
-      .setDescription(`[Pussy!](https://discordapp.com/oauth2/authorize?client_id=655493168099229709&scope=bot&permissions=805314622)`)
-      .setFooter(`Okeanos | Nsfw Sistem`)
+      .setDescription(`[Pussy!](https://discordapp.com/oauth2/authorize?client_id=665636900895195157&scope=bot&permissions=2146958847)`)
+      .setFooter(`${msg.guild.name} | Nsfw Sistem`)
       msg.channel.send(cfx) 
     });
   } else {
