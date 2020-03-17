@@ -12,10 +12,12 @@ exports.run = (client, message, args) => {
   if (!code) return message.channel.send("Kodunu Yazmalısın!");
   message.delete();
 if (message.guild.channels.find(a => a.id === "688788941310001199")) {
-message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.id === "688788941310001199")}).then(c => c.send(
+message.guild.createChannel(kanal, {type: "text", parent: message.guild.channels.find(a => a.id === "688788941310001199")}).then(c => c.send(new Discord.RichEmbed()
+                                                                                                                                             
 
-
-
+.setColor("DAR")
+.setFooter(message.guild.name, message.guild.iconURL)
+.setDescription(
 `**ARK SUNUCUSU KOD PAYLAŞIM KANALI!**\n
 **${message.author} Tarafından \`\`${kanal}\`\` İsimli Kod Eklendi! ${message.author} Teşekkür Ederiz! :heart:\n\n
 ${client.emojis.get("678184744537686017")} İşte Kod;**
@@ -24,7 +26,7 @@ ${client.emojis.get("678184744537686017")} İşte Kod;**
 ${code}
 
 
-**:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#678169836832030720> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`))
+**:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#678169836832030720> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`)))
 
   
 message.reply(`${client.emojis.get("688789528856625165")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `)
