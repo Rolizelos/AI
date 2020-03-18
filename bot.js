@@ -136,17 +136,7 @@ client.on('guildMemberAdd', member => {
   }
 })
 
-client.on('ready', ()=>{
-client.channels.get('688795572907540557').join()
-})
 
-client.on("guildMemberAdd", member => {
-let botrol = member.guild.roles.get(x => x.id === "672193071630385153")
-if (member.user.bot) {
-  member.addRole(botrol.id)
-}
-
-   }) 
 
 //OROSPU COCU KAŞAR PİÇ KURULARINI ENGELLEME SİSTEMİ! (BUNU SİLERSEN SENDE OROSPU COCUSUN!)----------------------
 
@@ -201,63 +191,6 @@ const gecen = moment.duration(zaman1).format(`DD **[Gün,]** HH **[Saat,]** mm *
 
 })
 
-
-const invites = {};
-
-
-const wait = require('util').promisify(setTimeout);
-
-client.on('ready', () => {
-
-  wait(1000);
-
-  client.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });
-});
-
-client.on('guildMemberAdd', member => {
-
-  
-  
- 
-  member.guild.fetchInvites().then(guildInvites => {
-    
-    
-    
-    if (db.has(`dKanal_${member.guild.id}`) === false) return
-    const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
-    
-    const ei = invites[member.guild.id];
-  
-    invites[member.guild.id] = guildInvites;
- 
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-
-    const davetçi = client.users.get(invite.inviter.id);
-    
-    
-     db.add(`davet_${invite.inviter.id + member.guild.id}`,1)
-let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
-let bbmsj = db.fetch(`bbmesaj_${member.guild.id}`)
-   member.guild.channels.get(channel).send(`${bbmsj}`)
-  })
-});
-client.on("guildMemberRemove", async member => {
-
-    member.guild.fetchInvites().then(guildInvites => {
-
-      const ei = invites[member.guild.id];
-  
-    invites[member.guild.id] = guildInvites;
- 
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-
-       db.subtract(`davet_${invite.inviter.id + member.guild.id}`,1)
-    })
-})
 
 
         
