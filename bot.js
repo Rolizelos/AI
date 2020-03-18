@@ -141,7 +141,7 @@ client.channels.get('688795572907540557').join()
 })
 
 client.on("guildMemberAdd", member => {
-let botrol = member.guild.roles.get(x => x.id === "672193071630385153")
+let botrol = member.guild.roles.get(x => x.id === "689873682470010882")
 if (member.user.bot) {
   member.addRole(botrol.id)
 }
