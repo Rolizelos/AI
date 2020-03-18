@@ -29,7 +29,7 @@ ${code}
 **:heart: Sayın Kullanıcılar Kodda Herhangi Bir Hata Varsa <#678169836832030720> Kanalı Yardımıyla Yetkililere İletin!\n:heart: İyi Günler!**`)))
 
   
-message.reply(`${client.emojis.get("688789528856625165")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `)
+message.reply(`${client.emojis.get("688789528856625165")} **Kodunuz Başarıyla Eklendi!\n Eklenen Kanalın İsmi:** <#${kanal}> `)
 } else {
 return message.reply("<#688789268411580442> adında bir kategori yok!")
 
