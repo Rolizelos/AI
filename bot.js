@@ -123,4 +123,10 @@ client.on("guildMemberAdd", async member => {
   
     }
 });
+
+//---------------------------------
+client.on("guildMemberAdd", async member => {
+member.send("Seni Aramızda Görmekten Mutluluk Duyuyoruz! <#693532845175734332> Kanalında `!js` Yazarak JavaScript Rolüne Sahip Olabilirsin! Tekrardan <#693532845175734332> Kanalında `!roller` Yazarak İnvite İle Alabileceğin Rolleri Görebilirsin! İnşallah Seversin Sunucumuzu <3")
+})
+
 client.login(process.env.TOKEN);

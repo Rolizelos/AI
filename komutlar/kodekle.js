@@ -67,17 +67,6 @@ exports.run = (client, message, args) => {
             return message.reply("<#693564894041210913> adında bir kategori yok!")
             }
         }
-  let cfxkanal = message.mentions.channels.first()
-
-  if(args[0] == 'kanalayarla') {
-	db.set(`kodeklemelog${message.guild.id}`, cfxkanal.id)
-	message.channel.send(`Kodekle Logu ${cfxkanal} olarak ayarlandı.`)
-	return; }
-
-client.channels.get(cfxkanal).send(new Discord.RichEmbed()
-.setColor("GOLD")
-.setDescription(``)             )
-  
       }  
       
 
