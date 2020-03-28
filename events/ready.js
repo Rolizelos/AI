@@ -12,7 +12,7 @@ client.user.setPresence({
             name: `Junex Development`,
             type: 'listening'
         },
-        status: 'dnd'
+        status: 'online'
     })
     console.log(`[${client.user.username}]: Giriş Yaptı! Komutlar Yüklendi!`);
 }
