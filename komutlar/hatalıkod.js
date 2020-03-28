@@ -4,7 +4,7 @@ const a = require('../ayarlar.json')
  
 exports.run = async function(client, message, args) {
   
-  if(message.channel.id != "688799331566092329") return message.channel.send(':x: **Bu Komutudu <#688799331566092329> Kanalında Kullan!**').then(n => n.delete(5000));
+  if(message.channel.id != "693533731947806801") return message.channel.send(':x: **Bu Komutudu <#693533731947806801> Kanalında Kullan!**').then(n => n.delete(5000));
   
   
   message.channel.bulkDelete(1)
@@ -13,16 +13,16 @@ exports.run = async function(client, message, args) {
   const cfx1 = new Discord.RichEmbed()
   .setDescription(`**Hatalı-Kod-Log Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}hatalı-kanal ayarla #kanal\``)
   .setColor("#00ff88")
-  .setFooter(`Junex | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)
   const cfx2 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Lütfen hatalı kodu belirtin.`)
   .setColor("#00ff88")
-  .setFooter(`Junex | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)
 
   const cfx4 = new Discord.RichEmbed()
   .setDescription(`\`${user.tag}\` Hatalı Kod Bildirimin Yetkililere Ulaştı! Yakında Düzeltilir!`)
   .setColor("#00ff88")
-  .setFooter(`Junex | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)
 
   
   
@@ -34,19 +34,19 @@ exports.run = async function(client, message, args) {
     if (code.length < 1) return message.channel.send(cfx2);
   if (message.author) {
 
-//CodeFENIX // CFX
+
 
 
 
 message.author.send(cfx4).then(m => {
   m.delete(300000)
 })
-//CodeFENIX //CFX
+
 
 
   db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
-//CodeFENIX //CFX
+
      chan.send(`<@&678165769963700224>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
@@ -56,13 +56,12 @@ chan.send(new Discord.RichEmbed()
 .addField("Sayın Yetkililer! Kod Düzeltildiyse `✅` Buna, Düzeltilmediyse Veya Hatasız `❎` Buna Basınız! Boş Yere Kullanan Kişiler Ceza Alıcaktır! ", "** **")          
 .setThumbnail(message.author.avatarURL))
 .then(async function(sentEmbed) {
-     //CodeFENIX //CFX
+
         const emojideistir = ["✅", "❎", "🔒"];
         const filter = (reaction) =>
-     //CodeFENIX //CFX 
+
           emojideistir.includes(reaction.emoji.name)
 
-     //CodeFENIX //CFX 
         await sentEmbed.react(emojideistir[0]).catch(function() {});
         await sentEmbed.react(emojideistir[1]).catch(function() {});
         await sentEmbed.react(emojideistir[2]).catch(function() {});
@@ -80,13 +79,8 @@ chan.send(new Discord.RichEmbed()
      
 })})
 })  
-    
-    
-    
-    
 }};
 
-// CodeFENIX // CFX
 exports.conf = {
   enabled: true,
   guildOnly: false, 
@@ -95,7 +89,5 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'hatalı-kod',
-  description: 'CODEFENIX KOD PAYLASIM',
-  usage: 'istek <istediğiniz>'
+  name: 'hata'
 };
