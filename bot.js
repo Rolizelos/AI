@@ -106,7 +106,21 @@ client.elevation = message => {
 
 //------------------------------------------
 
+client.on("guildMemberAdd", async member => {
 
-        
+  let botrol = await db.fetch(`bototorol_${member.guild.id}`);
+  let botrol2 = member.guild.roles.find('id', botrol);
+  if (!botrol2) return;
 
+   //dcs ekibi
+
+  
+    if (botrol) {
+      if (member.user.bot) {
+        member.addRole(botrol2)
+        client.channels.get("693527212216942612").send(` \`${member.user.tag}\` adlı bota \`${botrol2.name}\` rolü verildi.`)
+      }
+  
+    }
+});
 client.login(process.env.TOKEN);
