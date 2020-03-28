@@ -5,13 +5,10 @@ exports.run = function(client, message, args) {
     let a = message.guild.channels.find(x => x.id === '688789268411580442')
     let b = a.children.map(x => x +  x.name)
 
-  const js = new Discord.RichEmbed()
+message.author.send(new Discord.RichEmbed()
   .setAuthor(`JS+ Kategorisindeki Kanallar:`)
   .setDescription(`${b.join('\n')}`)
-  .setColor(`PURPLE`)
-
-
-message.author.send(js)
+  .setColor(`PURPLE`))
 
   
 };

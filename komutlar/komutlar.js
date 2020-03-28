@@ -16,7 +16,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: 'komutlar1',
+  name: 'komutlar',
   description: 'Botta bulunan tüm komutları gösterir',
   usage: 'komutlar'
 };
