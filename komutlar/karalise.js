@@ -10,7 +10,7 @@ let cfxkanal2 = message.guild.channels.find('id', cfxkaralistekanaldb)
 let cfxkanal = message.mentions.channels.first()
 const karaliste = new Discord.RichEmbed()
 .setColor(`RED`)
-.setTitle(`${client.emojis.get("665930842786365473")} ARK KARALİSTE`)
+.setTitle(`${client.emojis.get("665930842786365473")} ${message.guild.name} KARALİSTE`)
 .setDescription(`> **Karaliste Logunu Ayarlamak İçin:** \`${prefix}karaliste kanalayarla #kanal\` \n > **Karalisteye Birini Eklemek İçin:** \`${prefix}karaliste ekle ID\` \n > **Karalisteden Birini Silmek İçin:** \`${prefix}karaliste kaldır ID\` \n > **Karaliste Log Kanalını Kapatmak İçin:** \`${prefix}karaliste kanalsıfırla\` \n > **Sistemi Sıfırlamak İçin:** \`${prefix}karaliste sıfırla\` `);
 if(!args[0]) return message.channel.send(karaliste)
 
