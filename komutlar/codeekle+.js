@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   message.channel.bulkDelete(1)
   
-   if (!message.member.roles.find('id', '678165769963700224')) return message.channel.send('Bu Kodu Kullanabilmek İçin \`\`Code Sharer\`\` Rolüne Sahip Olmalısın!');
+   if (!message.member.roles.find('id', '693562539891621938')) return message.channel.send('Bu Kodu Kullanabilmek İçin <@693562539891621938> Rolüne Sahip Olmalısın!');
   
   
    let kanal = '📁'+args[0]
