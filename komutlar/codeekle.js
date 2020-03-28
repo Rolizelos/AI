@@ -36,7 +36,7 @@ if (args[0] == 'logayarla') {
 \`${gonderen.tag}\`; \n
 \`${args[2]}\` Kanalını oluşturdum ve belirttiğin kodu kanalın içine attım. \n
 ${JSCODE}`)
-      cfx.setFooter(`© FENIX Development`)
+      cfx.setFooter(`© ${message.guild.name}`)
       cfx.setColor("#00ff88")
       cfx.setTitle('Basit')
 
@@ -50,7 +50,7 @@ kanalog.send(new Discord.RichEmbed()
   .setDescription(`
 \`${gonderen.tag}\` adlı yetkili tarafından **basit** kodlar kategorisinde,
 ` + JSCODE + ` kanalı oluşturuldu ve içerisine yeni kod eklendi.`)
-  .setFooter(`© FENIX Development`)
+  .setFooter(`© ${message.guild.name}`)
   .setColor("#00ff88")) 
 })
 return;
@@ -75,7 +75,7 @@ return;
 \`${gonderen.tag}\`; \n
 \`${args[2]}\` Kanalını oluşturdum ve belirttiğin kodu kanalın içine attım. \n
 ${JSCODE}`)
-      cfx.setFooter(`© FENIX Development`)
+      cfx.setFooter(`© ${message.guild.name}`)
       cfx.setColor("#fff000")
       cfx.setTitle('Orta seviye')
       message.channel.sendEmbed(cfx); 
@@ -88,7 +88,7 @@ kanalog.send(new Discord.RichEmbed()
   .setDescription(`
 \`${gonderen.tag}\` adlı yetkili tarafından **orta seviye** kodlar kategorisinde,
 ` + JSCODE + ` kanalı oluşturuldu ve içerisine yeni kod eklendi.`)
-  .setFooter(`© FENIX Development`)
+  .setFooter(`© ${message.guild.name}`)
   .setColor("#fff000"))
   })
 return;
@@ -113,7 +113,7 @@ return;
 \`${gonderen.tag}\`; \n
 \`${args[2]}\` Kanalını oluşturdum ve belirttiğin kodu kanalın içine attım. \n
 ${JSCODE}`)
-      cfx.setFooter(`© FENIX Development`)
+      cfx.setFooter(`© ${message.guild.name}`)
       cfx.setColor("#ff0000")
       cfx.setTitle('Zor seviye')
       message.channel.sendEmbed(cfx); 
@@ -126,7 +126,7 @@ kanalog.send(new Discord.RichEmbed()
   .setDescription(`
 \`${gonderen.tag}\` adlı yetkili tarafından **zor seviye** kodlar kategorisinde,
 ` + JSCODE + ` kanalı oluşturuldu ve içerisine yeni kod eklendi.`)
-  .setFooter(`© FENIX Development`)
+  .setFooter(`© ${message.guild.name}`)
   .setColor("#ff0000"))
   })
 return;
