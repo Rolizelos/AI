@@ -19,7 +19,7 @@ if (args[0] == 'logayarla') {
 }
 
   if(args[0] == 'paylaş' && args[1] == 'basit'){
-  let JS = message.guild.channels.find(x => x.id === "688788941310001199");
+  let JS = message.guild.channels.find(x => x.id === "693559264652034209");
   message.guild.createChannel(args[2], "text").then(async JSCODE => {  
   let code = args.slice(3).join(' ');
   const cfx = new Discord.RichEmbed() 
