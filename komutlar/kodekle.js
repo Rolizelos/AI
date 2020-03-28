@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
-
+const db = require("quick.db")
 exports.run = (client, message, args) => {
         let prefix = ayarlar.prefix
 
@@ -59,7 +59,7 @@ exports.run = (client, message, args) => {
 
             `**${message.guild.name} SUNUCUSU KOD PAYLAŞIM KANALI! Altayapı KATEGORİSİ!**\n
             **${message.author} Tarafından \`\`${kanal}\`\` İsimli Altyapı Eklendi! ${message.author} Teşekkür Ederiz! :heart:\n\n
-            ${client.emojis.get("693533313180368945")} İşte Altaypı;**
+            ${client.emojis.get("693533313180368945")} İşte Altayapı;**
 
             ${code}`))
             message.reply(`${client.emojis.get("693533190580731905")} **Kodunuz Başarıyla Altyapı Kategorisine Eklendi!\n Eklenen Kanalın İsmi:** \`\`${kanal}\`\` `).then(n => n.delete(5000));
@@ -67,10 +67,19 @@ exports.run = (client, message, args) => {
             return message.reply("<#693564894041210913> adında bir kategori yok!")
             }
         }
+  let cfxkanal = message.mentions.channels.first()
 
-        }  
-      
+  if(args[0] == 'kanalayarla') {
+	db.set(`kodeklemelog${message.guild.id}`, cfxkanal.id)
+	message.channel.send(`Kodekle Logu ${cfxkanal} olarak ayarlandı.`)
+	return; }
+
+client.channels.get(cfxkanal).send(new Discord.RichEmbed()
+.setColor("GOLD")
+.setDescription(``)             )
   
+      }  
+      
 
 exports.conf = {
   enabled: true,
