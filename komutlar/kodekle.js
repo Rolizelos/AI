@@ -3,9 +3,16 @@ const ayarlar = require('../ayarlar.json')
 const db = require("quick.db")
 exports.run = (client, message, args) => {
         let prefix = ayarlar.prefix
-if(!args[0]) {
-message.channel.send(new Discord.RichEmbed()
-                    )}
+//if(args[0]) return
+//message.channel.send(new Discord.RichEmbed()
+//.setColor("GOLD")
+.setAuthor(`Kod Ekleme Sistemi!`)
+.setDescription(`Kod Eklemek İçin \`3\` Adet Kategori Bulunmaktadır!`)
+.addField("**__Kullanım:__**", `
+${prefix}kodekle js <kanalismi> <kod (açıklama isterseniz yazabilirsiniz!)>
+${prefix}kodekle js+ <kanalismi> <kod (açıklama isterseniz yazabilirsiniz!)>
+${prefix}kodekle altyapı <kanalismi> <kod (açıklama isterseniz yazabilirsiniz!)>`)                    
+.setFooter(`Komutu Kullanan: ${message.author.tag}`))
         if(args[0] == 'js') {
             let kanal = '📁'+args[1]
             let code = args.slice(2).join(' ');
