@@ -3,8 +3,9 @@ const ayarlar = require('../ayarlar.json')
 const db = require("quick.db")
 exports.run = (client, message, args) => {
         let prefix = ayarlar.prefix
-
-  
+if(!args[0]) {
+message.channel.send(new Discord.RichEmbed()
+                    )}
         if(args[0] == 'js') {
             let kanal = '📁'+args[1]
             let code = args.slice(2).join(' ');
