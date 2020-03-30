@@ -3,6 +3,8 @@ const ayarlar = require('../ayarlar.json')
 const db = require("quick.db")
 exports.run = (client, message, args) => {
         let prefix = ayarlar.prefix
+if (!message.member.roles.find('id', '693562539891621938')) return message.channel.send('Bu Kodu Kullanabilmek İçin <@&693562539891621938> Rolüne Sahip Olmalısın!');
+  
 //if(args[0]) return
 //message.channel.send(new Discord.RichEmbed()
 //.setColor("GOLD")
