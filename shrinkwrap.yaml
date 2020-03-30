@@ -74,6 +74,7 @@ dependencies:
   passport-strategy: 1.0.0
   path: 0.12.7
   porn: 0.0.1
+  pornsearch: 2.4.3
   quick.db: 7.0.0-b22
   random-puppy: 1.1.0
   randomstring: 1.1.5
@@ -697,6 +698,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==
+  /axios/0.15.3:
+    dependencies:
+      follow-redirects: 1.0.0
+    dev: false
+    resolution:
+      integrity: sha1-LJ1jiy4ZGgjqHWzJiOrda6W9wFM=
   /axios/0.18.1:
     dependencies:
       follow-redirects: 1.5.10
@@ -1129,7 +1136,7 @@ packages:
       integrity: sha1-btAhFz4vy0htestFxgCahW9kcHE=
   /babel-runtime/6.26.0:
     dependencies:
-      core-js: 2.6.9
+      core-js: 2.6.11
       regenerator-runtime: 0.11.1
     dev: false
     resolution:
@@ -1649,6 +1656,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-wjHvTcX/boIoGOrO4b12G3zie0v9TBm/Ljg2WmLPbnmOGhYjLkKd2FQaVkzzAhl6KqJkOHspfIcgoE7uk5djhQ==
+  /core-js/2.6.11:
+    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
   /core-js/2.6.9:
     dev: false
     requiresBuild: true
@@ -2399,6 +2412,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-Y1GUDo39ez4aHAw7MysnUD5JzYX+WaIj8I57kO3aEPT1fFRL4sr7mjei97FgnwhAyyzRYmQZaTHb2+9uZ1dPtg==
+  /follow-redirects/1.0.0:
+    dependencies:
+      debug: 2.6.9
+    dev: false
+    resolution:
+      integrity: sha1-jjQpjL0uF28lTv/sdaHHjMhJ/Tc=
   /follow-redirects/1.5.10:
     dependencies:
       debug: 3.1.0
@@ -4308,6 +4327,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-76quRf+/Bpku7+IFPtjjKOJhxRI=
+  /pornsearch/2.4.3:
+    dependencies:
+      axios: 0.15.3
+      babel-runtime: 6.26.0
+      cheerio: 0.22.0
+    dev: false
+    resolution:
+      integrity: sha512-ew4DEQCb2xzIJzTEHhjLR906gcI5DSF7XIu5pW9Z1CsdX5MjANr5ALJL3vX+FHk0w/YLGAOROPvBLv5cceuJ7Q==
   /prebuild-install/2.5.3:
     dependencies:
       detect-libc: 1.0.3
@@ -5949,6 +5976,7 @@ specifiers:
   passport-strategy: ^1.0.0
   path: ^0.12.7
   porn: 0.0.1
+  pornsearch: ^2.4.3
   quick.db: ^7.0.0-b17
   random-puppy: ^1.1.0
   randomstring: ^1.1.5

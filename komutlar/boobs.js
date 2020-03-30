@@ -1,44 +1,35 @@
 const Discord = require('discord.js');
-const snekfetch = require('snekfetch');
-const errors = require('../../assets/json/errors');
-const { Command } = require('../../commando');
+const a = require('../ayarlar.json');
+const db = require('quick.db');
+const Pornsearch = require('pornsearch').default;
 
-module.exports = class BoobsCommand extends Command {
-    constructor(client) {
-        super(client, {
-            name: 'boobs',
-            aliases: ['boobies', 'bobs'],
-            group: 'nsfw',
-            memberName: 'boobs',
-            guildOnly: true,
-            description: 'Show a picture of boobs!',
-            details: 'This command can only be used in NSFW channels!',
-            examples: ['~boobs'],
-            throttling: {
-                usages: 1,
-                duration: 3
-            }
-        });
-    }
+exports.run = async (client, message, args) => {
+ 
 
-    async run(message) {
-        var errMessage = errors[Math.round(Math.random() * (errors.length - 1))];
-        if (!message.channel.nsfw) {
-            message.react('💢');
-            return message.channel.send(errMessage);
+        var s = message.content.split(/\s+/g).slice(1).join(" ");
 
-        } else {
-
-            const id = [Math.floor(Math.random() * 10930)];
-            const res = await snekfetch.get(`http://api.oboobs.ru/boobs/${id}`);
-            const preview = res.body[0]["PREVIEW".toLowerCase()];
-            const image = `http://media.oboobs.ru/${preview}`;
-
-            const embed = new Discord.MessageEmbed()
-                .setFooter('http://oboobs.ru/')
-                .setImage(image)
-                .setColor('#CEA0A6');
-            return message.channel.send({ embed });
+        if (!s) {
+            return message.channel.send('Please provide me something to search for!')
         }
-    }
-}
+
+        var Searcher = new Pornsearch(s);
+
+        try {
+            Searcher.videos()
+                .then(videos => message.channel.send(videos[1].url));
+
+            return null;
+
+        } catch (err) {
+            return message.channel.send(`No results found for **${s}**`)
+        }}
+  exports.conf = {
+  enabled: true,
+  guildOnly: true,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'p',
+};
