@@ -5,7 +5,7 @@ const superagent = require('superagent');
 exports.run = (client, msg, args) => {
   if (msg.channel.nsfw === true) {
     superagent.get('https://nekobot.xyz/api/image')
-    .query({ type: 'anal'}) 
+    .query({ type: 'boobies'}) 
     .end((err, response) => {
        const cfx = new Discord.RichEmbed()
       .setImage(response.body.message)
