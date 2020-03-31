@@ -129,16 +129,20 @@ client.on("guildMemberAdd", async member => {
 member.send("Seni Aramızda Görmekten Mutluluk Duyuyoruz! <#693532845175734332> Kanalında `!js` Yazarak JavaScript Rolüne Sahip Olabilirsin! Tekrardan <#693532845175734332> Kanalında `!roller` Yazarak İnvite İle Alabileceğin Rolleri Görebilirsin! İnşallah Seversin Sunucumuzu <3 Junex Development Ekibi!")
 })
 
-client.on("ready", async message => {
+client.on("ready", () => {
   setInterval(() => {
     let botdurum = client.channels.find(c => c.id === "693553095325515916");
-    const botistatistik = new Discord.RichEmbed()
-      .setColor("GREEN")
-      .addField(`** **`, `Sunucu: ${message.guild.name}`)
-          .addField(`** **`, `Sunucudaki Üye Sayısı: ${message.memberCount}`)
-      .setTimestamp();
-    botdurum.send(botistatistik);
-  }, 30000);
-});
-
+    let guild = botdurum.guild.id
+    const botistatistik =  new Discord.RichEmbed()
+      .setColor("RED")
+      .setThumbnail(botdurum.guild.iconURL)
+      .setTitle(`${botdurum.guild.name}  Sunucu İstatistik!`)
+      .addField(`** **`, `**Sunucu:** \`${botdurum.guild.name}\``)
+      .addField(`** **`, `**Sunucu Sahibi:** <@${botdurum.guild.owner.id}>`)
+      .addField(`** **`, `**Sunucudaki Üye Sayısı:** \`${botdurum.guild.memberCount}\``)
+      .setFooter(`${botdurum.guild.name} İstatistik!`, botdurum.guild.iconURL)
+      .setTimestamp(); 
+    botdurum.send(botistatistik)
+    }, 200000);
+});  
 client.login(process.env.TOKEN);
