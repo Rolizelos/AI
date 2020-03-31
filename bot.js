@@ -145,4 +145,7 @@ client.on("ready", () => {
     botdurum.send(botistatistik)
     }, 200000);
 });  
+
+
+
 client.login(process.env.TOKEN);
