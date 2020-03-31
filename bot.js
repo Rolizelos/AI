@@ -129,4 +129,16 @@ client.on("guildMemberAdd", async member => {
 member.send("Seni Aramızda Görmekten Mutluluk Duyuyoruz! <#693532845175734332> Kanalında `!js` Yazarak JavaScript Rolüne Sahip Olabilirsin! Tekrardan <#693532845175734332> Kanalında `!roller` Yazarak İnvite İle Alabileceğin Rolleri Görebilirsin! İnşallah Seversin Sunucumuzu <3 Junex Development Ekibi!")
 })
 
+client.on("ready", async message => {
+  setInterval(() => {
+    let botdurum = client.channels.find(c => c.id === "693553095325515916");
+    const botistatistik = new Discord.RichEmbed()
+      .setColor("GREEN")
+      .addField(`** **`, `Sunucu: ${message.guild.name}`)
+          .addField(`** **`, `Sunucudaki Üye Sayısı: ${message.memberCount}`)
+      .setTimestamp();
+    botdurum.send(botistatistik);
+  }, 30000);
+});
+
 client.login(process.env.TOKEN);
