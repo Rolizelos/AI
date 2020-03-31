@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
-  
-  message.channel.bulkDelete(1)
-    let a = message.guild.channels.find(x => x.id === '688789268411580442')
-    let b = a.children.map(x => x +  x.name)
-
+let a = message.guild.channels.find(x => x.id === '688789268411580442')
+let b = a.children.map(x => x +  x.name)
+let c = message.guild.channels.find(x => x.id === '688789268411580442')
+let d = c.children.map(x => x +  x.name)
+let e = message.guild.channels.find(x => x.id === '688789268411580442')
+let f = e.children.map(x => x +  x.name)
 message.author.send(new Discord.RichEmbed()
-  .setAuthor(`JS+ Kategorisindeki Kanallar:`)
+  .setAuthor(`${message.guild.name} Adlı Sunucudaki Premium Kodl`)
   .setDescription(`${b.join('\n')}`)
   .setColor(`PURPLE`))
 
