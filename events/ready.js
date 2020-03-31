@@ -9,7 +9,7 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `Junex Development`,
+            name: `${prefix}js / ${prefix}kodlar`,
             type: 'listening'
         },
         status: 'online'
