@@ -1,4 +1,4 @@
-aconst Discord = require('discord.js');
+const Discord = require('discord.js');
 const db = require('quick.db');
 // ONLY CODE
 exports.run = async (client, message, args) => {
@@ -10,8 +10,10 @@ exports.run = async (client, message, args) => {
  let eklenecekpara = args[1]
 
 message.channel.send("amk ağla")
-  db.add(`para${message.guild}`)}
-
+  db.add(`para${message.author.id}`, eklenecekpara)
+  
+  
+}
 exports.conf = {
   enabled: true,
   guildOnly: true,
