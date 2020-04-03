@@ -14,6 +14,8 @@
  **__♣__** Logda Bir Sorun Yaşarsanız Çözemez iseniz Destek Almak için Sunucumuza Gele Bilirsiniz!
 
  **__♣__** Asla ve Asla Kim Olursa Olsun Projenizi Kimse ile Paylaşmayınız!
+ 
+  **__♣__** Her Dosyaya Dikkatlice Bakın ID Girilmesi Gereken Yerleri Doldurun!
 
  **__♣__** Komutlar Klasörüne Dosya Eklemek için `komutlar/komut-ismi.js` Şeklinde Yükleme Yapınız! Örnek: `komutlar/reboot.js`
   
