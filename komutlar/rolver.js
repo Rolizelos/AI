@@ -42,10 +42,7 @@ exports.conf = {
   aliases: ["rolver", "rv"],
   permLevel: 0
 };
- //Dcs Ekibi
 exports.help = {
-  name: "rol-ver",
-  description: "İstediğiniz kişiyi istediğiniz rolü verir.",
-  usage: "rol-ver [kullanıcı] [@rol]"
+  name: "rolver"
 };
    

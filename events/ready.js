@@ -9,10 +9,10 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `${prefix}js / ${prefix}kodlar`,
+            name: `ONLY CODE KOD SUNUCUSU BOTU`,
             type: 'listening'
         },
         status: 'online'
     })
-    console.log(`[${client.user.username}]: Giriş Yaptı! Komutlar Yüklendi!`);
+    console.log(`[${client.user.username}]: Giriş Yaptı! Komutlar Yüklendi! Only Code By Except!`);
 }

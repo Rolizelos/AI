@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
 const superagent = require('superagent');
-
-
+const ayarlar = require('../ayarlar.json')
 exports.run = (client, message, args) => {
    const util = require('util');
-    let owner = ["655124789018492947"]
+    let owner = [`${ayarlar.sahip}`]
     if(owner.includes(message.author.id)) {
         try {
             let toEval = args.join(" ");

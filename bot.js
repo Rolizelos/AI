@@ -111,32 +111,28 @@ client.on("guildMemberAdd", async member => {
   let botrol = await db.fetch(`bototorol_${member.guild.id}`);
   let botrol2 = member.guild.roles.find('id', botrol);
   if (!botrol2) return;
-
-   //dcs ekibi
-
-  
     if (botrol) {
       if (member.user.bot) {
         member.addRole(botrol2)
-        client.channels.get("693527212216942612").send(` \`${member.user.tag}\` adlı bota \`${botrol2.name}\` rolü verildi.`)
+        client.channels.get("EMOJİ ID").send(` \`${member.user.tag}\` adlı bota \`${botrol2.name}\` rolü verildi.`)
       }
   
     }
 });
 
 
-
-
 //---------------------------------
 client.on("guildMemberAdd", async member => {
-member.send("Seni Aramızda Görmekten Mutluluk Duyuyoruz! <#693532845175734332> Kanalında `!js` Yazarak JavaScript Rolüne Sahip Olabilirsin! Tekrardan <#693532845175734332> Kanalında `!roller` Yazarak İnvite İle Alabileceğin Rolleri Görebilirsin! İnşallah Seversin Sunucumuzu <3 Junex Development Ekibi!")
+member.send("SUNUCUYA KATILAN KİŞİYE ATILACAK MEAJ")
 })
+
+
 
 client.on("ready", () => {
   setInterval(() => {
-    let botdurum = client.channels.find(c => c.id === "693553095325515916");
+    let botdurum = client.channels.find(c => c.id === "KANAL ID");
     let guild = botdurum.guild.id
-    const botistatistik =  new Discord.RichEmbed()
+    botdurum.send(new Discord.RichEmbed()
       .setColor("RED")
       .setThumbnail(botdurum.guild.iconURL)
       .setTitle(`${botdurum.guild.name}  Sunucu İstatistik!`)
@@ -144,8 +140,7 @@ client.on("ready", () => {
       .addField(`** **`, `**Sunucu Sahibi:** <@${botdurum.guild.owner.id}>`)
       .addField(`** **`, `**Sunucudaki Üye Sayısı:** \`${botdurum.guild.memberCount}\``)
       .setFooter(`${botdurum.guild.name} İstatistik!`, botdurum.guild.iconURL)
-      .setTimestamp(); 
-    botdurum.send(botistatistik)
+      .setTimestamp())
     }, 200000);
 });  
 
