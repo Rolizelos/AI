@@ -9,7 +9,7 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `ONLY CODE KOD SUNUCUSU BOTU`,
+            name: `OgünSert Kob's `,
             type: 'listening'
         },
         status: 'online'
