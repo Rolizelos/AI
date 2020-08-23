@@ -5,28 +5,28 @@ const a = require('../ayarlar.json')
 exports.run = async function(client, message, args) {
   
   if(message.channel.id != "KANAL ID") return message.channel.send(':x: **Bu Komutudu <#KANAL ID> Kanalında Kullan!**').then(n => n.delete(5000));
-  
-  
-  message.channel.bulkDelete(1)
-  let user = message.author
-    
-  const cfx1 = new Discord.RichEmbed()
-  .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\``)
-  .setColor("#00ff88")
-  .setFooter(`${client.user.username} | İstek Sistemi.`, client.user.avatarURL)
-  const cfx2 = new Discord.RichEmbed()
-  .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)
-  .setColor("#00ff88")
-  .setFooter(`${client.user.username} | İstek Sistemi.`, client.user.avatarURL)
-
-  const cfx4 = new Discord.RichEmbed()
-  .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)
-  .setColor("#00ff88")
-  .setFooter(`${client.user.username} | İstek Sistemi.`, client.user.avatarURL)
-
-  
-  
-  
+  //GweepCreative
+  //GweepCreative
+  message.channel.bulkDelete(1)//GweepCreative
+  let user = message.author//GweepCreative
+    //GweepCreative
+  const cfx1 = new Discord.RichEmbed()//GweepCreative
+  .setDescription(`**İstek Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}istek-kanal ayarla #kanal\``)//GweepCreative
+  .setColor("#00ff88")//GweepCreative
+  .setFooter(`${client.user.username} | İstek Sistemi.`, client.user.avatarURL)//GweepCreative
+  const cfx2 = new Discord.RichEmbed()//GweepCreative
+  .setDescription(`\`${user.tag}\` Lütfen isteğinizi belirtin.`)//GweepCreative
+  .setColor("#00ff88")//GweepCreative
+  .setFooter(`${client.user.username} | İstek Sistemi.`, client.user.avatarURL)//GweepCreative
+//GweepCreative
+  const cfx4 = new Discord.RichEmbed()//GweepCreative
+  .setDescription(`\`${user.tag}\` İsteğin bildirildi!`)//GweepCreative
+  .setColor("#00ff88")//GweepCreative
+  .setFooter(`${client.user.username} | İstek Sistemi.`, client.user.avatarURL)//GweepCreative
+//GweepCreative
+  //GweepCreative
+  //GweepCreative
+  //GweepCreative
     let cfxistekkanal = await db.fetch(`istekkanal${message.guild.id}`)
     let chan = message.guild.channels.find('id', cfxistekkanal)
     let code = args.slice(0).join(' ');
@@ -41,7 +41,7 @@ exports.run = async function(client, message, args) {
 
 db.set(`emo${message.author.id}`, message.author.id)
     let emo = await db.fetch(`emo${message.author.id}`)
-//CodeFENIX //CFX
+///GweepCreative
     chan.send(`<@&678165769963700224>`).then(m => {
 chan.send(new Discord.RichEmbed()
 .setColor("#00ff88")
@@ -51,13 +51,13 @@ chan.send(new Discord.RichEmbed()
 .addField("Sayın Yetkililer! İstek Kod Eklendiyse `✅` Buna, Eklenmediyse `❎` Buna Basınız! Boş Yere Kullanan Kişiler Ceza Alıcaktır! ", "** **")  
 .setThumbnail(message.author.avatarURL))
 .then(async function(sentEmbed) {
-     //CodeFENIX //CFX
+     ///GweepCreative
         const emojideistir = ["✅", "❎", "🔒"];
         const filter = (reaction) =>
-     //CodeFENIX //CFX 
+     //GweepCreative
           emojideistir.includes(reaction.emoji.name)
 
-     //CodeFENIX //CFX 
+    //GweepCreative
         await sentEmbed.react(emojideistir[0]).catch(function() {});
         await sentEmbed.react(emojideistir[1]).catch(function() {});
         await sentEmbed.react(emojideistir[2]).catch(function() {});
@@ -81,7 +81,7 @@ message.author.send(cfx4).then(m => {
 
 }};
 
-// CodeFENIX // CFX
+// //GweepCreative
 exports.conf = {
   enabled: true,
   guildOnly: false, 

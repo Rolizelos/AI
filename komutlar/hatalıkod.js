@@ -7,22 +7,22 @@ exports.run = async function(client, message, args) {
   if(message.channel.id != "KANAL ID") return message.channel.send(':x: **Bu Komutudu <#KANAL ID> Kanalında Kullan!**').then(n => n.delete(5000));
   
   
-  message.channel.bulkDelete(1)
+  message.channel.bulkDelete(1)//GweepCreative
   let user = message.author
     
-  const cfx1 = new Discord.RichEmbed()
-  .setDescription(`**Hatalı-Kod-Log Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}hatalı-kanal ayarla #kanal\``)
-  .setColor("#00ff88")
-  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)
-  const cfx2 = new Discord.RichEmbed()
-  .setDescription(`\`${user.tag}\` Lütfen hatalı kodu belirtin.`)
-  .setColor("#00ff88")
-  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  const cfx1 = new Discord.RichEmbed()//GweepCreative
+  .setDescription(`**Hatalı-Kod-Log Kanalı Ayarlanmamış!** \n\n **Ayarlamak İçin:** \`${a.prefix}hatalı-kanal ayarla #kanal\``)//GweepCreative
+  .setColor("#00ff88")//GweepCreative
+  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)//GweepCreative
+  const cfx2 = new Discord.RichEmbed()//GweepCreative
+  .setDescription(`\`${user.tag}\` Lütfen hatalı kodu belirtin.`)//GweepCreative
+  .setColor("#00ff88")//GweepCreative
+  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)//GweepCreative
 
-  const cfx4 = new Discord.RichEmbed()
-  .setDescription(`\`${user.tag}\` Hatalı Kod Bildirimin Yetkililere Ulaştı! Yakında Düzeltilir!`)
-  .setColor("#00ff88")
-  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)
+  const cfx4 = new Discord.RichEmbed()//GweepCreative
+  .setDescription(`\`${user.tag}\` Hatalı Kod Bildirimin Yetkililere Ulaştı! Yakında Düzeltilir!`)//GweepCreative
+  .setColor("#00ff88")//GweepCreative
+  .setFooter(`${client.user.username} | Hatalı-Kod Sistemi.`, client.user.avatarURL)//GweepCreative
 
   
   
