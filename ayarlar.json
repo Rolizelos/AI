@@ -1,4 +1,5 @@
 {
   "prefix": "PREFIX",
-  "sahip": ["SAHİP ID"]
+  "sahip": ["SAHİP ID"],
+  "token": "token"
 }
